@@ -1,0 +1,8 @@
+1.0.1: Initialize plugin.
+1.0.2:
+    - Create database tables.
+    - create_states_table.php
+    - create_countries_table.php
+1.0.3:
+    - Add seed data for countries and states.
+    - seed_all_tables.php

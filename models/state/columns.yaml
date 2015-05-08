@@ -1,0 +1,12 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: rainlab.location::lang.state.name
+        searchable: true
+
+    code:
+        label: rainlab.location::lang.state.code
+        searchable: true

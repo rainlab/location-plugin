@@ -1,0 +1,13 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: rainlab.location::lang.state.name
+        span: auto
+        commentAbove: rainlab.location::lang.state.name_comment
+    code:
+        label: rainlab.location::lang.state.code
+        span: auto
+        commentAbove: rainlab.location::lang.state.code_comment

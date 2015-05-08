@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: rainlab.location::lang.location.label
+
+# Model Form Field configuration
+form: ~/plugins/rainlab/location/models/country/fields.yaml
+
+# Model Class name
+modelClass: RainLab\Location\Models\Country
+
+# Default redirect location
+defaultRedirect: rainlab/location/locations
+
+# Create page
+create:
+    title: rainlab.location::lang.location.create_title
+    redirect: rainlab/location/locations/update/:id
+    redirectClose: rainlab/location/locations
+
+# Update page
+update:
+    title: rainlab.location::lang.location.update_title
+    redirect: rainlab/location/locations
+    redirectClose: rainlab/location/locations
+
+# Preview page
+preview:
+    title: rainlab.location::lang.location.preview_title

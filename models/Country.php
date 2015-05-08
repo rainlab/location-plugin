@@ -1,0 +1,76 @@
+<?php namespace RainLab\Location\Models;
+
+use Form;
+use Model;
+
+/**
+ * Country Model
+ */
+class Country extends Model
+{
+    use \October\Rain\Database\Traits\Validation;
+
+    /**
+     * @var string The database table used by the model.
+     */
+    public $table = 'rainlab_location_countries';
+
+    /**
+     * @var array Guarded fields
+     */
+    protected $guarded = ['*'];
+
+    /**
+     * @var array Fillable fields
+     */
+    protected $fillable = ['name', 'code'];
+
+    /**
+     * @var array Validation rules
+     */
+    public $rules = [
+        'name' => 'required',
+        'code' => 'unique:rainlab_location_countries',
+    ];
+
+    /**
+     * @var array Relations
+     */
+    public $hasMany = [
+        'states' => ['RainLab\Location\Models\State']
+    ];
+
+    /**
+     * @var bool Indicates if the model should be timestamped.
+     */
+    public $timestamps = false;
+
+    /**
+     * @var array Cache for nameList() method
+     */
+    protected static $nameList = null;
+
+    public static function getNameList()
+    {
+        if (self::$nameList)
+            return self::$nameList;
+
+        return self::$nameList = self::isEnabled()->lists('name', 'id');
+    }
+
+    public static function formSelect($name, $selectedValue = null, $options = [])
+    {
+        return Form::select($name, self::getNameList(), $selectedValue, $options);
+    }
+
+    public function scopeIsEnabled($query)
+    {
+        return $query->where('is_enabled', true);
+    }
+
+    public static function getDefault()
+    {
+        return static::find(Settings::get('default_country', 1));
+    }
+
+}

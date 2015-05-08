@@ -1,0 +1,12 @@
+scopes:
+
+    enabled:
+
+        # Filter name
+        label: rainlab.location::lang.locations.hide_disabled
+
+        # Filter type
+        type: checkbox
+
+        # SQL Conditions
+        conditions: is_enabled = 1

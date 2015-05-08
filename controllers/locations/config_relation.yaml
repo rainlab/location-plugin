@@ -1,0 +1,10 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+states:
+    label: rainlab.location::lang.state.label
+    list: ~/plugins/rainlab/location/models/state/columns.yaml
+    form: ~/plugins/rainlab/location/models/state/fields.yaml
+    view:
+        toolbarButtons: create|delete

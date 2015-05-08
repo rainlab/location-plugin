@@ -1,0 +1,17 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    is_enabled:
+        label: rainlab.location::lang.country.enabled
+        type: checkbox
+
+    name:
+        label: rainlab.location::lang.country.name
+        span: auto
+
+    code:
+        label: rainlab.location::lang.country.code
+        span: auto
+        comment: rainlab.location::lang.country.code_comment
