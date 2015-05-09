@@ -53,4 +53,17 @@ class Plugin extends PluginBase
             ]
         ];
     }
+
+    /**
+     * Registers any form widgets implemented in this plugin.
+     */
+    public function registerFormWidgets()
+    {
+        return [
+            'RainLab\Location\FormWidgets\AddressFinder' => [
+                'label' => 'Address Finder',
+                'code' => 'addressfinder'
+            ],
+        ];
+    }
 }

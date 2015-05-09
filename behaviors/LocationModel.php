@@ -44,6 +44,48 @@ class LocationModel extends ModelBehavior
         return State::getNameList($this->model->country_id);
     }
 
+    /**
+     * Sets the "country" relation with the code specified, model lookup used.
+     * @param string $code
+     */
+    public function setCountryCodeAttribute($code)
+    {
+        if (!$country = Country::whereCode($code)->first())
+            return;
+
+        $this->model->country = $country;
+    }
+
+    /**
+     * Sets the "state" relation with the code specified, model lookup used.
+     * @param string $code
+     */
+    public function setStateCodeAttribute($code)
+    {
+        if (!$state = State::whereCode($code)->first())
+            return;
+
+        $this->model->state = $state;
+    }
+
+    /**
+     * Mutator for "country_code" attribute.
+     * @return string
+     */
+    public function getCountryCodeAttribute()
+    {
+        return $this->model->country ? $this->model->country->code : null;
+    }
+
+    /**
+     * Mutator for "state_code" attribute.
+     * @return string
+     */
+    public function getStateCodeAttribute()
+    {
+        return $this->model->state ? $this->model->state->code : null;
+    }
+
     // Fields
     // country:
     //     label: rainlab.user::lang.user.country
