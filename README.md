@@ -21,7 +21,9 @@ This will automatically create two "belongs to" relationships:
 1. **state** - relation for RainLab\Location\Models\State
 1. **country** - relation for RainLab\Location\Models\Country
 
-Then you are free to add the form field definitions:
+#### Back-end usage
+
+You are free to add the following form field definitions:
 
     country:
         label: Country
@@ -33,6 +35,43 @@ Then you are free to add the form field definitions:
         type: dropdown
         placeholder: -- select --
         dependsOn: country
+
+#### Front-end usage
+
+The front-end can also use the relationships by creating a partial called **country-state** with the content:
+
+    {% set countryId = countryId|default(form_value('country_id')) %}
+    {% set stateId = stateId|default(form_value('state_id')) %}
+
+    <div class="form-group">
+        <label for="accountCountry">Country</label>
+        {{ form_select_country('country_id', countryId, {
+            id: 'accountCountry',
+            class: 'form-control',
+            emptyOption: '',
+            'data-request': 'onInit',
+            'data-request-update': {
+                'country-state': '#partialCountryState'
+            }
+        }) }}
+    </div>
+
+    <div class="form-group">
+        <label for="accountState">State</label>
+        {{ form_select_state('state_id', countryId, stateId, {
+            id: 'accountState',
+            class: 'form-control',
+            emptyOption: ''
+        }) }}
+    </div>
+
+This partial can be rendered in a form with the following:
+
+    <div id="partialCountryState">
+        {% partial 'country-state' countryId=user.country_id stateId=user.state_id %}
+    </div>
+
+#### Short code accessors
 
 The behavior will also add a special short code accessor and setter to the model that converts `country_code` and `state_code` to their respective identifiers.
 
