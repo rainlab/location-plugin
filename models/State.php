@@ -50,12 +50,30 @@ class State extends Model
      */
     protected static $nameList = [];
 
-    public static function getNameList($countryId)
+    /**
+     * Get list of State names for dropdowns
+     * @param  Country|int  $country    Country model or ID to list the States from
+     * @return array
+     */
+    public static function getNameList($country)
     {
-        if (isset(self::$nameList[$countryId]))
-            return self::$nameList[$countryId];
+        $country instanceof Country
+        ? self::setNameList($countryId = $country->id, $country->states())
+        : self::setNameList($countryId = $country, self::whereCountryId($country));
 
-        return self::$nameList[$countryId] = self::whereCountryId($countryId)->lists('name', 'id');
+        return self::$nameList[$countryId];
+    }
+
+    /**
+     * Add the State list to cache for a given Country
+     * @param int             $countryId
+     * @param Builder|HasMany $stateModel
+     */
+    protected static function setNameList($countryId, $stateModel)
+    {
+        if (!isset(self::$nameList[$countryId])) {
+            self::$nameList[$countryId] = $stateModel->lists('name', 'id');
+        }
     }
 
     public static function formSelect($name, $countryId = null, $selectedValue = null, $options = [])
@@ -67,5 +85,4 @@ class State extends Model
     {
         return static::find(Settings::get('default_state', 1));
     }
-
 }
