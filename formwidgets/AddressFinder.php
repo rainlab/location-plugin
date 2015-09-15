@@ -44,6 +44,7 @@ class AddressFinder extends FormWidgetBase
     public function render()
     {
         $this->prepareVars();
+
         return $this->makePartial('addressfinder');
     }
 
@@ -62,10 +63,11 @@ class AddressFinder extends FormWidgetBase
         $widget = $this->controller->formGetWidget();
         $fields = $widget->getFields();
         $result = [];
-        foreach ($this->fieldMap as $map => $fieldName) {
 
-            if (!$field = array_get($fields, $fieldName))
+        foreach ($this->fieldMap as $map => $fieldName) {
+            if (!$field = array_get($fields, $fieldName)) {
                 continue;
+            }
 
             $result['data-input-'.$map] = '#'.$field->getId();
         }
@@ -81,5 +83,4 @@ class AddressFinder extends FormWidgetBase
         $this->addJs('http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false');
         $this->addJs('js/location-autocomplete.js', 'core');
     }
-
 }

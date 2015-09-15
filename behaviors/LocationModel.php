@@ -21,7 +21,6 @@ use Exception;
  */
 class LocationModel extends ModelBehavior
 {
-
     /**
      * Constructor
      */
@@ -58,8 +57,9 @@ class LocationModel extends ModelBehavior
      */
     public function setCountryCodeAttribute($code)
     {
-        if (!$country = Country::whereCode($code)->first())
+        if (!$country = Country::whereCode($code)->first()) {
             return;
+        }
 
         $this->model->country = $country;
     }
@@ -70,8 +70,9 @@ class LocationModel extends ModelBehavior
      */
     public function setStateCodeAttribute($code)
     {
-        if (!$state = State::whereCode($code)->first())
+        if (!$state = State::whereCode($code)->first()) {
             return;
+        }
 
         $this->model->state = $state;
     }
@@ -160,5 +161,4 @@ class LocationModel extends ModelBehavior
     // {
     //     return State::getNameList($this->default_country);
     // }
-
 }

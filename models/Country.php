@@ -52,8 +52,9 @@ class Country extends Model
 
     public static function getNameList()
     {
-        if (self::$nameList)
+        if (self::$nameList) {
             return self::$nameList;
+        }
 
         return self::$nameList = self::isEnabled()->lists('name', 'id');
     }
@@ -72,5 +73,4 @@ class Country extends Model
     {
         return static::find(Settings::get('default_country', 1));
     }
-
 }
