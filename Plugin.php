@@ -8,7 +8,6 @@ use System\Classes\PluginBase;
  */
 class Plugin extends PluginBase
 {
-
     /**
      * Returns information about this plugin.
      *
@@ -35,7 +34,7 @@ class Plugin extends PluginBase
                 'icon'        => 'icon-globe',
                 'url'         => Backend::url('rainlab/location/locations'),
                 'order'       => 500,
-                'permissions' => ['rainlab.locations.*'],
+                'permissions' => ['rainlab.locations.*']
             ]
         ];
     }
@@ -49,7 +48,7 @@ class Plugin extends PluginBase
         return [
             'functions' => [
                 'form_select_country' => ['RainLab\Location\Models\Country', 'formSelect'],
-                'form_select_state'   => ['RainLab\Location\Models\State', 'formSelect'],
+                'form_select_state'   => ['RainLab\Location\Models\State', 'formSelect']
             ]
         ];
     }
@@ -62,8 +61,8 @@ class Plugin extends PluginBase
         return [
             'RainLab\Location\FormWidgets\AddressFinder' => [
                 'label' => 'Address Finder',
-                'code' => 'addressfinder'
-            ],
+                'code'  => 'addressfinder'
+            ]
         ];
     }
 }

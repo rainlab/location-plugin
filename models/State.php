@@ -52,8 +52,9 @@ class State extends Model
 
     public static function getNameList($countryId)
     {
-        if (isset(self::$nameList[$countryId]))
+        if (isset(self::$nameList[$countryId])) {
             return self::$nameList[$countryId];
+        }
 
         return self::$nameList[$countryId] = self::whereCountryId($countryId)->lists('name', 'id');
     }
@@ -67,5 +68,4 @@ class State extends Model
     {
         return static::find(Settings::get('default_state', 1));
     }
-
 }

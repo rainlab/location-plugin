@@ -17,7 +17,7 @@ class Locations extends Controller
     public $implement = [
         'Backend.Behaviors.FormController',
         'Backend.Behaviors.ListController',
-        'Backend.Behaviors.RelationController',
+        'Backend.Behaviors.RelationController'
     ];
 
     public $formConfig = 'config_form.yaml';
@@ -37,8 +37,9 @@ class Locations extends Controller
      */
     public function listInjectRowClass($record, $definition = null)
     {
-        if (!$record->is_enabled)
+        if (!$record->is_enabled) {
             return 'safe disabled';
+        }
     }
 
     public function onLoadDisableForm()
@@ -56,11 +57,13 @@ class Locations extends Controller
     public function onDisableLocations()
     {
         $enable = post('enable', false);
+
         if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
 
             foreach ($checkedIds as $objectId) {
-                if (!$object = Country::find($objectId))
+                if (!$object = Country::find($objectId)) {
                     continue;
+                }
 
                 $object->is_enabled = $enable;
                 $object->save();
@@ -68,10 +71,12 @@ class Locations extends Controller
 
         }
 
-        if ($enable)
+        if ($enable) {
             Flash::success(Lang::get('rainlab.location::lang.locations.enable_success'));
-        else
+        }
+        else {
             Flash::success(Lang::get('rainlab.location::lang.locations.disable_success'));
+        }
 
         return Backend::redirect('rainlab/location/locations');
     }
