@@ -2,11 +2,11 @@
 
 return [
     'plugin' => [
-        'name' => 'Location',
-        'description' => 'Location based features, such as Country and State.'
+        'name' => 'موقعیت',
+        'description' => 'امکانات بر پایه موقعیت مانند کشور و استان'
     ],
     'location' => [
-        'location' => 'location',
+        'location' => 'موقعیت',
         'new' => 'موقعیت جدید',
         'create_title' => 'افزودن موقعیت',
         'update_title' => 'ویرایش موقعیت',
@@ -35,12 +35,15 @@ return [
     'state' => [
         'label' => 'استان',
         'name' => 'نام',
+        'select' => '-- انتخاب استان --',
         'name_comment' => 'نام استان را جهت نمایش وارد نمایید.',
         'code' => 'کد',
         'code_comment' => 'کد یکتایی جهت دسترسی به این استان وارد نمایید.',
     ],
     'country' => [
+        'label' => 'کشور',
         'name' => 'نام',
+        'select' => '-- انتخاب کشور --',
         'code' => 'کد',
         'code_comment' => 'کد یکتایی را جهت دسترسی به این کشور را وارد نمایید.',
         'enabled' => 'فعال',
