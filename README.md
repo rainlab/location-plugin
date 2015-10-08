@@ -52,7 +52,7 @@ For the list column definitions, you can use the following snippet:
      state:
          label: rainlab.location::lang.state.label
          searchable: true
-         relation: country
+         relation: state
          select: name
          sortable: false
     
