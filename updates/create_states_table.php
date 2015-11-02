@@ -18,6 +18,18 @@ class CreateStatesTable extends Migration
             return;
         }
 
+        if (!Schema::hasColumn('users', 'country_id')) {
+            Schema::table('users', function($table) {
+                $table->integer('country_id')->unsigned()->nullable()->index();
+            });
+        }
+
+        if (!Schema::hasColumn('users', 'state_id')) {
+            Schema::table('users', function($table) {
+                $table->integer('state_id')->unsigned()->nullable()->index();
+            });
+        }
+
         Schema::create('rainlab_location_states', function($table)
         {
             $table->engine = 'InnoDB';
@@ -31,6 +43,18 @@ class CreateStatesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('rainlab_location_states');
+
+        if (Schema::hasColumn('users', 'country_id')) {
+            Schema::table('users', function($table) {
+                $table->dropColumn('country_id');
+            });
+        }
+
+        if (Schema::hasColumn('users', 'state_id')) {
+            Schema::table('users', function($table) {
+                $table->dropColumn('state_id');
+            });
+        }
     }
 
 }
