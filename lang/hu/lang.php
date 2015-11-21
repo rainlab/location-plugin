@@ -2,8 +2,8 @@
 
 return [
     'plugin' => [
-        'name' => 'Location',
-        'description' => 'Location based features, such as Country and State.'
+        'name' => 'Helyek',
+        'description' => 'Tartózkodási helyek, úgy mint országok és megyék.'
     ],
     'location' => [
         'label' => 'Tartózkodási hely',
@@ -13,7 +13,7 @@ return [
         'preview_title' => 'Tartózkodási hely villámnézete'
     ],
     'locations' => [
-        'menu_label' => 'Tartózkodási helyek',
+        'menu_label' => 'Tartózkodások',
         'menu_description' => 'Elérhető felhasználói országok és államok / megyék kezelése.',
         'hide_disabled' => 'Letiltottak elrejtése',
         'enabled_label' => 'Engedélyezve',
@@ -26,7 +26,7 @@ return [
         'disable_confirm' => 'Biztos benne?',
         'list_title' => 'Tartózkodási helyek kezelése',
         'delete_confirm' => 'Valóban törölni akarja ezt a tartózkodási helyet?',
-        'return_to_list' => 'Vissza a tartózkodási helyek listájához',
+        'return_to_list' => 'Vissza a tartózkodási helyekhez',
         'default_country' => 'Alapértelmezett ország',
         'default_country_comment' => 'Ha egy felhasználó nem adja meg a tartózkodási helyét, akkor válasszon egy országot.',
         'default_state' => 'Alapértelmezett állam / megye',
@@ -36,15 +36,15 @@ return [
         'label' => 'Állam / megye',
         'name' => 'Név',
         'select' => '-- válasszon államot / megyét --',
-        'name_comment' => 'Írja be ennek az államnak / megyének a megjelenítendő nevét.',
+        'name_comment' => 'Írja be az államnak / megyének a megjelenítendő nevét.',
         'code' => 'Kód',
-        'code_comment' => 'Írja be az ezt az államot / megyét azonosító egyedi kódot.'
+        'code_comment' => 'Írja be az államot / megyét azonosító egyedi kódot.'
     ],
     'country' => [
         'name' => 'Név',
         'select' => '-- válasszon országot --',
         'code' => 'Kód',
-        'code_comment' => 'Írja be az ezt az országot azonosító egyedi kódot.',
+        'code_comment' => 'Írja be az országot azonosító egyedi kódot.',
         'enabled' => 'Engedélyezve'
     ]
 ];
