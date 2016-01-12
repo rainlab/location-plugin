@@ -60,6 +60,7 @@
         inputCity: null,
         inputZip: null,
         inputState: null,
+        inputVicinity: null,
         inputCountry: null,
         inputCountryLong: null
     }
@@ -92,6 +93,9 @@
             },
             'long': {
                 inputCountryLong: 'country'
+            },
+            'misc': {
+                inputVicinity: 'vicinity'
             }
         }
     }
@@ -148,6 +152,13 @@
             if (!$targetEl) return
 
             $targetEl.val(extractionFunction(standard, google, 'long_name'))
+        })
+
+        $.each(valueMap['misc'], function(standard, google){
+            var $targetEl = elementFinderFunction(standard)
+            if (!$targetEl) return
+
+            $targetEl.val(place[google])
         })
 
         this.$el.trigger('changedLocation')
