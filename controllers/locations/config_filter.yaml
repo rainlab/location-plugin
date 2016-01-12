@@ -9,4 +9,4 @@ scopes:
         type: checkbox
 
         # SQL Conditions
-        conditions: is_enabled = 1
+        conditions: is_enabled = '1'
