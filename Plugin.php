@@ -24,6 +24,40 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function boot()
+    {
+        if (class_exists('RainLab\User\Models\User'))
+        {
+            // extend RainLab.User model
+            \RainLab\User\Models\User::extend(function($model) {
+                $model->implement[] = 'RainLab.Location.Behaviors.LocationModel';
+            });
+
+            // extend RainLab.Users controller
+            \RainLab\User\Controllers\Users::extendFormFields(function($form, $model, $context) {
+
+                if (!$model instanceof \RainLab\User\Models\User)
+                    return;
+
+                $form->addTabFields([
+                    'country' => [
+                        'tab' => 'Location',
+                        'label'   => 'Country',
+                        'type'    => 'Dropdown',
+                        'placeholder' => '-- select --'
+                    ],
+                    'state' => [
+                        'tab' => 'Location',
+                        'label'   => 'State',
+                        'type'    => 'Dropdown',
+                        'placeholder' => '-- select --',
+                        'dependsOn' => 'country'
+                    ]
+                ]);
+            });
+        }
+    }
+
     public function registerSettings()
     {
         return [
