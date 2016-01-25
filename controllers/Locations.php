@@ -29,7 +29,7 @@ class Locations extends Controller
         parent::__construct();
 
         BackendMenu::setContext('October.System', 'system', 'settings');
-        SettingsManager::setContext('RainLab.User', 'location');
+        SettingsManager::setContext('RainLab.Location', 'location');
     }
 
     /**
