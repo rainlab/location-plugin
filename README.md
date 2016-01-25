@@ -32,13 +32,14 @@ You are free to add the following form field definitions:
         type: dropdown
         span: left
         placeholder: rainlab.location::lang.country.select
+
     state:
         label: rainlab.location::lang.state.label
         type: dropdown
         span: right
         dependsOn: country
         placeholder: rainlab.location::lang.state.select
-        
+
 #### Lists
 
 For the list column definitions, you can use the following snippet:
@@ -49,13 +50,13 @@ For the list column definitions, you can use the following snippet:
          relation: country
          select: name
          sortable: false
+
      state:
          label: rainlab.location::lang.state.label
          searchable: true
          relation: state
          select: name
          sortable: false
-    
 
 ### Front-end usage
 
@@ -117,6 +118,7 @@ Available mappings:
 - country-long
 - latitude
 - longitude
+- vicinity
 
 Usage:
 
@@ -135,6 +137,7 @@ Usage:
                 zip: zip
                 country: country_code
                 state: state_code
+                vicinity: vicinity
 
         city:
             label: City
@@ -148,3 +151,5 @@ Usage:
             label: Latitude
         longitude:
             label: Longitude
+        vicinity:
+            label: Vicinity
