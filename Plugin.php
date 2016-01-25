@@ -30,7 +30,7 @@ class Plugin extends PluginBase
             'location' => [
                 'label'       => 'rainlab.location::lang.locations.menu_label',
                 'description' => 'rainlab.location::lang.locations.menu_description',
-                'category'    => 'Locations',
+                'category'    => 'rainlab.location::lang.plugin.name',
                 'icon'        => 'icon-globe',
                 'url'         => Backend::url('rainlab/location/locations'),
                 'order'       => 500,
