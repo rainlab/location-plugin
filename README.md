@@ -5,6 +5,10 @@ This plugin adds location based features to [OctoberCMS](http://octobercms.com).
 * Easily add Country and State to any model
 * Form widget for address lookups (Google API)
 
+## Extended features
+
+To integrate locations with front-end users consider installing the [User Plus+ plugin](http://octobercms.com/plugin/rainlab-userplus) (`RainLab.UserPlus`).
+
 ### Add Country and State to any model
 
 This plugin provides an easy way to add location fields, country and state, to any model. Simply add these columns to the database table:
