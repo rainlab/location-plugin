@@ -21,22 +21,43 @@ This will automatically create two "belongs to" relationships:
 1. **state** - relation for RainLab\Location\Models\State
 1. **country** - relation for RainLab\Location\Models\Country
 
-#### Back-end usage
+### Back-end usage
+
+#### Forms
 
 You are free to add the following form field definitions:
 
     country:
-        label: Country
+        label: rainlab.location::lang.country.label
         type: dropdown
-        placeholder: -- select --
-
+        span: left
+        placeholder: rainlab.location::lang.country.select
     state:
-        label: State
+        label: rainlab.location::lang.state.label
         type: dropdown
-        placeholder: -- select --
+        span: right
         dependsOn: country
+        placeholder: rainlab.location::lang.state.select
+        
+#### Lists
 
-#### Front-end usage
+For the list column definitions, you can use the following snippet:
+
+     country:
+         label: rainlab.location::lang.country.label
+         searchable: true
+         relation: country
+         select: name
+         sortable: false
+     state:
+         label: rainlab.location::lang.state.label
+         searchable: true
+         relation: state
+         select: name
+         sortable: false
+    
+
+### Front-end usage
 
 The front-end can also use the relationships by creating a partial called **country-state** with the content:
 
@@ -71,7 +92,7 @@ This partial can be rendered in a form with the following:
         {% partial 'country-state' countryId=user.country_id stateId=user.state_id %}
     </div>
 
-#### Short code accessors
+### Short code accessors
 
 The behavior will also add a special short code accessor and setter to the model that converts `country_code` and `state_code` to their respective identifiers.
 
@@ -115,15 +136,15 @@ Usage:
                 country: country_code
                 state: state_code
 
-            city:
-                label: City
-            zip:
-                label: Zip
-            country_code:
-                label: Country
-            state_code:
-                label: State
-            latitude:
-                label: Latitude
-            longitude:
-                label: Longitude
+        city:
+            label: City
+        zip:
+            label: Zip
+        country_code:
+            label: Country
+        state_code:
+            label: State
+        latitude:
+            label: Latitude
+        longitude:
+            label: Longitude
