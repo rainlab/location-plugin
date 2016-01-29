@@ -95,5 +95,20 @@ class LocationModel extends ModelBehavior
         return $this->model->state ? $this->model->state->code : null;
     }
 
+    /**
+     * Ensure an integer value is set, otherwise nullable.
+     */
+    public function setCountryIdAttribute($value)
+    {
+        $this->attributes['country_id'] = $value ?: null;
+    }
+
+    /**
+     * Ensure an integer value is set, otherwise nullable.
+     */
+    public function setStateIdAttribute($value)
+    {
+        $this->attributes['state_id'] = $value ?: null;
+    }
 
 }
