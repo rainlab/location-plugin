@@ -100,7 +100,7 @@ class LocationModel extends ModelBehavior
      */
     public function setCountryIdAttribute($value)
     {
-        $this->attributes['country_id'] = $value ?: null;
+        $this->model->attributes['country_id'] = $value ?: null;
     }
 
     /**
@@ -108,7 +108,7 @@ class LocationModel extends ModelBehavior
      */
     public function setStateIdAttribute($value)
     {
-        $this->attributes['state_id'] = $value ?: null;
+        $this->model->attributes['state_id'] = $value ?: null;
     }
 
 }
