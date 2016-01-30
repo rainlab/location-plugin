@@ -34,7 +34,8 @@ class Plugin extends PluginBase
                 'icon'        => 'icon-globe',
                 'url'         => Backend::url('rainlab/location/locations'),
                 'order'       => 500,
-                'permissions' => ['rainlab.locations.*']
+                'permissions' => ['rainlab.locations.*'],
+                'keywords'    => 'country, countries, state'
             ]
         ];
     }
