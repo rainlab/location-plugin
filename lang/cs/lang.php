@@ -2,8 +2,11 @@
 
 return [
     'plugin' => [
-        'name' => 'Location',
-        'description' => 'Location based features, such as Country and State.'
+        'name' => 'Lokace',
+        'description' => 'Location based features, such as Country and State.',
+    ],
+    'permissions' => [
+        'settings' => 'Správa lokací',
     ],
     'location' => [
         'label' => 'Lokality',

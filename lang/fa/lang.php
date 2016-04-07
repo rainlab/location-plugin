@@ -5,6 +5,9 @@ return [
         'name' => 'موقعیت',
         'description' => 'امکانات بر پایه موقعیت مانند کشور و استان'
     ],
+    'permissions' => [
+        'settings' => 'Locations management',
+    ],
     'location' => [
         'location' => 'موقعیت',
         'new' => 'موقعیت جدید',

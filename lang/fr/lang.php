@@ -5,6 +5,9 @@ return [
         'name' => 'Location',
         'description' => 'Location based features, such as Country and State.'
     ],
+    'permissions' => [
+        'settings' => 'Locations management',
+    ],
     'location' => [
         'label' => 'Lieu',
         'new' => 'Nouveau Lieu',
