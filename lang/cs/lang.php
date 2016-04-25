@@ -2,8 +2,8 @@
 
 return [
     'plugin' => [
-        'name' => 'Location',
-        'description' => 'Location based features, such as Country and State.'
+        'name' => 'Lokace',
+        'description' => 'Funkce pro upřesnění lokace, jako třeba Země, nebo Stát.',
     ],
     'location' => [
         'label' => 'Lokality',
