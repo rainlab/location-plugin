@@ -80,7 +80,7 @@ class AddressFinder extends FormWidgetBase
      */
     public function loadAssets()
     {
-        $this->addJs('http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false');
+        $this->addJs('//maps.googleapis.com/maps/api/js?libraries=places&sensor=false');
         $this->addJs('js/location-autocomplete.js', 'core');
     }
 }
