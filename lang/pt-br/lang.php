@@ -15,7 +15,7 @@ return [
     'locations' => [
         'menu_label' => 'Locais',
         'menu_description' => 'Gerenciar países e estados disponíveis.',
-        'hide_disabled' => 'Ocultar desabilitados',
+        'disabled_label' => 'Ocultar desabilitados',
         'enabled_label' => 'Habilitado',
         'enabled_help' => 'Locais desabilitados não são visíveis no front-end.',
         'enable_or_disable_title' => "Habilitar ou Desabilitar Locais",

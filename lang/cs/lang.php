@@ -15,7 +15,7 @@ return [
     'locations' => [
         'menu_label' => 'Lokality',
         'menu_description' => 'Správa dostupných zemí a států.',
-        'hide_disabled' => 'Skrýt neaktivní země',
+        'disabled_label' => 'Skrýt neaktivní země',
         'enabled_label' => 'Aktivní',
         'enabled_help' => 'Neaktivní lokality nejsou viditelné na front-endu.',
         'enable_or_disable_title' => 'Aktivace nebo zákaz lokality',

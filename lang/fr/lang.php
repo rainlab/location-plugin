@@ -15,7 +15,7 @@ return [
     'locations' => [
         'menu_label' => 'Lieux',
         'menu_description' => 'Gestion des Pays et Etats disponibles pour les utilisateurs.',
-        'hide_disabled' => 'Cacher les items désactivés',
+        'disabled_label' => 'Cacher les items désactivés',
         'enabled_label' => 'Autorisé',
         'enabled_help' => 'Désactiver les lieux pour les rendre invisibles sur le Front-end.',
         'enable_or_disable_title' => "Activer ou Désactiver Lieux",

@@ -15,7 +15,7 @@ return [
     'locations' => [
         'menu_label' => 'Tartózkodások',
         'menu_description' => 'Elérhető felhasználói országok és államok / megyék kezelése.',
-        'hide_disabled' => 'Letiltottak elrejtése',
+        'disabled_label' => 'Letiltottak elrejtése',
         'enabled_label' => 'Engedélyezve',
         'enabled_help' => 'A letiltott tartózkodási helyek nem láthatók a felhasználói oldalon.',
         'enable_or_disable_title' => 'Tartózkodási helyek engedélyezése vagy letiltása',

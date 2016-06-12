@@ -3,10 +3,12 @@ scopes:
     enabled:
 
         # Filter name
-        label: rainlab.location::lang.locations.hide_disabled
+        label: rainlab.location::lang.locations.disabled_label
 
         # Filter type
-        type: checkbox
+        type: switch
 
         # SQL Conditions
-        conditions: is_enabled = '1'
+        conditions:
+            - is_enabled = '1'
+            - is_enabled = '0'

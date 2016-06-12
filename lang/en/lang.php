@@ -15,7 +15,7 @@ return [
     'locations' => [
         'menu_label' => 'Locations',
         'menu_description' => 'Manage available user countries and states.',
-        'hide_disabled' => 'Hide disabled',
+        'disabled_label' => 'Disabled',
         'enabled_label' => 'Enabled',
         'enabled_help' => 'Disabled locations are not visible on the front-end.',
         'enable_or_disable_title' => "Enable or Disable Locations",

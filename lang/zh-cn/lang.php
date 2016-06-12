@@ -15,7 +15,7 @@ return [
     'locations' => [
         'menu_label' => '位置信息',
         'menu_description' => '管理国家和地区.',
-        'hide_disabled' => '隐藏被禁用项',
+        'disabled_label' => '隐藏被禁用项',
         'enabled_label' => '启用',
         'enabled_help' => '被禁用后不会继续在前端显示.',
         'enable_or_disable_title' => "启用 或 禁用",
