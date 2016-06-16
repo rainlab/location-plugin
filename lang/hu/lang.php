@@ -41,6 +41,7 @@ return [
         'code_comment' => 'Írja be az államot / megyét azonosító egyedi kódot.'
     ],
     'country' => [
+        'label' => 'Országok',
         'name' => 'Név',
         'select' => '-- válasszon országot --',
         'code' => 'Kód',
