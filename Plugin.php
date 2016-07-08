@@ -34,8 +34,17 @@ class Plugin extends PluginBase
                 'icon'        => 'icon-globe',
                 'url'         => Backend::url('rainlab/location/locations'),
                 'order'       => 500,
-                'permissions' => ['rainlab.location.settings'],
+                'permissions' => ['rainlab.location.access_settings'],
                 'keywords'    => 'country, countries, state',
+            ],
+            'settings' => [
+                'label'       => 'rainlab.location::lang.settings.menu_label',
+                'description' => 'rainlab.location::lang.settings.menu_description',
+                'category'    => 'rainlab.location::lang.plugin.name',
+                'icon'        => 'icon-map-signs',
+                'class'       => 'RainLab\Location\Models\Setting',
+                'order'       => 600,
+                'permissions' => ['rainlab.location.access_settings'],
             ]
         ];
     }
@@ -43,7 +52,7 @@ class Plugin extends PluginBase
     public function registerPermissions()
     {
         return [
-            'rainlab.location.settings' => ['tab' => 'rainlab.location::lang.plugin.name', 'label' => 'rainlab.location::lang.permissions.settings'],
+            'rainlab.location.access_settings' => ['tab' => 'rainlab.location::lang.plugin.name', 'label' => 'rainlab.location::lang.permissions.settings'],
         ];
     }
 

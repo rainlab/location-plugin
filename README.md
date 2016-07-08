@@ -5,9 +5,17 @@ This plugin adds location based features to [OctoberCMS](http://octobercms.com).
 * Easily add Country and State to any model
 * Form widget for address lookups (Google API)
 
-## Extended features
+### Extended features
 
 To integrate locations with front-end users consider installing the [User Plus+ plugin](http://octobercms.com/plugin/rainlab-userplus) (`RainLab.UserPlus`).
+
+### Google API key requirement
+
+As of June 22, 2016 the Google Maps service requires an API key. You may generate a key from the following link:
+
+- [Get a Google API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
+
+Copy the key and enter it in the **Settings > Location settings** area. If you find the address finder is not working, you may need to [enable the Places Web Service](https://console.developers.google.com/apis/api/places_backend/overview?project=_).
 
 ### Add Country and State to any model
 

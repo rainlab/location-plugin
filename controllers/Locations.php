@@ -24,6 +24,8 @@ class Locations extends Controller
     public $listConfig = 'config_list.yaml';
     public $relationConfig = 'config_relation.yaml';
 
+    public $requiredPermissions = ['rainlab.users.access_settings'];
+
     public function __construct()
     {
         parent::__construct();

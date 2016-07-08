@@ -16,7 +16,7 @@ return [
         'preview_title' => 'Preview Location'
     ],
     'locations' => [
-        'menu_label' => 'Locations',
+        'menu_label' => 'Countries & States',
         'menu_description' => 'Manage available user countries and states.',
         'disabled_label' => 'Disabled',
         'enabled_label' => 'Enabled',
@@ -34,6 +34,13 @@ return [
         'default_country_comment' => 'When a user does not specify their location, select a default country to use.',
         'default_state' => 'Default State',
         'default_state_comment' => 'When a user does not specify their location, select a default state to use.',
+    ],
+    'settings' => [
+        'menu_label' => 'Location settings',
+        'menu_description' => 'Manage location based settings.',
+        'google_maps_key' => 'Google Maps API Key',
+        'google_maps_key_comment' => 'If you plan on using Google Maps services, enter the API key for it here.',
+        'credentials_tab' => 'Credentials',
     ],
     'state' => [
         'label' => 'State',

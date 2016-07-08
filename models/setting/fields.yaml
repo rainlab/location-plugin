@@ -1,0 +1,12 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+tabs:
+    fields:
+
+        # Google Maps API Key
+        google_maps_key:
+            label: rainlab.location::lang.settings.google_maps_key
+            comment: rainlab.location::lang.settings.google_maps_key_comment
+            tab: rainlab.location::lang.settings.credentials_tab

@@ -6,3 +6,4 @@
 1.0.3:
     - Add seed data for countries and states.
     - seed_all_tables.php
+1.0.4: Satisfy the new Google API key requirement.
