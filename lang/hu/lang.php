@@ -5,6 +5,9 @@ return [
         'name' => 'Helyek',
         'description' => 'Tartózkodási helyek, úgy mint országok és megyék.'
     ],
+    'permissions' => [
+        'settings' => 'Locations management',
+    ],
     'location' => [
         'label' => 'Tartózkodási hely',
         'new' => 'Új tartózkodási hely',
