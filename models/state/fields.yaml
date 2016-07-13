@@ -11,3 +11,6 @@ fields:
         label: rainlab.location::lang.state.code
         span: auto
         commentAbove: rainlab.location::lang.state.code_comment
+        preset:
+            field: name
+            type: slug
