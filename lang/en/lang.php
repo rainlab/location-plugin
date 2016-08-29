@@ -3,7 +3,7 @@
 return [
     'plugin' => [
         'name' => 'Location',
-        'description' => 'Location based features, such as Country and State.'
+        'description' => 'Location based features, such as Country and State.',
     ],
     'permissions' => [
         'settings' => 'Locations management',
@@ -13,7 +13,7 @@ return [
         'new' => 'New Location',
         'create_title' => 'Create Location',
         'update_title' => 'Edit Location',
-        'preview_title' => 'Preview Location'
+        'preview_title' => 'Preview Location',
     ],
     'locations' => [
         'menu_label' => 'Countries & States',
@@ -48,7 +48,7 @@ return [
         'select' => '-- select state --',
         'name_comment' => 'Enter the display name for this state.',
         'code' => 'Code',
-        'code_comment' => 'Enter a unique code to identify this state.'
+        'code_comment' => 'Enter a unique code to identify this state.',
     ],
     'country' => [
         'label' => 'Country',
@@ -56,6 +56,7 @@ return [
         'select' => '-- select country --',
         'code' => 'Code',
         'code_comment' => 'Enter a unique code to identify this country.',
-        'enabled' => 'Enabled'
-    ]
+        'enabled' => 'Enabled',
+        'pinned' => 'Pinned',
+    ],
 ];
