@@ -14,3 +14,7 @@ columns:
     is_enabled:
         label: rainlab.location::lang.country.enabled
         type: switch
+
+    is_pinned:
+        label: rainlab.location::lang.country.pinned
+        type: switch

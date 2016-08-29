@@ -56,7 +56,7 @@ class Country extends Model
             return self::$nameList;
         }
 
-        return self::$nameList = self::isEnabled()->lists('name', 'id');
+        return self::$nameList = self::isEnabled()->orderBy('is_pinned', 'desc')->lists('name', 'id');
     }
 
     public static function formSelect($name, $selectedValue = null, $options = [])

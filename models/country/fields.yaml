@@ -6,6 +6,12 @@ fields:
     is_enabled:
         label: rainlab.location::lang.country.enabled
         type: checkbox
+        span: left
+
+    is_pinned:
+        label: rainlab.location::lang.country.pinned
+        type: checkbox
+        span: right
 
     name:
         label: rainlab.location::lang.country.name

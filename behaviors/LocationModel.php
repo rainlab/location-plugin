@@ -110,5 +110,4 @@ class LocationModel extends ModelBehavior
     {
         $this->model->attributes['state_id'] = $value ?: null;
     }
-
 }

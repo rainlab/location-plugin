@@ -1,6 +1,7 @@
 <?php namespace RainLab\Location\Updates;
 
 use Schema;
+use October\Rain\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
 
 class CreateStatesTable extends Migration
@@ -18,8 +19,7 @@ class CreateStatesTable extends Migration
             return;
         }
 
-        Schema::create('rainlab_location_states', function($table)
-        {
+        Schema::create('rainlab_location_states', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('country_id')->unsigned()->index();
