@@ -10,4 +10,3 @@
 1.0.5:
     - Countries can now be pinned to make them appear at the top of the list.
     - add_country_pinned_flag.php
-    - seed_pinned_countries.php
