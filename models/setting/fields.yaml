@@ -5,6 +5,23 @@
 tabs:
     fields:
 
+        # Default Country
+        default_country:
+            span: left
+            label: rainlab.location::lang.locations.default_country
+            comment: rainlab.location::lang.locations.default_country_comment
+            type: dropdown
+            tab: rainlab.location::lang.location.label
+
+        # Default State
+        default_state:
+            span: right
+            label: rainlab.location::lang.locations.default_state
+            comment: rainlab.location::lang.locations.default_state_comment
+            type: dropdown
+            tab: rainlab.location::lang.location.label
+            dependsOn: default_country
+
         # Google Maps API Key
         google_maps_key:
             label: rainlab.location::lang.settings.google_maps_key

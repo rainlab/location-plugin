@@ -68,4 +68,9 @@ class Country extends Model
     {
         return $query->where('is_enabled', true);
     }
+
+    public static function getDefault()
+    {
+        return static::find(Setting::get('default_country', 1));
+    }
 }
