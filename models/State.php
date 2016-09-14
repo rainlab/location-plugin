@@ -66,6 +66,8 @@ class State extends Model
 
     public static function getDefault()
     {
-        return static::find(Setting::get('default_state', 1));
+        return ($defaultId = Setting::get('default_state'))
+            ? static::find($defaultId)
+            : null;
     }
 }

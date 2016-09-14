@@ -71,6 +71,8 @@ class Country extends Model
 
     public static function getDefault()
     {
-        return static::find(Setting::get('default_country', 1));
+        return ($defaultId = Setting::get('default_country'))
+            ? static::find($defaultId)
+            : null;
     }
 }
