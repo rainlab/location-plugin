@@ -11,3 +11,4 @@
     - Countries can now be pinned to make them appear at the top of the list.
     - add_country_pinned_flag.php
 1.0.6: Added support for defining a default country and state.
+1.0.7: Added basic geocoding method to the Country model.

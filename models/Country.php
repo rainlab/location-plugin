@@ -1,7 +1,9 @@
 <?php namespace RainLab\Location\Models;
 
+use Http;
 use Form;
 use Model;
+use Exception;
 
 /**
  * Country Model
@@ -74,5 +76,23 @@ class Country extends Model
         return ($defaultId = Setting::get('default_country'))
             ? static::find($defaultId)
             : null;
+    }
+
+    /**
+     * Attempts to find a country from the IP address.
+     * @param string $ipAddress
+     * @return self
+     */
+    public static function getFromIp($ipAddress)
+    {
+        try {
+            $body = (string) Http::get('http://ip2c.org/?ip='.$ipAddress);
+
+            if (substr($body, 0, 1) === '1') {
+                $code = explode(';', $body)[1];
+                return static::where('code', $code)->first();
+            }
+        }
+        catch (Exception $e) {}
     }
 }
