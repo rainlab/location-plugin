@@ -35,6 +35,13 @@ return [
         'default_state' => 'Výchozí stát',
         'default_state_comment' => 'Použije se pokud si uživatel nevybere stát při registraci.',
     ],
+    'settings' => [
+        'menu_label' => 'Nastavení lokalit',
+        'menu_description' => 'Nastavení geolokace.',
+        'google_maps_key' => 'Google Maps API klíč',
+        'google_maps_key_comment' => 'Pokud chcete používat Google Mapy, zadejte zde váš API klíč.',
+        'credentials_tab' => 'Údaje',
+    ],
     'state' => [
         'label' => 'Stát',
         'name' => 'Jméno',
@@ -49,6 +56,7 @@ return [
         'select' => '-- zvolte zemi --',
         'code' => 'Kód',
         'code_comment' => 'Zadejte unikátní kód země.',
-        'enabled' => 'Aktivní'
-    ]
+        'enabled' => 'Aktivní',
+        'pinned' => 'Preferovat',
+    ],
 ];
