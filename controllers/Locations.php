@@ -82,4 +82,43 @@ class Locations extends Controller
 
         return Backend::redirect('rainlab/location/locations');
     }
+
+    public function onLoadUnpinForm()
+    {
+        try {
+            $this->vars['checked'] = post('checked');
+        }
+        catch (Exception $ex) {
+            $this->handleError($ex);
+        }
+
+        return $this->makePartial('unpin_form');
+    }
+
+    public function onUnpinLocations()
+    {
+        $pin = post('pin', false);
+
+        if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
+
+            foreach ($checkedIds as $objectId) {
+                if (!$object = Country::find($objectId)) {
+                    continue;
+                }
+
+                $object->is_pinned = $pin;
+                $object->save();
+            }
+
+        }
+
+        if ($pin) {
+            Flash::success(Lang::get('rainlab.location::lang.locations.pin_success'));
+        }
+        else {
+            Flash::success(Lang::get('rainlab.location::lang.locations.unpin_success'));
+        }
+
+        return Backend::redirect('rainlab/location/locations');
+    }
 }
