@@ -18,4 +18,18 @@
         data-stripe-load-indicator>
         <?= e(trans('rainlab.location::lang.locations.enable_or_disable')) ?>
     </button>
+    <button
+        class="btn btn-default oc-icon-map-pin"
+        disabled="disabled"
+        onclick="$(this).data('request-data', {
+            checked: $('.control-list').listWidget('getChecked')
+        })"
+        data-control="popup"
+        data-handler="onLoadUnpinForm"
+        data-trigger-action="enable"
+        data-trigger=".control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-stripe-load-indicator>
+        <?= e(trans('rainlab.location::lang.locations.pin_or_unpin')) ?>
+    </button>
 </div>
