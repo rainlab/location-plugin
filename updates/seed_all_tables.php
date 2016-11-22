@@ -523,6 +523,52 @@ class SeedAllTables extends Seeder
             ['code' => 'WOR', 'name' => 'Worcestershire'],
             ['code' => 'YOR', 'name' => 'Yorkshire']
         ]);
+        
+        $ro = Country::whereCode('RO')->first();
+        $ro->states()->createMany([
+            ['name' => 'Alba', 'code' => 'AB'],
+            ['name' => 'Arad', 'code' => 'AR'],
+            ['name' => 'Arges', 'code' => 'AG'],
+            ['name' => 'Bacău', 'code' => 'BC'],
+            ['name' => 'Bihor', 'code' => 'BH'],
+            ['name' => 'Bistrita - Nasaud Bistrita', 'code' => 'BN'],
+            ['name' => 'Botosani', 'code' => 'BT'],
+            ['name' => 'Brasov', 'code' => 'BV'],
+            ['name' => 'Braila', 'code' => 'BR'],
+            ['name' => 'Bucuresti', 'code' => 'B'],
+            ['name' => 'Buzau', 'code' => 'BZ'],
+            ['name' => 'Caras - Severin', 'code' => 'CS'],
+            ['name' => 'Calarasi', 'code' => 'CL'],
+            ['name' => 'Cluj', 'code' => 'CJ'],
+            ['name' => 'Constanta', 'code' => 'CT'],
+            ['name' => 'Covasna Sfantu Gheorghe', 'code' => 'CV'],
+            ['name' => 'Dambovita', 'code' => 'DB'],
+            ['name' => 'Dolj', 'code' => 'DJ'],
+            ['name' => 'Galati', 'code' => 'GL'],
+            ['name' => 'Giurgiu', 'code' => 'GR'],
+            ['name' => 'Gorj', 'code' => 'GJ'],
+            ['name' => 'Harghita', 'code' => 'HR'],
+            ['name' => 'Hunedoara', 'code' => 'HD'],
+            ['name' => 'Ialomita', 'code' => 'IL'],
+            ['name' => 'Iasi', 'code' => 'IS'],
+            ['name' => 'Ilfov', 'code' => 'IF'],
+            ['name' => 'Maramures', 'code' => 'MM'],
+            ['name' => 'Mehedinti', 'code' => 'MH'],
+            ['name' => 'Mures', 'code' => 'MS'],
+            ['name' => 'Neamt', 'code' => 'NT'],
+            ['name' => 'Olt', 'code' => 'OT'],
+            ['name' => 'Prahova Ploiesti', 'code' => 'PH'],
+            ['name' => 'Satu Mare', 'code' => 'SM'],
+            ['name' => 'Salaj', 'code' => 'SJ'],
+            ['name' => 'Sibiu', 'code' => 'SB'],
+            ['name' => 'Suceava', 'code' => 'SV'],
+            ['name' => 'Teleorman', 'code' => 'TR'],
+            ['name' => 'Timis', 'code' => 'TM'],
+            ['name' => 'Tulcea', 'code' => 'TL'],
+            ['name' => 'Vaslui', 'code' => 'VS'],
+            ['name' => 'Valcea', 'code' => 'VL'],
+            ['name' => 'Vrancea', 'code' => 'VN']
+        ]);
 
         $hu = Country::whereCode('HU')->first();
         $hu->states()->createMany([
