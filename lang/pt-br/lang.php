@@ -2,18 +2,18 @@
 
 return [
     'plugin' => [
-        'name' => 'Location',
-        'description' => 'Location based features, such as Country and State.'
+        'name' => 'Locais',
+        'description' => 'Local com base em características, como País e Estado.',
     ],
     'permissions' => [
-        'settings' => 'Locations management',
+        'settings' => 'Gerenciamento de locais',
     ],
     'location' => [
         'label' => 'Local',
         'new' => 'Novo Local',
         'create_title' => 'Criar Local',
         'update_title' => 'Editar Local',
-        'preview_title' => 'Pré-visualizar Local'
+        'preview_title' => 'Pré-visualizar Local',
     ],
     'locations' => [
         'menu_label' => 'Locais',
@@ -27,6 +27,14 @@ return [
         'enable_success' => 'Locais habilitados com sucesso.',
         'disable_success' => 'Locais desabilitados com sucesso.',
         'disable_confirm' => 'Você tem certeza?',
+        'unpin_label' => 'Desafixado',
+        'pinned_label' => 'Fixado',
+        'pinned_help' => 'Locais fixados são classificadas em primeiro lugar na lista.',
+        'pin_or_unpin_title' => "Fixar ou desafixar locais",
+        'pin_or_unpin' => 'Fixar ou Desafixar',
+        'pin_success' => 'Os locais selecionados foram fixados com sucesso.',
+        'unpin_success' => 'Os locais selecionados foram desafixados com sucesso.',
+        'unpin_confirm' => 'Você tem certeza?',
         'list_title' => 'Gerenciar Locais',
         'delete_confirm' => 'Você realmente deseja deletar este local?',
         'return_to_list' => 'Retornar à lista de locais',
@@ -35,13 +43,20 @@ return [
         'default_state' => 'Estado padrão',
         'default_state_comment' => 'Quando um usuário não especifica seu local, selecione um estado padrão para usar.',
     ],
+    'settings' => [
+        'menu_label' => 'Configurações de locais',
+        'menu_description' => 'Gerenciar configurações baseadas em local.',
+        'google_maps_key' => 'Chave de API do Google Maps',
+        'google_maps_key_comment' => 'Se pretender utilizar os serviços do Google Maps, introduza a chave da API aqui.',
+        'credentials_tab' => 'Credenciais',
+    ],
     'state' => [
         'label' => 'Estado',
         'name' => 'Nome',
         'select' => '-- selecione um estado --',
         'name_comment' => 'Informe do nome de exibição para este estado.',
         'code' => 'Código',
-        'code_comment' => 'Informe o código único pra este estado.'
+        'code_comment' => 'Informe o código único pra este estado.',
     ],
     'country' => [
         'label' => 'País',
@@ -49,6 +64,7 @@ return [
         'select' => '-- selecione um país --',
         'code' => 'Código',
         'code_comment' => 'Informe um código único para este país.',
-        'enabled' => 'Habilitado'
+        'enabled' => 'Habilitado',
+        'pinned' => 'Fixado',
     ]
 ];
