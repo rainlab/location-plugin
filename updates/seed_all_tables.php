@@ -482,7 +482,7 @@ class SeedAllTables extends Seeder
             ['code' => 'LON', 'name' => 'London'],
             ['code' => 'MAN', 'name' => 'Manchester'],
             ['code' => 'MER', 'name' => 'Merionethshire'],
-            ['code' => 'MER', 'name' => 'Merseyside'],
+            ['code' => 'MSY', 'name' => 'Merseyside'],
             ['code' => 'MDX', 'name' => 'Middlesex'],
             ['code' => 'MID', 'name' => 'Midlands'],
             ['code' => 'MLT', 'name' => 'Midlothian'],
