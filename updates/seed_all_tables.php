@@ -413,21 +413,21 @@ class SeedAllTables extends Seeder
 
         $ee = Country::whereCode('EE')->first();
         $ee->states()->createMany([
-            ['code' => 'EE-37', 'name' => 'Harju'],
-            ['code' => 'EE-39', 'name' => 'Hiiu'],
-            ['code' => 'EE-44', 'name' => 'Ida-Viru'],
-            ['code' => 'EE-49', 'name' => 'Jõgeva'],
-            ['code' => 'EE-51', 'name' => 'Järva'],
-            ['code' => 'EE-57', 'name' => 'Lääne'],
-            ['code' => 'EE-59', 'name' => 'Lääne-Viru'],
-            ['code' => 'EE-65', 'name' => 'Põlva'],
-            ['code' => 'EE-67', 'name' => 'Pärnu'],
-            ['code' => 'EE-70', 'name' => 'Rapla'],
-            ['code' => 'EE-74', 'name' => 'Saare'],
-            ['code' => 'EE-78', 'name' => 'Tartu'],
-            ['code' => 'EE-82', 'name' => 'Valga'],
-            ['code' => 'EE-84', 'name' => 'Viljandi'],
-            ['code' => 'EE-86', 'name' => 'Võru']
+            ['code' => 'HA', 'name' => 'Harju'],
+            ['code' => 'HI', 'name' => 'Hiiu'],
+            ['code' => 'IV', 'name' => 'Ida-Viru'],
+            ['code' => 'JR', 'name' => 'Jõgeva'],
+            ['code' => 'JN', 'name' => 'Järva'],
+            ['code' => 'LN', 'name' => 'Lääne'],
+            ['code' => 'LV', 'name' => 'Lääne-Viru'],
+            ['code' => 'PL', 'name' => 'Põlva'],
+            ['code' => 'PR', 'name' => 'Pärnu'],
+            ['code' => 'RA', 'name' => 'Rapla'],
+            ['code' => 'SA', 'name' => 'Saare'],
+            ['code' => 'TA', 'name' => 'Tartu'],
+            ['code' => 'VG', 'name' => 'Valga'],
+            ['code' => 'VD', 'name' => 'Viljandi'],
+            ['code' => 'VR', 'name' => 'Võru']
         ]);
 
         $ie = Country::whereCode('IE')->first();
