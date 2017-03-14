@@ -16,6 +16,16 @@ class State extends Model
     public $table = 'rainlab_location_states';
 
     /**
+     * @var array Behaviours implemented by this model.
+     */
+    public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
+
+    /**
+     * @var array The translatable table fields.
+     */
+    public $translatable = ['name'];
+
+    /**
      * @var array Guarded fields
      */
     protected $guarded = ['*'];
