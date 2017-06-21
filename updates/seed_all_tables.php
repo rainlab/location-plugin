@@ -378,6 +378,35 @@ class SeedAllTables extends Seeder
             ['code' => 'SK', 'name' => 'Saskatchewan'],
             ['code' => 'YT', 'name' => 'Yukon']
         ]);
+        
+        $ca = Country::whereCode('CH')->first();
+        $ca->states()->createMany([    
+            ['code' => 'AG', 'name' => 'Aargau'],
+            ['code' => 'AI', 'name' => 'Appenzell Innerrhoden'],
+            ['code' => 'AR', 'name' => 'Appenzell Ausserrhoden'],
+            ['code' => 'BE', 'name' => 'Bern'],
+            ['code' => 'BL', 'name' => 'Basel-Landschaft'],
+            ['code' => 'BS', 'name' => 'Basel-Stadt'],
+            ['code' => 'FR', 'name' => 'Fribourg'],
+            ['code' => 'GE', 'name' => 'Genève'],
+            ['code' => 'GL', 'name' => 'Glarus'],
+            ['code' => 'GR', 'name' => 'Graubünden'],
+            ['code' => 'JU', 'name' => 'Jura'],
+            ['code' => 'LU', 'name' => 'Luzern'],
+            ['code' => 'NE', 'name' => 'Neuchâtel'],
+            ['code' => 'NW', 'name' => 'Nidwalden'],
+            ['code' => 'OW', 'name' => 'Obwalden'],
+            ['code' => 'SG', 'name' => 'St. Gallen'],
+            ['code' => 'SO', 'name' => 'Solothurn'],
+            ['code' => 'SZ', 'name' => 'Schwyz'],
+            ['code' => 'TG', 'name' => 'Thurgau'],
+            ['code' => 'TI', 'name' => 'Ticino'],
+            ['code' => 'UR', 'name' => 'Uri'],
+            ['code' => 'VD', 'name' => 'Vaud'],
+            ['code' => 'VS', 'name' => 'Valais'],
+            ['code' => 'ZG', 'name' => 'Zug'],
+            ['code' => 'ZH', 'name' => 'Zürich']
+        ]);        
 
         $au = Country::whereCode('AU')->first();
         $au->states()->createMany([
