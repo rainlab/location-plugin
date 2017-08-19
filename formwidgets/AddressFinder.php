@@ -13,6 +13,7 @@ use RainLab\Location\Models\Setting;
  *   address:
  *       label: Address
  *       type: addressfinder
+ *       countryRestrictions: 'us,ch'
  *       fieldMap:
  *           latitude: latitude
  *           longitude: longitude
@@ -30,6 +31,7 @@ class AddressFinder extends FormWidgetBase
     public $defaultAlias = 'addressfinder';
 
     protected $fieldMap;
+    protected $countryRestrictions;
 
     /**
      * {@inheritDoc}
@@ -37,6 +39,7 @@ class AddressFinder extends FormWidgetBase
     public function init()
     {
         $this->fieldMap = $this->getConfig('fieldMap', []);
+        $this->countryRestrictions = $this->getConfig('countryRestrictions', null);
     }
 
     /**
@@ -74,6 +77,11 @@ class AddressFinder extends FormWidgetBase
         }
 
         return Html::attributes($result);
+    }
+
+    public function getCountryRestrictions()
+    {
+        return $this->countryRestrictions;
     }
 
     /**

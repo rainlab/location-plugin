@@ -132,6 +132,10 @@ Available mappings:
 - longitude
 - vicinity
 
+Available options:
+
+You can restrict the address lookup to certain countries by defining the `countryRestrictions` option. The option accepts a comma separated list of ISO 3166-1 ALPHA-2 compatible country codes (see: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+
 Usage:
 
     # ===================================
@@ -142,6 +146,7 @@ Usage:
         address:
             label: Address
             type: addressfinder
+            countryRestrictions: 'us,ch'
             fieldMap:
                 latitude: latitude
                 longitude: longitude

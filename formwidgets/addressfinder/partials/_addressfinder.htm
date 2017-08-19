@@ -11,6 +11,7 @@
             class="form-control"
             data-control="location-autocomplete"
             <?= $field->getAttributes() ?>
+            data-country-restrictions="<?= $this->getCountryRestrictions() ?>"
             <?= $this->getFieldMapAttributes() ?>
             />
     </div>
