@@ -39,7 +39,7 @@ class AddressFinder extends FormWidgetBase
     public function init()
     {
         $this->fieldMap = $this->getConfig('fieldMap', []);
-        $this->countryRestrictions = $this->getConfig('countryRestrictions', null);
+        $this->countryRestrictions = $this->getConfig('countryRestrictions', '');
     }
 
     /**
