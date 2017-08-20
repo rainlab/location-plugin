@@ -24,7 +24,7 @@
         type="text"
         class="form-control"
         data-control="location-autocomplete"
-        data-country-restrictions="us,ch"
+        data-country-restriction="us,ch"
         data-input-street="#inputStreet"
         data-input-city="#locationCity"
         data-input-state="#locationState"
@@ -70,9 +70,9 @@
         var autocompleteOptions = {
             types: ['geocode']
         }
-        var countryRestrictions = this.$el.data('countryRestrictions')
-        if (countryRestrictions) {
-            var countryCodes = countryRestrictions.split(',').map(function(code) {
+        var countryRestriction = this.$el.data('countryRestriction')
+        if (countryRestriction) {
+            var countryCodes = countryRestriction.split(',').map(function(code) {
                 return code.trim();
             });
             autocompleteOptions['componentRestrictions'] = {
