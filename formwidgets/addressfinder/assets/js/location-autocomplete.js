@@ -1,6 +1,6 @@
 /*
  * Location Autocomplete plugin
- * 
+ *
  * Data attributes:
  * - data-control="location-autocomplete" - enables the plugin on an element
  * - data-input-street="#locationStreet" - input to populate with street
@@ -24,6 +24,7 @@
         type="text"
         class="form-control"
         data-control="location-autocomplete"
+        data-country-restriction="us,ch"
         data-input-street="#inputStreet"
         data-input-city="#locationCity"
         data-input-state="#locationState"
@@ -36,7 +37,7 @@
     <input type="text" name="state" value="" id="locationState" />
     <input type="text" name="zip" value="" id="locationZip" />
     <input type="text" name="country" value="" id="locationCountry" />
- * 
+ *
  */
 
 
@@ -66,9 +67,19 @@
     }
 
     LocationAutocomplete.prototype.init = function() {
-        this.autocomplete = new map.places.Autocomplete(this.$el.get(0), {
+        var autocompleteOptions = {
             types: ['geocode']
-        })
+        }
+        var countryRestriction = this.$el.data('countryRestriction')
+        if (countryRestriction) {
+            var countryCodes = countryRestriction.split(',').map(function(code) {
+                return code.trim();
+            });
+            autocompleteOptions['componentRestrictions'] = {
+                'country': countryCodes
+            }
+        }
+        this.autocomplete = new map.places.Autocomplete(this.$el.get(0), autocompleteOptions)
 
         map.event.addListener(this.autocomplete, 'place_changed', $.proxy(this.handlePlaceChanged, this))
 
