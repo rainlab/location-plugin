@@ -28,7 +28,9 @@ class LocationModel extends ModelBehavior
     {
         parent::__construct($model);
 
-        if (!empty($model->getFillable())) {
+        $guarded = $model->getGuarded();
+
+        if (count($guarded) === 1 && $guarded[0] === '*') {
             $model->addFillable([
                 'country',
                 'country_id',
