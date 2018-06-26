@@ -28,14 +28,18 @@ class LocationModel extends ModelBehavior
     {
         parent::__construct($model);
 
-        $model->addFillable([
-            'country',
-            'country_id',
-            'country_code',
-            'state',
-            'state_id',
-            'state_code'
-        ]);
+        $guarded = $model->getGuarded();
+
+        if (count($guarded) === 1 && $guarded[0] === '*') {
+            $model->addFillable([
+                'country',
+                'country_id',
+                'country_code',
+                'state',
+                'state_id',
+                'state_code'
+            ]);
+        }
 
         $model->belongsTo['country'] = ['RainLab\Location\Models\Country'];
         $model->belongsTo['state']   = ['RainLab\Location\Models\State'];
