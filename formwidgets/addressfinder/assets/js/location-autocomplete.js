@@ -97,7 +97,7 @@
             },
             'short': {
                 inputStreet: ['street_number', 'route'],
-                inputCity: 'locality',
+                inputCity: ['locality', 'postal_town'],
                 inputZip: 'postal_code',
                 inputState: 'administrative_area_level_1',
                 inputCountry: 'country'
