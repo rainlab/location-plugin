@@ -13,4 +13,5 @@
 1.0.6: Added support for defining a default country and state.
 1.0.7: Added basic geocoding method to the Country model.
 1.0.8: Include Mexico states
-1.1.0: !!! Update requires Build 447. Fixed AddressFinder form widget not working correctly in repeaters.
+1.1.0: !!! Update requires Build 447. Fixed AddressFinder formwidget not working correctly in repeaters.
+1.1.1: Minor fix to AddressFinder formwidget for the change to the FormField API
