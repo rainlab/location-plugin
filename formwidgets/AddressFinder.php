@@ -64,7 +64,7 @@ class AddressFinder extends FormWidgetBase
 
     public function getFieldMapAttributes()
     {
-        $fields = $this->formField->getParent()->getFields();
+        $fields = $this->getParentForm()->getFields();
         $result = [];
 
         foreach ($this->fieldMap as $map => $fieldName) {
