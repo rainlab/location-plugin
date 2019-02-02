@@ -16,3 +16,6 @@
 1.1.0: !!! Update requires Build 447. Fixed AddressFinder formwidget not working correctly in repeaters.
 1.1.1: Minor fix to AddressFinder formwidget for the change to the FormField API
 1.1.2: Yet another change to the AddressFinder for changes to the FormField API
+1.1.3:
+    - Include Argentina states
+    - seed_ar_states.php
