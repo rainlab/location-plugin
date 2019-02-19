@@ -6,7 +6,7 @@ return [
         'description' => 'امکانات بر پایه موقعیت مانند کشور و استان'
     ],
     'permissions' => [
-        'settings' => 'Locations management',
+        'settings' => 'مدیریت موقعیت ها',
     ],
     'location' => [
         'location' => 'موقعیت',
@@ -16,9 +16,9 @@ return [
         'preview_title' => 'پیش نمایش موقعیت',
     ],
     'locations' => [
-        'menu_label' => 'موقعیت ها',
+        'menu_label' => 'شهرها و استان ها',
         'menu_description' => 'مدیریت کشور ها و استانهای موجود برای کاربران.',
-        'disabled_label' => 'Disabled',
+        'disabled_label' => 'غیر فعال',
         'enabled_label' => "فعال",
         'enabled_help' => "موقعیت های غیر فعال شده در محیط کاربری نماسش داده نمی شوند.",
         'enable_or_disable_title' => "فعال و یا غیر فعال سازی موقعیت ها",
@@ -29,11 +29,26 @@ return [
         'disable_confirm' => 'آیا اطمینان دارید؟',
         'list_title' => 'مدیریت موقعیت ها',
         'delete_confirm' => 'آیا از حذف این موقعیت اطمینان دارید؟',
+        'unpin_label' => 'سنجاق نشده',
+        'pinned_label' => 'سنجاق شده',
+        'pinned_help' => 'موقعیت های سنجاق شده در ابتدای لیست نمایش داده می شوند.',
+        'pin_or_unpin_title' => 'سنجاق کردن یا نکردن موقعیت ها',
+        'pin_or_unpin' => 'سنجاق کردن یا نکردن',
+        'pin_success' => 'موقعیت های انتخاب شده سنجاق شدند.',
+        'unpin_success' => 'موقعیت های انتخاب شده از حالت سنجاق شده خارج شدند.',
+        'unpin_confirm' => 'آیا اطمینان دارید؟',
         'return_to_list' => 'بازگشت به لیست موقعیت ها',
         'default_country' => 'کشور پیشفرض',
         'default_country_comment' => 'هنگامی که کاربر موقعیت خود را مشخص نکند کشور پیش فرض ایتفاده خواهد شد.',
         'default_state' => 'استان پیش فرض',
         'default_state_comment' => 'هنگامی که کاربر موقعیت خود را مشخص نکند استان پیشفرض انتخاب خواهد شد.',
+    ],
+    'settings' => [
+        'menu_label' => 'تنظیمات موقعیت ها',
+        'menu_description' => 'مدیریت تنظیمات مبتنی بر موقعیت',
+        'google_maps_key' => 'کلید API نقشه Google',
+        'google_maps_key_comment' => 'اگر قصد استفاده از سرویس نقشه گوگل را دارید کلید API آن را در این قسمت وارد نمایید.',
+        'credentials_tab' => 'مجوز ها',
     ],
     'state' => [
         'label' => 'استان',
@@ -50,5 +65,6 @@ return [
         'code' => 'کد',
         'code_comment' => 'کد یکتایی را جهت دسترسی به این کشور را وارد نمایید.',
         'enabled' => 'فعال',
+        'pinned' => 'سنجاق شده',
     ]
 ];
