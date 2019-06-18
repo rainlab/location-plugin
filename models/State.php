@@ -66,7 +66,7 @@ class State extends Model
             return self::$nameList[$countryId];
         }
 
-        return self::$nameList[$countryId] = self::whereCountryId($countryId)->lists('name', 'id');
+        return self::$nameList[$countryId] = self::whereCountryId($countryId)->orderBy('name', 'asc')->lists('name', 'id');
     }
 
     public static function formSelect($name, $countryId = null, $selectedValue = null, $options = [])
