@@ -5,8 +5,9 @@
  * - data-control="location-autocomplete" - enables the plugin on an element
  * - data-input-street="#locationStreet" - input to populate with street
  * - data-input-city="#locationCity" - input to populate with city
- * - data-input-zip="#locationZip" - input to populate with zip
+ * - data-input-county="#locationCounty" - input to populate with county
  * - data-input-state="#locationState" - input to populate with state
+ * - data-input-zip="#locationZip" - input to populate with zip
  * - data-input-country="#locationCountry" - input to populate with country
  * - data-input-country-long="#locationCountry" - input to populate with country (long name)
  * - data-input-latitude="#locationLatitude" - input to populate with latitude
@@ -27,6 +28,7 @@
         data-country-restriction="us,ch"
         data-input-street="#inputStreet"
         data-input-city="#locationCity"
+        data-input-county="#locationCounty"
         data-input-state="#locationState"
         data-input-zip="#locationZip"
         data-input-country="#locationCountry"
@@ -34,6 +36,7 @@
 
     <input type="text" name="street" value="" id="inputStreet" />
     <input type="text" name="city" value="" id="locationCity" />
+    <input type="text" name="county" value="" id="locationCounty" />
     <input type="text" name="state" value="" id="locationState" />
     <input type="text" name="zip" value="" id="locationZip" />
     <input type="text" name="country" value="" id="locationCountry" />
@@ -59,8 +62,9 @@
         inputLongitude: null,
         inputStreet: null,
         inputCity: null,
-        inputZip: null,
+        inputCounty: null,
         inputState: null,
+        inputZip: null,
         inputVicinity: null,
         inputCountry: null,
         inputCountryLong: null
@@ -98,8 +102,9 @@
             'short': {
                 inputStreet: ['street_number', 'route'],
                 inputCity: ['locality', 'postal_town'],
-                inputZip: 'postal_code',
+                inputCounty: 'administrative_area_level_2',
                 inputState: 'administrative_area_level_1',
+                inputZip: 'postal_code',
                 inputCountry: 'country'
             },
             'long': {
@@ -184,9 +189,10 @@
      * street_number               = Street Number
      * route                       = Street
      * locality                    = City
+     * administrative_area_level_2 = County
      * administrative_area_level_1 = State
-     * country                     = Country
      * postal_code                 = Zip
+     * country                     = Country
      *
      */
     LocationAutocomplete.prototype.getValueFromAddressObject = function(addressObj, type, resultType) {
