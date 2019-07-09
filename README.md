@@ -15,7 +15,7 @@ As of June 22, 2016 the Google Maps service requires an API key. You may generat
 
 - [Get a Google API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
-Copy the key and enter it in the **Settings > Location settings** area. If you find the address finder is not working, you may need to [enable the Places Web Service](https://console.developers.google.com/apis/api/places_backend/overview?project=_).
+Copy the key and enter it in the **Settings > Location settings** area. If you find the address finder is not working, you may need to enable the [Places API](https://console.developers.google.com/apis/api/places_backend/overview?project=_) and the [Maps JavaScript API](https://console.developers.google.com/apis/api/maps_backend/overview?project=_).
 
 ### Add Country and State to any model
 
