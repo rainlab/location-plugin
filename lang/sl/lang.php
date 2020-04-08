@@ -3,7 +3,7 @@
 return [
     'plugin'      => [
         'name'        => 'Lokacije',
-        'description' => 'Funkcije, ki temeljijo na lokaciji, kot npr. države.',
+        'description' => 'Funkcije, ki temeljijo na lokaciji, kot so npr. države in regije.',
     ],
     'permissions' => [
         'settings' => 'Upravljanje lokacij',
@@ -27,13 +27,13 @@ return [
         'enable_success'          => 'Lokacije so bile uspešno omogočene.',
         'disable_success'         => 'Lokacije so bile onemogočene.',
         'disable_confirm'         => 'Ali ste prepričani?',
-        'unpin_label'             => 'Odpete',
+        'unpin_label'             => 'Nepripete',
         'pinned_label'            => 'Pripete',
         'pinned_help'             => 'Pripete lokacije so razvrščene na začetek seznama.',
         'pin_or_unpin_title'      => "Pripni ali odpni lokacije",
         'pin_or_unpin'            => 'Pripni ali odpni',
         'pin_success'             => 'Lokacije so bile uspešno pripete.',
-        'unpin_success'           => 'Lokacije so bile odpete.',
+        'unpin_success'           => 'Lokacije so sedaj nepripete.',
         'unpin_confirm'           => 'Ali ste prepričani?',
         'list_title'              => 'Upravljanje lokacij',
         'delete_confirm'          => 'Ali ste prepričani, da želite izbrisati to lokacijo?',
@@ -44,11 +44,11 @@ return [
         'default_state_comment'   => 'Določite privzeto regijo oz. zvezno državo, ki se uporabi v primeru, če je uporabnik ne izbere sam.',
     ],
     'settings'    => [
-        'menu_label'              => 'Nastavitve lokacije',
-        'menu_description'        => 'Upravljanje nastavitev in poverilnic za lokacije.',
+        'menu_label'              => 'Nastavitve za lokacije',
+        'menu_description'        => 'Upravljanje privzetih nastavitev in API dostopa za lokacije.',
         'google_maps_key'         => 'Ključ za Google Maps API',
-        'google_maps_key_comment' => 'Če nameravate uporabljati storitve Google Maps, vnesite tukaj API ključ (Google Maps API Key).',
-        'credentials_tab'         => 'Poverilnice',
+        'google_maps_key_comment' => 'Če nameravate uporabljati storitve Google Maps, vnesite v polje API ključ (Google Maps API Key).',
+        'credentials_tab'         => 'API dostop',
     ],
     'state'       => [
         'label'        => 'regijo oz. zvezno državo',
