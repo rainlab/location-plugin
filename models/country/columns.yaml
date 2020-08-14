@@ -11,6 +11,10 @@ columns:
         label: rainlab.location::lang.country.code
         searchable: true
 
+    callingcode:
+        label: rainlab.location::lang.country.callingcode
+        searchable: true
+
     is_enabled:
         label: rainlab.location::lang.country.enabled
         type: switch

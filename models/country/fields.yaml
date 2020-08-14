@@ -21,3 +21,9 @@ fields:
         label: rainlab.location::lang.country.code
         span: auto
         comment: rainlab.location::lang.country.code_comment
+
+    callingcode:
+        label: rainlab.location::lang.country.callingcode
+        span: auto
+        comment: rainlab.location::lang.country.callingcode_comment
+
