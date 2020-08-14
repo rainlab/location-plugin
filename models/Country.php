@@ -35,7 +35,7 @@ class Country extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = ['name', 'code'];
+    protected $fillable = ['name', 'code', 'callingcode'];
 
     /**
      * @var array Validation rules
