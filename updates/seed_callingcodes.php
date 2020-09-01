@@ -7,7 +7,6 @@ class SeedCallingCodes extends Seeder
 {
     public function run()
     {
-
         $callingCodes = array(
             'AD' => array('name' => 'ANDORRA', 'code' => '376'),
             'AE' => array('name' => 'UNITED ARAB EMIRATES', 'code' => '971'),
