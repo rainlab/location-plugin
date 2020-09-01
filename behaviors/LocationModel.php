@@ -1,11 +1,8 @@
 <?php namespace RainLab\Location\Behaviors;
 
-use Db;
 use RainLab\Location\Models\State;
 use RainLab\Location\Models\Country;
 use System\Classes\ModelBehavior;
-use ApplicationException;
-use Exception;
 
 /**
  * Location model extension
