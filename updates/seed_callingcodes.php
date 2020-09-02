@@ -7,7 +7,6 @@ class SeedCallingCodes extends Seeder
 {
     public function run()
     {
-
         $callingCodes = [
             'AD' => ['name' => 'ANDORRA', 'code' => '376'],
             'AE' => ['name' => 'UNITED ARAB EMIRATES', 'code' => '971'],
@@ -239,7 +238,7 @@ class SeedCallingCodes extends Seeder
             'ZA' => ['name' => 'SOUTH AFRICA', 'code' => '27'],
             'ZM' => ['name' => 'ZAMBIA', 'code' => '260'],
             'ZW' => ['name' => 'ZIMBABWE', 'code' => '263']
-        );
+        ];
 
         foreach ($callingCodes as $key => $item) {
             Country::where('code', $key)->update(['callingcode' => $item['code'] ]);
