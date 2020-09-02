@@ -241,7 +241,7 @@ class SeedCallingCodes extends Seeder
         ];
 
         foreach ($callingCodes as $key => $item) {
-            Country::where('code', $key)->update(['callingcode' => $item['code'] ]);
+            Country::where('code', $key)->update(['calling_code' => $item['code'] ]);
         }
     }
 }

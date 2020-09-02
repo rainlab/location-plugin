@@ -11,7 +11,7 @@ columns:
         label: rainlab.location::lang.country.code
         searchable: true
 
-    callingcode:
+    calling_code:
         label: rainlab.location::lang.country.callingcode
         searchable: true
 

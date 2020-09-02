@@ -9,14 +9,14 @@ class AddCountryPinnedFlag extends Migration
     public function up()
     {
         Schema::table('rainlab_location_countries', function (Blueprint $table) {
-            $table->string('callingcode')->nullable();
+            $table->string('calling_code')->nullable();
         });
     }
 
     public function down()
     {
         Schema::table('rainlab_location_countries', function (Blueprint $table) {
-            $table->dropColumn('callingcode');
+            $table->dropColumn('calling_code');
         });
     }
 }
