@@ -20,6 +20,7 @@ class Setting extends Model
     {
         return Country::getNameList();
     }
+
     public function getDefaultStateOptions()
     {
         return State::getNameList($this->default_country);
