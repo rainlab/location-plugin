@@ -23,7 +23,7 @@ fields:
         comment: rainlab.location::lang.country.code_comment
 
     calling_code:
-        label: rainlab.location::lang.country.callingcode
+        label: rainlab.location::lang.country.calling_code
         span: auto
-        comment: rainlab.location::lang.country.callingcode_comment
+        comment: rainlab.location::lang.country.calling_code_comment
 
