@@ -77,7 +77,6 @@ class Locations extends Controller
                 if (!$object) {
                     continue;
                 }
-                }
 
                 $object->is_enabled = $enable;
                 $object->save();
