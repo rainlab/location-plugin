@@ -6,7 +6,7 @@
         data-size="huge" 
         href="javascript:;" 
         class="btn btn-sm btn-secondary oc-icon-file">
-        Create State
+        <?= e(trans('backend::lang.form.create')) ?> <?= e(trans('rainlab.location::lang.state.label')) ?>          
     </a>
 
     <button
@@ -29,13 +29,13 @@
         onclick="$(this).data('request-data', {checked: $('#Locations-update-RelationController-states-view .control-list').listWidget('getChecked') })" 
         class="btn btn-sm btn-secondary oc-icon-trash-o control-disabled" 
         data-request="onRelationButtonDelete" 
-        data-request-confirm="Are you sure?" 
+        data-request-confirm="<?= e(trans('rainlab.location::lang.locations.delete_confirm')) ?>" 
         data-request-success="$.oc.relationBehavior.changed('states', 'deleted')" 
         data-trigger-action="enable" 
         data-trigger="#Locations-update-RelationController-states-view .control-list input[type=checkbox]" 
         data-trigger-condition="checked" 
         data-stripe-load-indicator=""
         disabled="">
-        Delete    
+        <?= e(trans('backend::lang.form.delete')) ?>    
     </button>
 </div>
