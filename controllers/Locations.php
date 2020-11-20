@@ -66,17 +66,19 @@ class Locations extends Controller
         if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
 
             foreach ($checkedIds as $objectId) {
-                
-                if(post('location_type') == 'country') {
-                    if (!$object = Country::find($objectId)) {
-                        continue;
-                    }
+                $object = null;
+                switch (post('location_type')) {
+                    case 'country':
+                        $object = Country::find($objectId);
+                        break;
+                    case 'state':
+                        $object = State::find($objectId);
+                        break;
                 }
                 
-                if(post('location_type') == 'state') {
-                    if (!$object = State::find($objectId)) {
-                        continue;
-                    }
+                if (!$object) {
+                    continue;
+                }
                 }
 
                 $object->is_enabled = $enable;
