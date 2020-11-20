@@ -8,5 +8,5 @@ states:
     form: ~/plugins/rainlab/location/models/state/fields.yaml
     view:
         showSearch: true
-        toolbarPartial: ~/plugins/rainlab/location/controllers/locations/_states_list_toolbar.htm
-        filter: ~/plugins/rainlab/location/models/state/filters.yaml
+        toolbarPartial: $/rainlab/location/controllers/locations/_states_list_toolbar.htm
+        filter: $/rainlab/location/models/state/filters.yaml
