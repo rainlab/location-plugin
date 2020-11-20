@@ -92,7 +92,7 @@ class Locations extends Controller
             Flash::success(Lang::get('rainlab.location::lang.locations.disable_success'));
         }
 
-        return Redirect::to(Request::url());
+        return redirect()->refresh();
     }
 
     public function onLoadUnpinForm()
