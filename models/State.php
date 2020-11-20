@@ -66,7 +66,7 @@ class State extends Model
             return self::$nameList[$countryId];
         }
 
-        return self::$nameList[$countryId] = self::whereCountryId($countryId)->IsEnabled()->orderBy('name', 'asc')->lists('name', 'id');
+        return self::$nameList[$countryId] = self::whereCountryId($countryId)->isEnabled()->orderBy('name', 'asc')->lists('name', 'id');
     }
 
     public function scopeIsEnabled($query)
