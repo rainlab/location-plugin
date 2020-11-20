@@ -1,0 +1,41 @@
+<div data-control="toolbar" data-disposable="">
+
+    <a 
+        data-handler="onRelationButtonCreate" 
+        data-control="popup" 
+        data-size="huge" 
+        href="javascript:;" 
+        class="btn btn-sm btn-secondary oc-icon-file">
+        Create State
+    </a>
+
+    <button
+        class="btn btn-sm btn-default oc-icon-magic"
+        disabled="disabled"
+        onclick="$(this).data('request-data', {
+            checked: $('.control-list').listWidget('getChecked'),
+            location_type: 'state'
+        })"
+        data-control="popup"
+        data-handler="onLoadDisableForm"
+        data-trigger-action="enable"
+        data-trigger=".control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-stripe-load-indicator>
+        <?= e(trans('rainlab.location::lang.locations.enable_or_disable')) ?>
+    </button>
+
+    <button 
+        onclick="$(this).data('request-data', {checked: $('#Locations-update-RelationController-states-view .control-list').listWidget('getChecked') })" 
+        class="btn btn-sm btn-secondary oc-icon-trash-o control-disabled" 
+        data-request="onRelationButtonDelete" 
+        data-request-confirm="Are you sure?" 
+        data-request-success="$.oc.relationBehavior.changed('states', 'deleted')" 
+        data-trigger-action="enable" 
+        data-trigger="#Locations-update-RelationController-states-view .control-list input[type=checkbox]" 
+        data-trigger-condition="checked" 
+        data-stripe-load-indicator=""
+        disabled="">
+        Delete    
+    </button>
+</div>

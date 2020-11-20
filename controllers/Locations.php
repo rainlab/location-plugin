@@ -4,8 +4,10 @@ use Lang;
 use Flash;
 use Backend;
 use Redirect;
+use Request;
 use BackendMenu;
 use RainLab\Location\Models\Country;
+use RainLab\Location\Models\State;
 use Backend\Classes\Controller;
 use System\Classes\SettingsManager;
 
@@ -48,6 +50,7 @@ class Locations extends Controller
     {
         try {
             $this->vars['checked'] = post('checked');
+            $this->vars['location_type'] = post('location_type');
         }
         catch (Exception $ex) {
             $this->handleError($ex);
@@ -63,8 +66,17 @@ class Locations extends Controller
         if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
 
             foreach ($checkedIds as $objectId) {
-                if (!$object = Country::find($objectId)) {
-                    continue;
+                
+                if(post('location_type') == 'country') {
+                    if (!$object = Country::find($objectId)) {
+                        continue;
+                    }
+                }
+                
+                if(post('location_type') == 'state') {
+                    if (!$object = State::find($objectId)) {
+                        continue;
+                    }
                 }
 
                 $object->is_enabled = $enable;
@@ -80,7 +92,7 @@ class Locations extends Controller
             Flash::success(Lang::get('rainlab.location::lang.locations.disable_success'));
         }
 
-        return Backend::redirect('rainlab/location/locations');
+        return Redirect::to(Request::url());
     }
 
     public function onLoadUnpinForm()

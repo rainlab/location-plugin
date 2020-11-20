@@ -1,0 +1,13 @@
+scopes:
+    enabled:
+
+        # Filter name
+        label: rainlab.location::lang.locations.disabled_label
+
+        # Filter type
+        type: switch
+
+        # SQL Conditions
+        conditions:
+            - is_enabled = '1'
+            - is_enabled = '0'

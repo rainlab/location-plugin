@@ -8,7 +8,8 @@
         class="btn btn-default oc-icon-magic"
         disabled="disabled"
         onclick="$(this).data('request-data', {
-            checked: $('.control-list').listWidget('getChecked')
+            checked: $('.control-list').listWidget('getChecked'),
+            location_type: 'country'
         })"
         data-control="popup"
         data-handler="onLoadDisableForm"
