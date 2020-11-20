@@ -3,8 +3,6 @@
 use Lang;
 use Flash;
 use Backend;
-use Redirect;
-use Request;
 use BackendMenu;
 use RainLab\Location\Models\Country;
 use RainLab\Location\Models\State;
