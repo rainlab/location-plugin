@@ -47,9 +47,8 @@ class Locations extends Controller
     public function relationExtendViewWidget($widget)
     {
         $widget->bindEvent('list.injectRowClass', function ($record) {
-            
-            if(!$record->is_enabled) {
-                return  'safe disabled';
+            if (!$record->is_enabled) {
+                return 'safe disabled';
             }
         });
     }
