@@ -23,3 +23,6 @@
 1.1.5:
     - Include Italian states (province)
     - seed_it_states.php
+1.1.6:
+    - Added ability to disable specific states
+    - add_enabled_states.php

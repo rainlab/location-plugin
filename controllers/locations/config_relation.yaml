@@ -7,4 +7,6 @@ states:
     list: ~/plugins/rainlab/location/models/state/columns.yaml
     form: ~/plugins/rainlab/location/models/state/fields.yaml
     view:
-        toolbarButtons: create|delete
+        showSearch: true
+        toolbarPartial: $/rainlab/location/controllers/locations/_states_list_toolbar.htm
+        filter: $/rainlab/location/models/state/filters.yaml
