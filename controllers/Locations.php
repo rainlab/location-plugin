@@ -8,16 +8,17 @@ use RainLab\Location\Models\Country;
 use RainLab\Location\Models\State;
 use Backend\Classes\Controller;
 use System\Classes\SettingsManager;
+use Exception;
 
 /**
- * Locations Back-end Controller
+ * Locations Backend Controller
  */
 class Locations extends Controller
 {
     public $implement = [
-        'Backend.Behaviors.FormController',
-        'Backend.Behaviors.ListController',
-        'Backend.Behaviors.RelationController'
+        \Backend\Behaviors\FormController::class,
+        \Backend\Behaviors\ListController::class,
+        \Backend\Behaviors\RelationController::class
     ];
 
     public $formConfig = 'config_form.yaml';
@@ -82,7 +83,7 @@ class Locations extends Controller
                         $object = State::find($objectId);
                         break;
                 }
-                
+
                 if (!$object) {
                     continue;
                 }
