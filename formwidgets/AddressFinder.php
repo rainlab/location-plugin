@@ -30,7 +30,14 @@ class AddressFinder extends FormWidgetBase
      */
     public $defaultAlias = 'addressfinder';
 
+    /**
+     * @var array fieldMap
+     */
     protected $fieldMap;
+
+    /**
+     * @var string countryRestriction
+     */
     protected $countryRestriction;
 
     /**
@@ -53,7 +60,7 @@ class AddressFinder extends FormWidgetBase
     }
 
     /**
-     * Prepares the list data
+     * prepareVars for the list data
      */
     public function prepareVars()
     {
@@ -62,6 +69,9 @@ class AddressFinder extends FormWidgetBase
         $this->vars['field'] = $this->formField;
     }
 
+    /**
+     * getFieldMapAttributes
+     */
     public function getFieldMapAttributes()
     {
         $fields = $this->getParentForm()->getFields();
@@ -78,6 +88,9 @@ class AddressFinder extends FormWidgetBase
         return Html::attributes($result);
     }
 
+    /**
+     * getCountryRestriction
+     */
     public function getCountryRestriction()
     {
         return $this->countryRestriction;

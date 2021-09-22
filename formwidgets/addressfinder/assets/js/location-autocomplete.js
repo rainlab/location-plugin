@@ -72,7 +72,7 @@
 
     LocationAutocomplete.prototype.init = function() {
         var autocompleteOptions = {
-            types: ['geocode']
+            types: ['geocode', 'establishment']
         }
         var countryRestriction = this.$el.data('countryRestriction')
         if (countryRestriction) {

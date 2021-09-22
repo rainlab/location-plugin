@@ -3,21 +3,22 @@
 use Lang;
 use Flash;
 use Backend;
-use Redirect;
 use BackendMenu;
 use RainLab\Location\Models\Country;
+use RainLab\Location\Models\State;
 use Backend\Classes\Controller;
 use System\Classes\SettingsManager;
+use Exception;
 
 /**
- * Locations Back-end Controller
+ * Locations Backend Controller
  */
 class Locations extends Controller
 {
     public $implement = [
-        'Backend.Behaviors.FormController',
-        'Backend.Behaviors.ListController',
-        'Backend.Behaviors.RelationController'
+        \Backend\Behaviors\FormController::class,
+        \Backend\Behaviors\ListController::class,
+        \Backend\Behaviors\RelationController::class
     ];
 
     public $formConfig = 'config_form.yaml';
@@ -44,10 +45,20 @@ class Locations extends Controller
         }
     }
 
+    public function relationExtendViewWidget($widget)
+    {
+        $widget->bindEvent('list.injectRowClass', function ($record) {
+            if (!$record->is_enabled) {
+                return 'safe disabled';
+            }
+        });
+    }
+
     public function onLoadDisableForm()
     {
         try {
             $this->vars['checked'] = post('checked');
+            $this->vars['location_type'] = post('location_type');
         }
         catch (Exception $ex) {
             $this->handleError($ex);
@@ -63,7 +74,17 @@ class Locations extends Controller
         if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
 
             foreach ($checkedIds as $objectId) {
-                if (!$object = Country::find($objectId)) {
+                $object = null;
+                switch (post('location_type')) {
+                    case 'country':
+                        $object = Country::find($objectId);
+                        break;
+                    case 'state':
+                        $object = State::find($objectId);
+                        break;
+                }
+
+                if (!$object) {
                     continue;
                 }
 
@@ -80,7 +101,7 @@ class Locations extends Controller
             Flash::success(Lang::get('rainlab.location::lang.locations.disable_success'));
         }
 
-        return Backend::redirect('rainlab/location/locations');
+        return redirect()->refresh();
     }
 
     public function onLoadUnpinForm()

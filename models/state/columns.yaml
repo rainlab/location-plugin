@@ -10,3 +10,8 @@ columns:
     code:
         label: rainlab.location::lang.state.code
         searchable: true
+    
+    is_enabled:
+        label: rainlab.location::lang.locations.enabled_label
+        type: switch
+        searchable: false

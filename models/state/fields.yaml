@@ -14,3 +14,8 @@ fields:
         preset:
             field: name
             type: slug
+    is_enabled:
+        label: rainlab.location::lang.locations.enabled_label
+        type: checkbox
+        default: true
+        span: left

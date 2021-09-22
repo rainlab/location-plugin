@@ -1,0 +1,5 @@
+scopes:
+    enabled:
+        label: rainlab.location::lang.locations.disabled_label
+        type: switch
+        scope: isEnabled
