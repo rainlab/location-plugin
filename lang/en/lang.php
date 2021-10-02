@@ -66,5 +66,7 @@ return [
         'code_comment' => 'Enter a unique code to identify this country.',
         'enabled' => 'Enabled',
         'pinned' => 'Pinned',
+        'calling_code' => 'Calling code',
+        'calling_code_comment' => 'Numerical country calling code without the plus sign.',
     ],
 ];

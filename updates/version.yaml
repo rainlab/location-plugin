@@ -27,3 +27,7 @@ v1.1.6:
     - Added ability to disable specific states
     - add_enabled_states.php
 v1.2.0: Fixes checkboxes in settings pages
+v1.2.1:
+    - Add country calling codes
+    - add_country_callingcode.php
+    - seed_callingcodes.php
