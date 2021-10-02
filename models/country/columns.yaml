@@ -11,10 +11,6 @@ columns:
         label: rainlab.location::lang.country.code
         searchable: true
 
-    calling_code:
-        label: rainlab.location::lang.country.calling_code
-        searchable: true
-
     is_enabled:
         label: rainlab.location::lang.country.enabled
         type: switch
@@ -22,3 +18,8 @@ columns:
     is_pinned:
         label: rainlab.location::lang.country.pinned
         type: switch
+
+    calling_code:
+        label: rainlab.location::lang.country.calling_code
+        searchable: true
+        invisible: true

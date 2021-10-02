@@ -3,6 +3,10 @@
 # ===================================
 
 fields:
+    name:
+        label: rainlab.location::lang.country.name
+        span: full
+
     is_enabled:
         label: rainlab.location::lang.country.enabled
         type: checkbox
@@ -13,10 +17,6 @@ fields:
         type: checkbox
         span: right
 
-    name:
-        label: rainlab.location::lang.country.name
-        span: auto
-
     code:
         label: rainlab.location::lang.country.code
         span: auto
@@ -26,4 +26,3 @@ fields:
         label: rainlab.location::lang.country.calling_code
         span: auto
         comment: rainlab.location::lang.country.calling_code_comment
-
