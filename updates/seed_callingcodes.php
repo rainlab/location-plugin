@@ -237,7 +237,27 @@ class SeedCallingCodes extends Seeder
             'YT' => ['name' => 'MAYOTTE', 'code' => '262'],
             'ZA' => ['name' => 'SOUTH AFRICA', 'code' => '27'],
             'ZM' => ['name' => 'ZAMBIA', 'code' => '260'],
-            'ZW' => ['name' => 'ZIMBABWE', 'code' => '263']
+            'ZW' => ['name' => 'ZIMBABWE', 'code' => '263'],
+            'AX' => ['name' => 'ALAND ISLANDS', 'code' => '358'],
+            'BQ' => ['name' => 'BONAIRE, SINT EUSTATIUS AND SABA', 'code' => '599'],
+            'BV' => ['name' => 'BOUVET ISLAND', 'code' => '55'],
+            'IO' => ['name' => 'BRITISH INDIAN OCEAN TERRITORY', 'code' => '246'],
+            'CW' => ['name' => 'CURAÇAO', 'code' => '599'],
+            'GF' => ['name' => 'FRENCH GUIANA', 'code' => '594'],
+            'TF' => ['name' => 'FRENCH SOUTHERN TERRITORIES', 'code' => '262'],
+            'GP' => ['name' => 'GUADELOUPE', 'code' => '590'],
+            'GG' => ['name' => 'GUERNSEY', 'code' => '44'],
+            'HM' => ['name' => 'HEARD ISLAND AND MCDONALD ISLANDS', 'code' => '672'],
+            'JE' => ['name' => 'JERSEY', 'code' => '44'],
+            'MQ' => ['name' => 'MARTINIQUE', 'code' => '596'],
+            'NF' => ['name' => 'NORFOLK ISLAND', 'code' => '672'],
+            'PS' => ['name' => 'PALESTINE', 'code' => '970'],
+            'RE' => ['name' => 'REUNION', 'code' => '262'],
+            'SX' => ['name' => 'SINT MAARTEN (DUTCH PART)', 'code' => '599'],
+            'GS' => ['name' => 'SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS', 'code' => '500'],
+            'SJ' => ['name' => 'SVALBARD AND JAN MAYEN', 'code' => '47'],
+            'UM' => ['name' => 'UNITED STATES MINOR OUTLYING ISLANDS', 'code' => '246'],
+            'EH' => ['name' => 'WESTERN SAHARA', 'code' => '212'],
         ];
 
         foreach ($callingCodes as $key => $item) {
