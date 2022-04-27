@@ -7,15 +7,6 @@ class SeedAllTables extends Seeder
 {
     public function run()
     {
-        /*
-         * The countries and states table were previously seeded
-         * by RainLab.User so this occurance is detected and halt.
-         * @deprecated Safe to remove if year >= 2017
-         */
-        if (Country::count() > 0) {
-            return;
-        }
-
         Country::insert([
             ['is_enabled' => 1, 'code' => 'AU', 'name' => 'Australia'],
             ['is_enabled' => 1, 'code' => 'CA', 'name' => 'Canada'],
@@ -378,9 +369,9 @@ class SeedAllTables extends Seeder
             ['code' => 'SK', 'name' => 'Saskatchewan'],
             ['code' => 'YT', 'name' => 'Yukon']
         ]);
-        
+
         $ca = Country::whereCode('CH')->first();
-        $ca->states()->createMany([    
+        $ca->states()->createMany([
             ['code' => 'AG', 'name' => 'Aargau'],
             ['code' => 'AI', 'name' => 'Appenzell Innerrhoden'],
             ['code' => 'AR', 'name' => 'Appenzell Ausserrhoden'],
@@ -406,7 +397,7 @@ class SeedAllTables extends Seeder
             ['code' => 'VS', 'name' => 'Valais'],
             ['code' => 'ZG', 'name' => 'Zug'],
             ['code' => 'ZH', 'name' => 'Zürich']
-        ]);        
+        ]);
 
         $au = Country::whereCode('AU')->first();
         $au->states()->createMany([
@@ -754,7 +745,7 @@ class SeedAllTables extends Seeder
             ['code' => 'OTA', 'name' => "Otago Otago"],
             ['code' => 'STL', 'name' => "Southland"],
         ]);
-        
+
   $es = Country::whereCode('ES')->first();
         $es->states()->createMany([
             ['code' => 'ES-C'	, 'name' => "A Coruña (gl) [La Coruña]"],

@@ -6,6 +6,9 @@ v1.0.2:
 v1.0.3:
     - Add seed data for countries and states.
     - seed_all_tables.php
+    - seed_ar_states.php
+    - seed_it_states.php
+    - seed_ru_states.php
 v1.0.4: Satisfy the new Google API key requirement.
 v1.0.5:
     - Countries can now be pinned to make them appear at the top of the list.
@@ -16,13 +19,9 @@ v1.0.8: Include Mexico states
 v1.1.0: Update requires Build 447. Fixed AddressFinder formwidget not working correctly in repeaters.
 v1.1.1: Minor fix to AddressFinder formwidget for the change to the FormField API
 v1.1.2: Yet another change to the AddressFinder for changes to the FormField API
-v1.1.3:
-    - Include Argentina states
-    - seed_ar_states.php
+v1.1.3: Include Argentina states
 v1.1.4: Added support for UK counties
-v1.1.5:
-    - Include Italian states (province)
-    - seed_it_states.php
+v1.1.5: Include Italian states (province)
 v1.1.6:
     - Added ability to disable specific states
     - add_enabled_states.php
@@ -31,3 +30,4 @@ v1.2.1:
     - Add country calling codes
     - add_country_callingcode.php
     - seed_callingcodes.php
+v1.2.2: Include Russian states
