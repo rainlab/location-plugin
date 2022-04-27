@@ -1,8 +1,8 @@
 <?php namespace RainLab\Location\Models;
 
-use Http;
 use Form;
 use Model;
+use October\Rain\Network\Http;
 use Exception;
 
 /**
