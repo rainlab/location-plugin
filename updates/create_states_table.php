@@ -6,7 +6,6 @@ use October\Rain\Database\Updates\Migration;
 
 class CreateStatesTable extends Migration
 {
-
     public function up()
     {
         /*
@@ -22,7 +21,7 @@ class CreateStatesTable extends Migration
         Schema::create('rainlab_location_states', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('country_id')->unsigned()->index();
+            $table->integer('country_id')->unsigned()->nullable()->index();
             $table->string('name')->index();
             $table->string('code');
         });
@@ -32,5 +31,4 @@ class CreateStatesTable extends Migration
     {
         Schema::dropIfExists('rainlab_location_states');
     }
-
 }
