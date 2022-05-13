@@ -31,3 +31,4 @@ v1.2.1:
     - add_country_callingcode.php
     - seed_callingcodes.php
 v1.2.2: Include Russian states
+v1.2.3: Improve support with October v3
