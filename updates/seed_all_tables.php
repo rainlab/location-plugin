@@ -142,7 +142,7 @@ class SeedAllTables extends Seeder
             ['is_enabled' => 0, 'code' => 'LT', 'name' => 'Lithuania'],
             ['is_enabled' => 0, 'code' => 'LU', 'name' => 'Luxembourg'],
             ['is_enabled' => 0, 'code' => 'MO', 'name' => 'Macao'],
-            ['is_enabled' => 0, 'code' => 'MK', 'name' => 'Macedonia'],
+            ['is_enabled' => 0, 'code' => 'MK', 'name' => 'North Macedonia'],
             ['is_enabled' => 0, 'code' => 'MG', 'name' => 'Madagascar'],
             ['is_enabled' => 0, 'code' => 'MW', 'name' => 'Malawi'],
             ['is_enabled' => 0, 'code' => 'MY', 'name' => 'Malaysia'],
