@@ -3,7 +3,7 @@
 use October\Rain\Database\Updates\Seeder;
 use RainLab\Location\Models\Country;
 
-class SeedAtStates extends Seeder
+class SeedBeStates extends Seeder
 {
     public function run()
     {
