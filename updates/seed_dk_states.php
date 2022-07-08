@@ -16,9 +16,9 @@ class SeedDkStates extends Seeder
         $dk->states()->createMany([
             ['code' => 'HO', 'name' =>	'Hovedstaden Region'],
             ['code' => 'MI', 'name' =>	'Midtjylland Region'],
-            ['code' => 'DA', 'name' =>	'Nordjylland Region'],
+            ['code' => 'NO', 'name' =>	'Nordjylland Region'],
             ['code' => 'SA', 'name' =>	'Sjælland Region'],
-            ['code' => 'SY', 'name' =>	' Region Syddanmark']
+            ['code' => 'SY', 'name' =>	'Region Syddanmark']
         ]);
     }
 }
