@@ -38,3 +38,5 @@ v1.2.4:
     - seed_nl_states.php
     - seed_hr_states.php
     - seed_be_states.php
+    - seed_pl_states.php
+    - seed_dk_states.php
