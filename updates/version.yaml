@@ -9,6 +9,12 @@ v1.0.3:
     - seed_ar_states.php
     - seed_it_states.php
     - seed_ru_states.php
+    - seed_at_states.php
+    - seed_nl_states.php
+    - seed_hr_states.php
+    - seed_be_states.php
+    - seed_pl_states.php
+    - seed_dk_states.php
 v1.0.4: Satisfy the new Google API key requirement.
 v1.0.5:
     - Countries can now be pinned to make them appear at the top of the list.
@@ -32,11 +38,3 @@ v1.2.1:
     - seed_callingcodes.php
 v1.2.2: Include Russian states
 v1.2.3: Improve support with October v3
-v1.2.4:
-    - Add seed data for countries
-    - seed_at_states.php
-    - seed_nl_states.php
-    - seed_hr_states.php
-    - seed_be_states.php
-    - seed_pl_states.php
-    - seed_dk_states.php
