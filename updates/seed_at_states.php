@@ -13,16 +13,16 @@ class SeedAtStates extends Seeder
             return;
         }
 
-        $at->states()->createMany([
-            ['code' => 'WI', 'name' =>	'Wien'],
-            ['code' => 'NI', 'name' =>	'Niederösterreich'],
-            ['code' => 'OB', 'name' =>	'Oberösterreich'],
-            ['code' => 'ST', 'name' =>	'Steiermark'],
-            ['code' => 'TI', 'name' =>	'Tirol'],
-            ['code' => 'KA', 'name' =>	'Kärnten'],
-            ['code' => 'SA', 'name' =>	'Salzburg'],
-            ['code' => 'VO', 'name' =>	'Vorarlberg'],
-            ['code' => 'BU', 'name' =>	'Burgenland']
+        $at->states()->createMany(
+            ['code' => 'WI', 'name' => 'Wien'],
+            ['code' => 'NI', 'name' => 'Niederösterreich'],
+            ['code' => 'OB', 'name' => 'Oberösterreich'],
+            ['code' => 'ST', 'name' => 'Steiermark'],
+            ['code' => 'TI', 'name' => 'Tirol'],
+            ['code' => 'KA', 'name' => 'Kärnten'],
+            ['code' => 'SA', 'name' => 'Salzburg'],
+            ['code' => 'VO', 'name' => 'Vorarlberg'],
+            ['code' => 'BU', 'name' => 'Burgenland']
         ]);
     }
 }

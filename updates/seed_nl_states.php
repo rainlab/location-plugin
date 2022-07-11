@@ -14,18 +14,18 @@ class SeedNlStates extends Seeder
         }
 
         $nl->states()->createMany([
-            ['code' => 'DR', 'name' =>	'Drenthe'],
-            ['code' => 'FL', 'name' =>	'Flevoland'],
-            ['code' => 'FR', 'name' =>	'Friesland'],
-            ['code' => 'GE', 'name' =>	'Gelderland'],
-            ['code' => 'GR', 'name' =>	'Groningen'],
-            ['code' => 'LI', 'name' =>	'Limburg'],
-            ['code' => 'NB', 'name' =>	'Noord-Brabant'],
-            ['code' => 'NH', 'name' =>	'Noord-Holland'],
-            ['code' => 'OV', 'name' =>	'Overijssel'],
-            ['code' => 'ZU', 'name' =>	'Zuid-Holland'],
-            ['code' => 'UT', 'name' =>	'Utrecht'],
-            ['code' => 'ZE', 'name' =>	'Zeeland'],
+            ['code' => 'DR', 'name' => 'Drenthe'],
+            ['code' => 'FL', 'name' => 'Flevoland'],
+            ['code' => 'FR', 'name' => 'Friesland'],
+            ['code' => 'GE', 'name' => 'Gelderland'],
+            ['code' => 'GR', 'name' => 'Groningen'],
+            ['code' => 'LI', 'name' => 'Limburg'],
+            ['code' => 'NB', 'name' => 'Noord-Brabant'],
+            ['code' => 'NH', 'name' => 'Noord-Holland'],
+            ['code' => 'OV', 'name' => 'Overijssel'],
+            ['code' => 'ZU', 'name' => 'Zuid-Holland'],
+            ['code' => 'UT', 'name' => 'Utrecht'],
+            ['code' => 'ZE', 'name' => 'Zeeland'],
         ]);
     }
 }

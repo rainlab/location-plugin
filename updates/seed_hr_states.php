@@ -14,10 +14,10 @@ class SeedHrStates extends Seeder
         }
 
         $hr->states()->createMany([
-            ['code' => 'SH', 'name' =>	'Središnja Hrvatska'],
-            ['code' => 'DA', 'name' =>	'Dalmacija'],
-            ['code' => 'SL', 'name' =>	'Slavonija'],
-            ['code' => 'IS', 'name' =>	'Istra']
+            ['code' => 'SH', 'name' => 'Središnja Hrvatska'],
+            ['code' => 'DA', 'name' => 'Dalmacija'],
+            ['code' => 'SL', 'name' => 'Slavonija'],
+            ['code' => 'IS', 'name' => 'Istra']
         ]);
     }
 }

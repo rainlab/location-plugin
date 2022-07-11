@@ -14,15 +14,15 @@ class SeedBeStates extends Seeder
         }
 
         $be->states()->createMany([
-            ['code' => 'AN', 'name' =>	'Antwerpen'],
-            ['code' => 'OV', 'name' =>	'Oost-Vlaanderen'],
-            ['code' => 'VB', 'name' =>	'Vlaams-Brabant'],
-            ['code' => 'WV', 'name' =>	'West-Vlaanderen'],
-            ['code' => 'HA', 'name' =>	'Hainaut'],
-            ['code' => 'LU', 'name' =>	'Luxembourg'],
-            ['code' => 'NA', 'name' =>	'Namur'],
-            ['code' => 'WA', 'name' =>	'Walloon Region'],
-            ['code' => 'BR', 'name' =>	'Brussels Hoofdstedelijk Gewest']
+            ['code' => 'AN', 'name' => 'Antwerpen'],
+            ['code' => 'OV', 'name' => 'Oost-Vlaanderen'],
+            ['code' => 'VB', 'name' => 'Vlaams-Brabant'],
+            ['code' => 'WV', 'name' => 'West-Vlaanderen'],
+            ['code' => 'HA', 'name' => 'Hainaut'],
+            ['code' => 'LU', 'name' => 'Luxembourg'],
+            ['code' => 'NA', 'name' => 'Namur'],
+            ['code' => 'WA', 'name' => 'Walloon Region'],
+            ['code' => 'BR', 'name' => 'Brussels Hoofdstedelijk Gewest']
         ]);
     }
 }
