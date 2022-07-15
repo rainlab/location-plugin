@@ -41,12 +41,18 @@ class AddressFinder extends FormWidgetBase
     protected $countryRestriction;
 
     /**
+     * @var string reverseStreetNumber
+     */
+    protected $reverseStreetNumber;
+
+    /**
      * {@inheritDoc}
      */
     public function init()
     {
         $this->fieldMap = $this->getConfig('fieldMap', []);
         $this->countryRestriction = $this->getConfig('countryRestriction', '');
+        $this->reverseStreetNumber = $this->getConfig('reverseStreetNumber', false);
     }
 
     /**
@@ -94,6 +100,14 @@ class AddressFinder extends FormWidgetBase
     public function getCountryRestriction()
     {
         return $this->countryRestriction;
+    }
+
+    /**
+     * getStreetReverseValue
+     */
+    public function getReverseStreetNumber()
+    {
+        return $this->reverseStreetNumber ? 1 : 0;
     }
 
     /**

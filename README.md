@@ -136,6 +136,8 @@ Available options:
 
 You can restrict the address lookup to certain countries by defining the `countryRestriction` option. The option accepts a comma separated list of ISO 3166-1 ALPHA-2 compatible country codes (see: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
 
+By default the `street` mapper places the house number before the street name. However in some countries the number is commonly placed after the street name. You can reverse the order by using the `reverseStreetNumber: true` option.
+
 Usage:
 
     # ===================================
@@ -147,11 +149,13 @@ Usage:
             label: Address
             type: addressfinder
             countryRestriction: 'us,ch'
+            reverseStreetNumber: false
             fieldMap:
                 latitude: latitude
                 longitude: longitude
                 city: city
                 zip: zip
+                street: street
                 country: country_code
                 state: state_code
                 vicinity: vicinity
@@ -160,6 +164,8 @@ Usage:
             label: City
         zip:
             label: Zip
+        street:
+            label: Street
         country_code:
             label: Country
         state_code:
