@@ -13,7 +13,7 @@ class SeedAtStates extends Seeder
             return;
         }
 
-        $at->states()->createMany(
+        $at->states()->createMany([
             ['code' => 'WI', 'name' => 'Wien'],
             ['code' => 'NI', 'name' => 'Niederösterreich'],
             ['code' => 'OB', 'name' => 'Oberösterreich'],
