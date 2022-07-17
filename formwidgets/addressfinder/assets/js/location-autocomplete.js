@@ -94,13 +94,19 @@
     }
 
     LocationAutocomplete.prototype.getValueMap = function() {
+        var streetValueMap = ['street_number', 'route']
+
+        if(this.$el.data('reverse-street-number')) {
+            streetValueMap = ['route', 'street_number']
+        }
+
         return {
             'geometry': {
                 inputLatitude: 'lat',
                 inputLongitude: 'lng'
             },
             'short': {
-                inputStreet: ['street_number', 'route'],
+                inputStreet: streetValueMap,
                 inputCity: ['locality', 'postal_town'],
                 inputCounty: 'administrative_area_level_2',
                 inputState: 'administrative_area_level_1',
