@@ -130,7 +130,7 @@
                 google = [google]
 
             $.each(google, function(index, _google) {
-                value.push(self.getValueFromAddressObject(place, _google))
+                value.push(self.getValueFromAddressObject(place, _google, resultType))
             })
 
             return value.join(' ')
