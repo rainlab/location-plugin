@@ -95,14 +95,15 @@ class Country extends Model
      */
     public static function getFromIp($ipAddress)
     {
-        try {
-            $body = (string) Http::get('http://ip2c.org/?ip='.$ipAddress);
+		try {
 
-            if (substr($body, 0, 1) === '1') {
-                $code = explode(';', $body)[1];
-                return static::where('code', $code)->first();
-            }
-        }
-        catch (Exception $e) {}
+			$body = Http::get('https://api.country.is/'.$ipAddress);
+
+			if($body->code == 200) {
+				$json = json_decode($body->body);
+				return static::where('code', strtolower($json->country))->first();
+			}
+		}
+		catch (Exception $e) {}
     }
 }
