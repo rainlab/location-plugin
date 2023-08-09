@@ -89,21 +89,20 @@ class Country extends Model
     }
 
     /**
-     * Attempts to find a country from the IP address.
+     * getFromIp attempts to find a country from the IP address.
      * @param string $ipAddress
-     * @return self
+     * @return self|null
      */
     public static function getFromIp($ipAddress)
     {
-		try {
+        try {
+            $body = Http::get('https://api.country.is/'.$ipAddress);
 
-			$body = Http::get('https://api.country.is/'.$ipAddress);
-
-			if($body->code == 200) {
-				$json = json_decode($body->body);
-				return static::where('code', strtolower($json->country))->first();
-			}
-		}
-		catch (Exception $e) {}
+            if ($body->code === 200) {
+                $json = json_decode($body->body);
+                return static::where('code', strtolower($json->country))->first();
+            }
+        }
+        catch (Exception $e) {}
     }
 }
