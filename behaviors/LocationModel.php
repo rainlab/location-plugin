@@ -5,15 +5,13 @@ use RainLab\Location\Models\Country;
 use System\Classes\ModelBehavior;
 
 /**
- * Location model extension
- *
- * Adds Country and State relations to a model
+ * LocationModel extension adds Country and State relations to a model
  *
  * Usage:
  *
  * In the model class definition:
  *
- *   public $implement = ['RainLab.Location.Behaviors.LocationModel'];
+ *   public $implement = [\RainLab\Location\Behaviors\LocationModel::class];
  *
  */
 class LocationModel extends ModelBehavior
@@ -25,35 +23,44 @@ class LocationModel extends ModelBehavior
     {
         parent::__construct($model);
 
-        $guarded = $model->getGuarded();
+        $model->addFillable([
+            'country',
+            'country_id',
+            'country_code',
+            'state',
+            'state_id',
+            'state_code'
+        ]);
 
-        if (count($guarded) === 1 && $guarded[0] === '*') {
-            $model->addFillable([
-                'country',
-                'country_id',
-                'country_code',
-                'state',
-                'state_id',
-                'state_code'
-            ]);
-        }
+        $model->belongsTo['country'] = [
+            Country::class,
+            'replicate' => false
+        ];
 
-        $model->belongsTo['country'] = ['RainLab\Location\Models\Country'];
-        $model->belongsTo['state']   = ['RainLab\Location\Models\State'];
+        $model->belongsTo['state'] = [
+            State::class,
+            'replicate' => false
+        ];
     }
 
+    /**
+     * getCountryOptions
+     */
     public function getCountryOptions()
     {
         return Country::getNameList();
     }
 
+    /**
+     * getStateOptions
+     */
     public function getStateOptions()
     {
         return State::getNameList($this->model->country_id);
     }
 
     /**
-     * Sets the "country" relation with the code specified, model lookup used.
+     * setCountryCodeAttribute sets the "country" relation with the code specified, model lookup used.
      * @param string $code
      */
     public function setCountryCodeAttribute($code)
@@ -66,7 +73,7 @@ class LocationModel extends ModelBehavior
     }
 
     /**
-     * Sets the "state" relation with the code specified, model lookup used.
+     * setStateCodeAttribute sets the "state" relation with the code specified, model lookup used.
      * @param string $code
      */
     public function setStateCodeAttribute($code)
@@ -79,7 +86,7 @@ class LocationModel extends ModelBehavior
     }
 
     /**
-     * Mutator for "country_code" attribute.
+     * getCountryCodeAttribute mutator for "country_code" attribute.
      * @return string
      */
     public function getCountryCodeAttribute()
@@ -88,7 +95,7 @@ class LocationModel extends ModelBehavior
     }
 
     /**
-     * Mutator for "state_code" attribute.
+     * getStateCodeAttribute mutator for "state_code" attribute.
      * @return string
      */
     public function getStateCodeAttribute()
@@ -97,7 +104,7 @@ class LocationModel extends ModelBehavior
     }
 
     /**
-     * Ensure an integer value is set, otherwise nullable.
+     * setCountryIdAttribute ensures an integer value is set, otherwise nullable.
      */
     public function setCountryIdAttribute($value)
     {
@@ -105,7 +112,7 @@ class LocationModel extends ModelBehavior
     }
 
     /**
-     * Ensure an integer value is set, otherwise nullable.
+     * setStateIdAttribute ensures an integer value is set, otherwise nullable.
      */
     public function setStateIdAttribute($value)
     {
