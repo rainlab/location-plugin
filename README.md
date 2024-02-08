@@ -21,12 +21,16 @@ Copy the key and enter it in the **Settings > Location settings** area. If you f
 
 This plugin provides an easy way to add location fields, country and state, to any model. Simply add these columns to the database table:
 
-    $table->integer('country_id')->unsigned()->nullable()->index();
-    $table->integer('state_id')->unsigned()->nullable()->index();
+```php
+$table->integer('country_id')->unsigned()->nullable()->index();
+$table->integer('state_id')->unsigned()->nullable()->index();
+```
 
 Then implement the **RainLab.Location.Behaviors.LocationModel** behavior in the model class:
 
-    public $implement = ['RainLab.Location.Behaviors.LocationModel'];
+```php
+public $implement = ['RainLab.Location.Behaviors.LocationModel'];
+```
 
 This will automatically create two "belongs to" relationships:
 
@@ -39,65 +43,71 @@ This will automatically create two "belongs to" relationships:
 
 You are free to add the following form field definitions:
 
-    country:
-        label: rainlab.location::lang.country.label
-        type: dropdown
-        span: left
-        placeholder: rainlab.location::lang.country.select
+```yaml
+country:
+    label: rainlab.location::lang.country.label
+    type: dropdown
+    span: left
+    placeholder: rainlab.location::lang.country.select
 
-    state:
-        label: rainlab.location::lang.state.label
-        type: dropdown
-        span: right
-        dependsOn: country
-        placeholder: rainlab.location::lang.state.select
+state:
+    label: rainlab.location::lang.state.label
+    type: dropdown
+    span: right
+    dependsOn: country
+    placeholder: rainlab.location::lang.state.select
+```
 
 #### Lists
 
 For the list column definitions, you can use the following snippet:
 
-     country:
-         label: rainlab.location::lang.country.label
-         searchable: true
-         relation: country
-         select: name
-         sortable: false
+```yaml
+country:
+    label: rainlab.location::lang.country.label
+    searchable: true
+    relation: country
+    select: name
+    sortable: false
 
-     state:
-         label: rainlab.location::lang.state.label
-         searchable: true
-         relation: state
-         select: name
-         sortable: false
+state:
+    label: rainlab.location::lang.state.label
+    searchable: true
+    relation: state
+    select: name
+    sortable: false
+```
 
 ### Front-end usage
 
 The front-end can also use the relationships by creating a partial called **country-state** with the content:
 
-    {% set countryId = countryId|default(form_value('country_id')) %}
-    {% set stateId = stateId|default(form_value('state_id')) %}
+```twig
+{% set countryId = countryId|default(form_value('country_id')) %}
+{% set stateId = stateId|default(form_value('state_id')) %}
 
-    <div class="form-group">
-        <label for="accountCountry">Country</label>
-        {{ form_select_country('country_id', countryId, {
-            id: 'accountCountry',
-            class: 'form-control',
-            emptyOption: '',
-            'data-request': 'onInit',
-            'data-request-update': {
-                'country-state': '#partialCountryState'
-            }
-        }) }}
-    </div>
+<div class="form-group">
+    <label for="accountCountry">Country</label>
+    {{ form_select_country('country_id', countryId, {
+        id: 'accountCountry',
+        class: 'form-control',
+        emptyOption: '',
+        'data-request': 'onInit',
+        'data-request-update': {
+            'country-state': '#partialCountryState'
+        }
+    }) }}
+</div>
 
-    <div class="form-group">
-        <label for="accountState">State</label>
-        {{ form_select_state('state_id', countryId, stateId, {
-            id: 'accountState',
-            class: 'form-control',
-            emptyOption: ''
-        }) }}
-    </div>
+<div class="form-group">
+    <label for="accountState">State</label>
+    {{ form_select_state('state_id', countryId, stateId, {
+        id: 'accountState',
+        class: 'form-control',
+        emptyOption: ''
+    }) }}
+</div>
+```
 
 This partial can be rendered in a form with the following:
 
@@ -109,12 +119,14 @@ This partial can be rendered in a form with the following:
 
 The behavior will also add a special short code accessor and setter to the model that converts `country_code` and `state_code` to their respective identifiers.
 
-    // Softly looks up and sets the country_id and state_id
-    // for these Country and State relations.
+```php
+// Softly looks up and sets the country_id and state_id
+// for these Country and State relations.
 
-    $model->country_code = "US";
-    $model->state_code = "FL";
-    $model->save();
+$model->country_code = "US";
+$model->state_code = "FL";
+$model->save();
+```
 
 ### Address Finder Form Widget
 
@@ -140,39 +152,45 @@ By default the `street` mapper places the house number before the street name. H
 
 Usage:
 
-    # ===================================
-    #  Form Field Definitions
-    # ===================================
+```yaml
+# ===================================
+#  Form Field Definitions
+# ===================================
 
-    fields:
-        address:
-            label: Address
-            type: addressfinder
-            countryRestriction: 'us,ch'
-            reverseStreetNumber: false
-            fieldMap:
-                latitude: latitude
-                longitude: longitude
-                city: city
-                zip: zip
-                street: street
-                country: country_code
-                state: state_code
-                vicinity: vicinity
+fields:
+    address:
+        label: Address
+        type: addressfinder
+        countryRestriction: 'us,ch'
+        reverseStreetNumber: false
+        fieldMap:
+            latitude: latitude
+            longitude: longitude
+            city: city
+            zip: zip
+            street: street
+            country: country_code
+            state: state_code
+            vicinity: vicinity
 
-        city:
-            label: City
-        zip:
-            label: Zip
-        street:
-            label: Street
-        country_code:
-            label: Country
-        state_code:
-            label: State
-        latitude:
-            label: Latitude
-        longitude:
-            label: Longitude
-        vicinity:
-            label: Vicinity
+    city:
+        label: City
+    zip:
+        label: Zip
+    street:
+        label: Street
+    country_code:
+        label: Country
+    state_code:
+        label: State
+    latitude:
+        label: Latitude
+    longitude:
+        label: Longitude
+    vicinity:
+        label: Vicinity
+```
+
+### License
+
+This plugin is an official extension of the October CMS platform and is free to use if you have a platform license. See [EULA license](LICENSE.md) for more details.
