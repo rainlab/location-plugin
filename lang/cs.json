@@ -1,0 +1,6 @@
+{
+  "Country": "Země",
+  "-- select country --": "-- zvolte zemi --",
+  "State": "Stát",
+  "-- select state --": "-- zvolte stát --"
+}

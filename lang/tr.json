@@ -1,0 +1,6 @@
+{
+  "Country": "Ülke",
+  "-- select country --": "-- ülke seçin --",
+  "State": "Şehir/Eyalet",
+  "-- select state --": "-- şehir seçin --"
+}

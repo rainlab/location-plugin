@@ -1,0 +1,6 @@
+{
+  "Country": "Országok",
+  "-- select country --": "-- válasszon országot --",
+  "State": "Állam / megye",
+  "-- select state --": "-- válasszon államot / megyét --"
+}

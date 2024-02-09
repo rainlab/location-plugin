@@ -1,0 +1,6 @@
+{
+  "Country": "Paese",
+  "-- select country --": "-- seleziona Paese --",
+  "State": "Stato",
+  "-- select state --": "-- seleziona Stato --"
+}

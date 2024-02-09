@@ -1,0 +1,6 @@
+{
+  "Country": "Država",
+  "-- select country --": "-- izberite državo --",
+  "State": "regijo oz. zvezno državo",
+  "-- select state --": "-- izberite regijo oz. zvezno državo --"
+}

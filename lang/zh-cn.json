@@ -1,0 +1,6 @@
+{
+  "Country": "国家",
+  "-- select country --": "-- 选择国家 --",
+  "State": "省市/地区",
+  "-- select state --": "-- 选择省市/地区 --"
+}
