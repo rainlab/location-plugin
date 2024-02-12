@@ -35,3 +35,6 @@ v1.2.2: Include Russian states
 v1.2.3: Improve support with October v3
 v1.2.4: Adds reverseStreetNumber option to address finder
 v1.2.5: Fixes missing callback parameter on Google API
+v2.0.0:
+    - Major Upgrade to Location Plugin
+    - migrate_from_version1.php

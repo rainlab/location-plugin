@@ -45,13 +45,13 @@ You are free to add the following form field definitions:
 
 ```yaml
 country:
-    label: rainlab.location::lang.country.label
+    label: Country
     type: dropdown
     span: left
     placeholder: rainlab.location::lang.country.select
 
 state:
-    label: rainlab.location::lang.state.label
+    label: State
     type: dropdown
     span: right
     dependsOn: country
@@ -64,14 +64,14 @@ For the list column definitions, you can use the following snippet:
 
 ```yaml
 country:
-    label: rainlab.location::lang.country.label
+    label: Country
     searchable: true
     relation: country
     select: name
     sortable: false
 
 state:
-    label: rainlab.location::lang.state.label
+    label: State
     searchable: true
     relation: state
     select: name

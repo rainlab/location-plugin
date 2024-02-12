@@ -3,7 +3,7 @@
 # ===================================
 
 states:
-    label: rainlab.location::lang.state.label
+    label: State
     list: ~/plugins/rainlab/location/models/state/columns.yaml
     form: ~/plugins/rainlab/location/models/state/fields.yaml
     view:
