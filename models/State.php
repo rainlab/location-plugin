@@ -122,4 +122,16 @@ class State extends Model
     {
         return $query->where('is_enabled', true);
     }
+
+    /**
+     * getStateOptionsForFilter
+     */
+    public function getStateOptionsForFilter($scopes = null)
+    {
+        if ($scopes->country && ($countryIds = $scopes->country->value)) {
+            return self::whereIn('country_id', $countryIds)->orderBy('name', 'asc')->lists('name', 'id');
+        }
+
+        return self::lists('name', 'id');
+    }
 }
