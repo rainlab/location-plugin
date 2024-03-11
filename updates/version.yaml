@@ -4,25 +4,41 @@ v1.0.2:
     - 000001_create_countries.php
     - 000002_create_states.php
 v1.0.3:
-    - Add seed data for countries and states.
-    - seed_all_tables.php
+    - Seeding countries
+    - seed_tables.php
+v1.0.4:
+    - Seeding states
     - seed_ar_states.php
-    - seed_it_states.php
-    - seed_ru_states.php
     - seed_at_states.php
-    - seed_nl_states.php
-    - seed_hr_states.php
+    - seed_au_states.php
     - seed_be_states.php
-    - seed_pl_states.php
+    - seed_br_states.php
+    - seed_ca_states.php
+    - seed_ch_states.php
+    - seed_de_states.php
     - seed_dk_states.php
+    - seed_ee_states.php
+    - seed_es_states.php
+    - seed_fr_states.php
+    - seed_gb_states.php
+    - seed_hr_states.php
+    - seed_hu_states.php
+    - seed_ie_states.php
+    - seed_in_states.php
+    - seed_it_states.php
+    - seed_mx_states.php
+    - seed_nl_states.php
+    - seed_nz_states.php
+    - seed_pl_states.php
+    - seed_ro_states.php
+    - seed_ru_states.php
     - seed_ua_states.php
-    - seed_callingcodes.php
-v1.0.4: Satisfy the new Google API key requirement.
+    - seed_us_states.php
 v1.0.5: Countries can now be pinned to make them appear at the top of the list.
 v1.0.6: Added support for defining a default country and state.
 v1.0.7: Added basic geocoding method to the Country model.
 v1.0.8: Include Mexico states
-v1.1.0: Update requires Build 447. Fixed AddressFinder formwidget not working correctly in repeaters.
+v1.1.0: Fixes AddressFinder formwidget not working correctly in repeaters.
 v1.1.1: Minor fix to AddressFinder formwidget for the change to the FormField API
 v1.1.2: Yet another change to the AddressFinder for changes to the FormField API
 v1.1.3: Include Argentina states

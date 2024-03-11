@@ -7,13 +7,12 @@ class SeedPlStates extends Seeder
 {
     public function run()
     {
-        $pl = Country::whereCode('AT')->first();
-
-        if ($pl->states()->count() > 0) {
+        $country = Country::whereCode('AT')->first();
+        if ($country->states()->count() > 0) {
             return;
         }
 
-        $pl->states()->createMany([
+        $country->states()->createMany([
             ['code' => 'WI', 'name' => 'Wielkopolskie'],
             ['code' => 'KP', 'name' => 'Kujawsko-Pomorskie'],
             ['code' => 'MA', 'name' => 'Małopolskie'],

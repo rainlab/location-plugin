@@ -7,13 +7,12 @@ class SeedRuStates extends Seeder
 {
     public function run()
     {
-        $ru = Country::whereCode('RU')->first();
-
-        if ($ru->states()->count() > 0) {
+        $country = Country::whereCode('RU')->first();
+        if ($country->states()->count() > 0) {
             return;
         }
 
-        $ru->states()->createMany([
+        $country->states()->createMany([
             ['code' => 'AD', 'name' => 'Респ Адыгея'],
             ['code' => 'BA', 'name' => 'Респ Башкортостан'],
             ['code' => 'BU', 'name' => 'Респ Бурятия'],
