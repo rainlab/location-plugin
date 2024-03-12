@@ -1,8 +1,5 @@
 <?php return [
-  'plugin' => [
-    'name' => 'Località',
-    'description' => 'Feature basate sulla località, come Paese e Stati.',
-  ],
+  'plugin' => [],
   'permissions' => [
     'settings' => 'Locations management',
   ],
@@ -14,7 +11,6 @@
     'preview_title' => 'Anteprima Località',
   ],
   'locations' => [
-    'menu_label' => 'Paesi & Stati',
     'menu_description' => 'Gestisci paesi e stati disponibili per l\'utente.',
     'disabled_label' => 'Disabilitato',
     'enabled_label' => 'Abilitato',

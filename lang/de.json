@@ -2,5 +2,8 @@
   "Country": "Land",
   "-- select country --": "-- Land auswählen --",
   "State": "Staat",
-  "-- select state --": "-- Staat auswählen --"
+  "-- select state --": "-- Staat auswählen --",
+  "Location": "Location",
+  "Location based features, such as Country and State.": "Location basierte Features, z.B. Länder and Staaten.",
+  "Countries & States": "Länder & Staaten"
 }

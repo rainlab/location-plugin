@@ -1,8 +1,5 @@
 <?php return [
-  'plugin' => [
-    'name' => 'موقعیت',
-    'description' => 'امکانات بر پایه موقعیت مانند کشور و استان',
-  ],
+  'plugin' => [],
   'permissions' => [
     'settings' => 'مدیریت موقعیت ها',
   ],
@@ -14,7 +11,6 @@
     'preview_title' => 'پیش نمایش موقعیت',
   ],
   'locations' => [
-    'menu_label' => 'شهرها و استان ها',
     'menu_description' => 'مدیریت کشور ها و استانهای موجود برای کاربران.',
     'disabled_label' => 'غیر فعال',
     'enabled_label' => 'فعال',

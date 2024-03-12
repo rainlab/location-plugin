@@ -1,8 +1,5 @@
 <?php return [
-  'plugin' => [
-    'name' => 'Konum',
-    'description' => 'Konum bazlı özellikler, örneği Ülke ve Şehir.',
-  ],
+  'plugin' => [],
   'permissions' => [
     'settings' => 'Konum yönetimi',
   ],
@@ -14,7 +11,6 @@
     'preview_title' => 'Konumu önizle',
   ],
   'locations' => [
-    'menu_label' => 'Ülkeler & Şehirler',
     'menu_description' => 'Ülkeleri ve şehirleri yönet.',
     'disabled_label' => 'Pasif',
     'enabled_label' => 'Aktif',

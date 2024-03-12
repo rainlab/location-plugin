@@ -1,8 +1,5 @@
 <?php return [
-  'plugin' => [
-    'name' => 'Lokácie',
-    'description' => 'Funkcie založené na umiestnení, napríklad krajina a štát..',
-  ],
+  'plugin' => [],
   'permissions' => [
     'settings' => 'Správa lokácií',
   ],
@@ -14,7 +11,6 @@
     'preview_title' => 'Náhľad lokácie',
   ],
   'locations' => [
-    'menu_label' => 'Krajiny a Štáty',
     'menu_description' => 'Správa dostupných krajín a štátov.',
     'disabled_label' => 'Neaktvne',
     'enabled_label' => 'Aktívne',

@@ -2,5 +2,8 @@
   "Country": "Ülke",
   "-- select country --": "-- ülke seçin --",
   "State": "Şehir/Eyalet",
-  "-- select state --": "-- şehir seçin --"
+  "-- select state --": "-- şehir seçin --",
+  "Location": "Konum",
+  "Location based features, such as Country and State.": "Konum bazlı özellikler, örneği Ülke ve Şehir.",
+  "Countries & States": "Ülkeler & Şehirler"
 }

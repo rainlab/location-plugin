@@ -2,5 +2,8 @@
   "Country": "Država",
   "-- select country --": "-- izberite državo --",
   "State": "regijo oz. zvezno državo",
-  "-- select state --": "-- izberite regijo oz. zvezno državo --"
+  "-- select state --": "-- izberite regijo oz. zvezno državo --",
+  "Location": "Lokacije",
+  "Location based features, such as Country and State.": "Funkcije, ki temeljijo na lokaciji, kot so npr. države in regije.",
+  "Countries & States": "Države in regije"
 }

@@ -1,8 +1,5 @@
 <?php return [
-  'plugin' => [
-    'name' => '地區',
-    'description' => '提供基本地區功能，如國家、州',
-  ],
+  'plugin' => [],
   'permissions' => [
     'settings' => '地區位置',
   ],
@@ -14,7 +11,6 @@
     'preview_title' => '預覽地區',
   ],
   'locations' => [
-    'menu_label' => '國家及州',
     'menu_description' => '管理會員可選的國家及州別。',
     'disabled_label' => '已停用',
     'enabled_label' => '啟用',

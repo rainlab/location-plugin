@@ -1,8 +1,5 @@
 <?php return [
-  'plugin' => [
-    'name' => 'Lokacije',
-    'description' => 'Funkcije, ki temeljijo na lokaciji, kot so npr. države in regije.',
-  ],
+  'plugin' => [],
   'permissions' => [
     'settings' => 'Upravljanje lokacij',
   ],
@@ -14,7 +11,6 @@
     'preview_title' => 'Predogled lokacije',
   ],
   'locations' => [
-    'menu_label' => 'Države in regije',
     'menu_description' => 'Upravljanje razpoložljivih držav in regij za uporabnike.',
     'disabled_label' => 'Onemogočene',
     'enabled_label' => 'Omogočene',

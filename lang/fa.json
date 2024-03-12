@@ -2,5 +2,8 @@
   "Country": "کشور",
   "-- select country --": "-- انتخاب کشور --",
   "State": "استان",
-  "-- select state --": "-- انتخاب استان --"
+  "-- select state --": "-- انتخاب استان --",
+  "Location": "موقعیت",
+  "Location based features, such as Country and State.": "امکانات بر پایه موقعیت مانند کشور و استان",
+  "Countries & States": "شهرها و استان ها"
 }

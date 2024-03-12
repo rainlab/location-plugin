@@ -2,5 +2,8 @@
   "Country": "Országok",
   "-- select country --": "-- válasszon országot --",
   "State": "Állam / megye",
-  "-- select state --": "-- válasszon államot / megyét --"
+  "-- select state --": "-- válasszon államot / megyét --",
+  "Location": "Helyek",
+  "Location based features, such as Country and State.": "Tartózkodási helyek, úgy mint országok és megyék.",
+  "Countries & States": "Tartózkodások"
 }

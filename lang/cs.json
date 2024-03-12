@@ -2,5 +2,8 @@
   "Country": "Země",
   "-- select country --": "-- zvolte zemi --",
   "State": "Stát",
-  "-- select state --": "-- zvolte stát --"
+  "-- select state --": "-- zvolte stát --",
+  "Location": "Lokace",
+  "Location based features, such as Country and State.": "Funkce pro upřesnění lokace, jako třeba Země, nebo Stát.",
+  "Countries & States": "Lokality"
 }

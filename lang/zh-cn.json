@@ -2,5 +2,8 @@
   "Country": "国家",
   "-- select country --": "-- 选择国家 --",
   "State": "省市/地区",
-  "-- select state --": "-- 选择省市/地区 --"
+  "-- select state --": "-- 选择省市/地区 --",
+  "Location": "位置",
+  "Location based features, such as Country and State.": "基于位置的功能，例如国家和地区。",
+  "Countries & States": "位置信息"
 }

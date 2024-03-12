@@ -1,8 +1,5 @@
 <?php return [
-  'plugin' => [
-    'name' => 'Locais',
-    'description' => 'Local com base em características, como País e Estado.',
-  ],
+  'plugin' => [],
   'permissions' => [
     'settings' => 'Gerenciamento de locais',
   ],
@@ -14,7 +11,6 @@
     'preview_title' => 'Pré-visualizar Local',
   ],
   'locations' => [
-    'menu_label' => 'Locais',
     'menu_description' => 'Gerenciar países e estados disponíveis.',
     'disabled_label' => 'Ocultar desabilitados',
     'enabled_label' => 'Habilitado',

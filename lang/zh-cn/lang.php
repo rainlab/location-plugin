@@ -1,8 +1,5 @@
 <?php return [
-  'plugin' => [
-    'name' => '位置',
-    'description' => '基于位置的功能，例如国家和地区。',
-  ],
+  'plugin' => [],
   'permissions' => [
     'settings' => '位置管理',
   ],
@@ -14,7 +11,6 @@
     'preview_title' => '预览位置信息',
   ],
   'locations' => [
-    'menu_label' => '位置信息',
     'menu_description' => '管理国家和地区.',
     'disabled_label' => '隐藏被禁用项',
     'enabled_label' => '启用',

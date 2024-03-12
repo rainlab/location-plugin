@@ -14,11 +14,11 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'rainlab.location::lang.plugin.name',
-            'description' => 'rainlab.location::lang.plugin.description',
-            'author'      => 'Alexey Bobkov, Samuel Georges',
-            'icon'        => 'icon-globe',
-            'homepage'    => 'https://github.com/rainlab/location-plugin'
+            'name' => "Location",
+            'description' => "Location based features, such as Country and State.",
+            'author' => 'Alexey Bobkov, Samuel Georges',
+            'icon' => 'icon-globe',
+            'homepage' => 'https://github.com/rainlab/location-plugin'
         ];
     }
 
@@ -29,9 +29,9 @@ class Plugin extends PluginBase
     {
         return [
             'location' => [
-                'label' => 'rainlab.location::lang.locations.menu_label',
+                'label' => "Countries & States",
                 'description' => 'rainlab.location::lang.locations.menu_description',
-                'category' => 'rainlab.location::lang.plugin.name',
+                'category' => "Location",
                 'icon' => 'icon-globe',
                 'url' => Backend::url('rainlab/location/locations'),
                 'order' => 500,
@@ -41,7 +41,7 @@ class Plugin extends PluginBase
             'settings' => [
                 'label' => 'rainlab.location::lang.settings.menu_label',
                 'description' => 'rainlab.location::lang.settings.menu_description',
-                'category' => 'rainlab.location::lang.plugin.name',
+                'category' => "Location",
                 'icon' => 'icon-map-signs',
                 'class' => \RainLab\Location\Models\Setting::class,
                 'order' => 600,
@@ -56,7 +56,10 @@ class Plugin extends PluginBase
     public function registerPermissions()
     {
         return [
-            'rainlab.location.access_settings' => ['tab' => 'rainlab.location::lang.plugin.name', 'label' => 'rainlab.location::lang.permissions.settings'],
+            'rainlab.location.access_settings' => [
+                'tab' => "Location",
+                'label' => 'rainlab.location::lang.permissions.settings'
+            ],
         ];
     }
 

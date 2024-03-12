@@ -7,11 +7,9 @@ use System\Classes\ModelBehavior;
 /**
  * LocationModel extension adds Country and State relations to a model
  *
- * Usage:
+ * Usage in the model class definition:
  *
- * In the model class definition:
- *
- *   public $implement = [\RainLab\Location\Behaviors\LocationModel::class];
+ *     public $implement = [\RainLab\Location\Behaviors\LocationModel::class];
  *
  */
 class LocationModel extends ModelBehavior

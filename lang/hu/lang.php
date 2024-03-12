@@ -1,8 +1,5 @@
 <?php return [
-  'plugin' => [
-    'name' => 'Helyek',
-    'description' => 'Tartózkodási helyek, úgy mint országok és megyék.',
-  ],
+  'plugin' => [],
   'permissions' => [
     'settings' => 'Helyek menedzselése',
   ],
@@ -14,7 +11,6 @@
     'preview_title' => 'Tartózkodási hely villámnézete',
   ],
   'locations' => [
-    'menu_label' => 'Tartózkodások',
     'menu_description' => 'Elérhető országok és megyék kiválasztása.',
     'disabled_label' => 'Letiltottak elrejtése',
     'enabled_label' => 'Engedélyezve',

@@ -2,5 +2,8 @@
   "Country": "Страна",
   "-- select country --": "-- выберите страну --",
   "State": "Регион",
-  "-- select state --": "-- выберите регион --"
+  "-- select state --": "-- выберите регион --",
+  "Location": "Локация",
+  "Location based features, such as Country and State.": "Базовый функционал локаций, таких как Страна и Регион.",
+  "Countries & States": "Страны и регионы"
 }

@@ -1,8 +1,5 @@
 <?php return [
-  'plugin' => [
-    'name' => 'Localisation géographique',
-    'description' => 'Fonctionnalités de localisation géographique, comme les pays et les régions.',
-  ],
+  'plugin' => [],
   'permissions' => [
     'settings' => 'Gestion des pays',
   ],
@@ -14,7 +11,6 @@
     'preview_title' => 'Consulter un pays',
   ],
   'locations' => [
-    'menu_label' => 'Pays',
     'menu_description' => 'Gestion des pays et régions disponibles pour les utilisateurs.',
     'disabled_label' => 'Pays désactivés',
     'enabled_label' => 'Activé',

@@ -1,8 +1,5 @@
 <?php return [
-  'plugin' => [
-    'name' => 'Location',
-    'description' => 'Location based features, such as Country and State.',
-  ],
+  'plugin' => [],
   'permissions' => [
     'settings' => 'Locations management',
   ],
@@ -14,7 +11,6 @@
     'preview_title' => 'Preview Location',
   ],
   'locations' => [
-    'menu_label' => 'Countries & States',
     'menu_description' => 'Manage available user countries and states.',
     'disabled_label' => 'Disabled',
     'enabled_label' => 'Enabled',
