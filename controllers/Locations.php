@@ -75,7 +75,7 @@ class Locations extends SettingsController
      */
     public function formExtendFields($form)
     {
-        if ($codeField = $form->getField('code')) {
+        if ($codeField = $form->getField('iso_code')) {
             $codeField->commentAbove(str_replace('%s', '<a href="http://en.wikipedia.org/wiki/ISO_3166-1" target="_blank" rel="nofollow">http://en.wikipedia.org/wiki/ISO_3166-1</a>', $codeField->commentAbove));
         }
 

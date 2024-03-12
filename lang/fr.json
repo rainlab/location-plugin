@@ -36,7 +36,6 @@
   "Code": "Code",
   "Calling Code": "Indicatif téléphonique",
   "Enter a unique code to identify this country.": "Entrez un code unique pour identifier ce pays.",
-  "Numerical country calling code without the plus sign.": "Indicatif téléphonique du pays sans le signe plus.",
   "Default Country": "Pays par défaut",
   "When a user does not specify their location, select a default country to use.": "Si un utilisateur n'indique pas son pays, ce pays sera choisi par défaut.",
   "Default State": "Région par défaut",

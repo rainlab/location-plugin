@@ -36,7 +36,6 @@
   "Code": "Code",
   "Calling Code": "Calling Code",
   "Enter a unique code to identify this country.": "Enter a unique code to identify this country.",
-  "Numerical country calling code without the plus sign.": "Numerical country calling code without the plus sign.",
   "Default Country": "Default Country",
   "When a user does not specify their location, select a default country to use.": "When a user does not specify their location, select a default country to use.",
   "Default State": "Default State",

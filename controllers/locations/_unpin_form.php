@@ -1,7 +1,7 @@
 <?= Form::open(['id' => 'unpinForm']) ?>
-    <div class="modal-header flex-row-reverse">
-        <button type="button" class="close" data-dismiss="popup">&times;</button>
+    <div class="modal-header">
         <h4 class="modal-title"><?= __("Pin or Unpin Locations") ?></h4>
+        <button type="button" class="btn-close" data-dismiss="popup"></button>
     </div>
     <div class="modal-body">
 
@@ -24,9 +24,7 @@
                     <label for="locationUnpin" class="storm-icon-pseudo">
                         <?= __("Pinned") ?>
                     </label>
-                    <p class="help-block form-text">
-                        <?= __("Pinned locations are sorted first in the list.") ?>
-                    </p>
+                    <p class="help-block form-text"><?= __("Pinned locations are sorted first in the list.") ?></p>
                 </div>
 
             </div>
@@ -35,9 +33,7 @@
         <?php foreach ($checked as $id): ?>
             <input type="hidden" name="checked[]" value="<?= $id ?>" />
         <?php endforeach ?>
-
     </div>
-
     <div class="modal-footer">
         <button
             type="submit"
@@ -45,13 +41,13 @@
             data-request="onUnpinLocations"
             data-request-confirm="<?= __("Are you sure?") ?>"
             data-stripe-load-indicator>
-            <?= e(trans('backend::lang.form.apply')) ?>
+            <?= __("Apply") ?>
         </button>
         <button
             type="button"
             class="btn btn-default"
             data-dismiss="popup">
-            <?= e(trans('backend::lang.form.cancel')) ?>
+            <?= __("Cancel") ?>
         </button>
     </div>
 <?= Form::close() ?>

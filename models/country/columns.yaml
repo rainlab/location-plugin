@@ -11,6 +11,14 @@ columns:
         label: Code
         searchable: true
 
+    iso_code:
+        label: ISO Code
+        searchable: true
+
+    calling_code:
+        label: Calling Code
+        searchable: true
+
     is_enabled:
         label: Enabled
         type: switch
@@ -18,8 +26,3 @@ columns:
     is_pinned:
         label: Pinned
         type: switch
-
-    calling_code:
-        label: Calling Code
-        searchable: true
-        invisible: true

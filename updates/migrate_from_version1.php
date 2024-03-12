@@ -10,7 +10,6 @@ return new class extends Migration
         if (!Schema::hasColumn('rainlab_location_countries', 'iso_code')) {
             Schema::table('rainlab_location_countries', function(Blueprint $table) {
                 $table->string('iso_code')->nullable();
-                $table->string('numeric_code')->nullable();
                 $table->boolean('is_enabled_edit')->default(false);
             });
         }

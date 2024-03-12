@@ -12,7 +12,6 @@ return new class extends Migration
             $table->string('name')->index();
             $table->string('code');
             $table->string('iso_code')->nullable();
-            $table->string('numeric_code')->nullable();
             $table->string('calling_code')->nullable();
             $table->boolean('is_enabled')->default(false);
             $table->boolean('is_enabled_edit')->default(false);

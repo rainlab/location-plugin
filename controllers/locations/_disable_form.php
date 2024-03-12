@@ -1,11 +1,10 @@
 <?= Form::open(['id' => 'disableForm']) ?>
     <input type="hidden" name="location_type" value="<?= $location_type ?>">
-    <div class="modal-header flex-row-reverse">
-        <button type="button" class="close" data-dismiss="popup">&times;</button>
+    <div class="modal-header">
         <h4 class="modal-title"><?= __("Enable or Disable Locations") ?></h4>
+        <button type="button" class="btn-close" data-dismiss="popup"></button>
     </div>
     <div class="modal-body">
-
         <?php if ($this->fatalError): ?>
             <p class="flash-message static error"><?= $fatalError ?></p>
         <?php endif ?>
@@ -25,9 +24,7 @@
                     <label for="locationDisable" class="storm-icon-pseudo">
                         <?= __("Enabled") ?>
                     </label>
-                    <p class="help-block form-text">
-                        <?= __("Disabled locations are not visible on the front-end.") ?>
-                    </p>
+                    <p class="help-block form-text"><?= __("Disabled locations are not visible on the front-end.") ?></p>
                 </div>
 
             </div>
@@ -36,23 +33,14 @@
         <?php foreach ($checked as $id): ?>
             <input type="hidden" name="checked[]" value="<?= $id ?>" />
         <?php endforeach ?>
-
     </div>
-
     <div class="modal-footer">
-        <button
-            type="submit"
-            class="btn btn-primary"
-            data-request="onDisableLocations"
-            data-request-confirm="<?= __("Are you sure?") ?>"
-            data-stripe-load-indicator>
-            <?= e(trans('backend::lang.form.apply')) ?>
-        </button>
-        <button
-            type="button"
-            class="btn btn-default"
-            data-dismiss="popup">
-            <?= e(trans('backend::lang.form.cancel')) ?>
-        </button>
+        <?= Ui::ajaxButton("Apply", 'onDisableLocations')
+            ->confirmMessage("Are you sure?")
+            ->primary() ?>
+
+        <?= Ui::button("Cancel")
+            ->dismissPopup()
+            ->cssClass('ms-auto') ?>
     </div>
 <?= Form::close() ?>

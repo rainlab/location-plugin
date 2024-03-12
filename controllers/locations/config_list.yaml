@@ -3,7 +3,10 @@
 # ===================================
 
 # Model List Column configuration
-list: ~/plugins/rainlab/location/models/country/columns.yaml
+list: $/rainlab/location/models/country/columns.yaml
+
+# Filter widget configuration
+filter: $/rainlab/location/models/country/scopes.yaml
 
 # Model Class name
 modelClass: RainLab\Location\Models\Country
@@ -39,6 +42,3 @@ toolbar:
     # Search widget configuration
     search:
         prompt: backend::lang.list.search_prompt
-
-# Filter widget configuration
-filter: config_filter.yaml

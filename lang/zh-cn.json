@@ -36,7 +36,6 @@
   "Code": "代码",
   "Calling Code": "调用代码",
   "Enter a unique code to identify this country.": "输入国家唯一编码.",
-  "Numerical country calling code without the plus sign.": "不带加号的数字国家/地区呼叫代码。",
   "Default Country": "默认国家",
   "When a user does not specify their location, select a default country to use.": "用户未设置国家时系统默认国家.",
   "Default State": "省市/地区",

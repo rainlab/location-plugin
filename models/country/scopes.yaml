@@ -1,14 +1,7 @@
 scopes:
-
     enabled:
-
-        # Filter name
-        label: Disabled
-
-        # Filter type
+        label: Enabled
         type: switch
-
-        # SQL Conditions
         conditions:
             - is_enabled = '1'
             - is_enabled = '0'

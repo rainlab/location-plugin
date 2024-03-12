@@ -14,6 +14,11 @@ modelClass: RainLab\Location\Models\Country
 # Default redirect location
 defaultRedirect: rainlab/location/locations
 
+# Form Design
+design:
+    displayMode: basic
+    size: 750
+
 # Create page
 create:
     title: Create Location
