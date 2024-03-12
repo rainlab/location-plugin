@@ -131,10 +131,10 @@ class Locations extends SettingsController
         }
 
         if ($enable) {
-            Flash::success(Lang::get('rainlab.location::lang.locations.enable_success'));
+            Flash::success(__("Successfully enabled those locations."));
         }
         else {
-            Flash::success(Lang::get('rainlab.location::lang.locations.disable_success'));
+            Flash::success(__("Successfully disabled those locations."));
         }
 
         return redirect()->refresh();
@@ -176,10 +176,10 @@ class Locations extends SettingsController
         }
 
         if ($pin) {
-            Flash::success(Lang::get('rainlab.location::lang.locations.pin_success'));
+            Flash::success(__("Successfully pinned selected locations."));
         }
         else {
-            Flash::success(Lang::get('rainlab.location::lang.locations.unpin_success'));
+            Flash::success(__("Successfully unpinned selected locations."));
         }
 
         return Backend::redirect('rainlab/location/locations');

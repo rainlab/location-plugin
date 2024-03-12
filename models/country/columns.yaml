@@ -4,22 +4,22 @@
 
 columns:
     name:
-        label: rainlab.location::lang.country.name
+        label: Name
         searchable: true
 
     code:
-        label: rainlab.location::lang.country.code
+        label: Code
         searchable: true
 
     is_enabled:
-        label: rainlab.location::lang.country.enabled
+        label: Enabled
         type: switch
 
     is_pinned:
-        label: rainlab.location::lang.country.pinned
+        label: Pinned
         type: switch
 
     calling_code:
-        label: rainlab.location::lang.country.calling_code
+        label: Calling Code
         searchable: true
         invisible: true

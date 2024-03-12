@@ -1,7 +1,7 @@
 <?= Form::open(['id' => 'unpinForm']) ?>
     <div class="modal-header flex-row-reverse">
         <button type="button" class="close" data-dismiss="popup">&times;</button>
-        <h4 class="modal-title"><?= e(trans('rainlab.location::lang.locations.pin_or_unpin_title')) ?></h4>
+        <h4 class="modal-title"><?= __("Pin or Unpin Locations") ?></h4>
     </div>
     <div class="modal-body">
 
@@ -9,7 +9,7 @@
             <p class="flash-message static error"><?= $fatalError ?></p>
         <?php endif ?>
 
-        <p><?= e(trans('rainlab.location::lang.locations.selected_amount', ['amount'=>count($checked)])) ?></p>
+        <p><?= __("Locations selected: :amount", ['amount'=>count($checked)]) ?></p>
 
         <div class="form-preview">
             <div class="form-group">
@@ -22,9 +22,11 @@
                         value="1"
                         id="locationUnpin">
                     <label for="locationUnpin" class="storm-icon-pseudo">
-                        <?= e(trans('rainlab.location::lang.locations.pinned_label')) ?>
+                        <?= __("Pinned") ?>
                     </label>
-                    <p class="help-block form-text"><?= e(trans('rainlab.location::lang.locations.pinned_help')) ?></p>
+                    <p class="help-block form-text">
+                        <?= __("Pinned locations are sorted first in the list.") ?>
+                    </p>
                 </div>
 
             </div>
@@ -41,7 +43,7 @@
             type="submit"
             class="btn btn-primary"
             data-request="onUnpinLocations"
-            data-request-confirm="<?= e(trans('rainlab.location::lang.locations.unpin_confirm')) ?>"
+            data-request-confirm="<?= __("Are you sure?") ?>"
             data-stripe-load-indicator>
             <?= e(trans('backend::lang.form.apply')) ?>
         </button>

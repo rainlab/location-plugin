@@ -30,7 +30,7 @@ class Plugin extends PluginBase
         return [
             'location' => [
                 'label' => "Countries & States",
-                'description' => 'rainlab.location::lang.locations.menu_description',
+                'description' => "Manage available user countries and states.",
                 'category' => "Location",
                 'icon' => 'icon-globe',
                 'url' => Backend::url('rainlab/location/locations'),
@@ -39,8 +39,8 @@ class Plugin extends PluginBase
                 'keywords' => 'country, countries, state',
             ],
             'settings' => [
-                'label' => 'rainlab.location::lang.settings.menu_label',
-                'description' => 'rainlab.location::lang.settings.menu_description',
+                'label' => "Location Settings",
+                'description' => "Manage location based settings.",
                 'category' => "Location",
                 'icon' => 'icon-map-signs',
                 'class' => \RainLab\Location\Models\Setting::class,
@@ -58,7 +58,7 @@ class Plugin extends PluginBase
         return [
             'rainlab.location.access_settings' => [
                 'tab' => "Location",
-                'label' => 'rainlab.location::lang.permissions.settings'
+                'label' => "Locations management"
             ],
         ];
     }

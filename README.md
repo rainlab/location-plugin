@@ -48,14 +48,14 @@ country:
     label: Country
     type: dropdown
     span: left
-    placeholder: rainlab.location::lang.country.select
+    placeholder: -- select country --
 
 state:
     label: State
     type: dropdown
     span: right
     dependsOn: country
-    placeholder: rainlab.location::lang.state.select
+    placeholder: -- select state --
 ```
 
 #### Lists

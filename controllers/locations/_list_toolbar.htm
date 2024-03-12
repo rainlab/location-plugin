@@ -2,7 +2,7 @@
     <a
         href="<?= Backend::url('rainlab/location/locations/create') ?>"
         class="btn btn-primary oc-icon-plus">
-        <?= e(trans('rainlab.location::lang.location.new')) ?>
+        <?= __("New Location") ?>
     </a>
     <button
         class="btn btn-default oc-icon-magic"
@@ -17,7 +17,7 @@
         data-trigger=".control-list input[type=checkbox]"
         data-trigger-condition="checked"
         data-stripe-load-indicator>
-        <?= e(trans('rainlab.location::lang.locations.enable_or_disable')) ?>
+        <?= __("Enable or Disable") ?>
     </button>
     <button
         class="btn btn-default oc-icon-map-pin"
@@ -31,6 +31,6 @@
         data-trigger=".control-list input[type=checkbox]"
         data-trigger-condition="checked"
         data-stripe-load-indicator>
-        <?= e(trans('rainlab.location::lang.locations.pin_or_unpin')) ?>
+        <?= __("Pin or Unpin") ?>
     </button>
 </div>

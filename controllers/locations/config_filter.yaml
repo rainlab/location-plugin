@@ -3,7 +3,7 @@ scopes:
     enabled:
 
         # Filter name
-        label: rainlab.location::lang.locations.disabled_label
+        label: Disabled
 
         # Filter type
         type: switch

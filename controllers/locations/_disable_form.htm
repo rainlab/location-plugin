@@ -2,7 +2,7 @@
     <input type="hidden" name="location_type" value="<?= $location_type ?>">
     <div class="modal-header flex-row-reverse">
         <button type="button" class="close" data-dismiss="popup">&times;</button>
-        <h4 class="modal-title"><?= e(trans('rainlab.location::lang.locations.enable_or_disable_title')) ?></h4>
+        <h4 class="modal-title"><?= __("Enable or Disable Locations") ?></h4>
     </div>
     <div class="modal-body">
 
@@ -10,7 +10,7 @@
             <p class="flash-message static error"><?= $fatalError ?></p>
         <?php endif ?>
 
-        <p><?= e(trans('rainlab.location::lang.locations.selected_amount', ['amount'=>count($checked)])) ?></p>
+        <p><?= __("Locations selected: :amount", ['amount'=>count($checked)]) ?></p>
 
         <div class="form-preview">
             <div class="form-group">
@@ -23,9 +23,11 @@
                         value="1"
                         id="locationDisable">
                     <label for="locationDisable" class="storm-icon-pseudo">
-                        <?= e(trans('rainlab.location::lang.locations.enabled_label')) ?>
+                        <?= __("Enabled") ?>
                     </label>
-                    <p class="help-block form-text"><?= e(trans('rainlab.location::lang.locations.enabled_help')) ?></p>
+                    <p class="help-block form-text">
+                        <?= __("Disabled locations are not visible on the front-end.") ?>
+                    </p>
                 </div>
 
             </div>
@@ -42,7 +44,7 @@
             type="submit"
             class="btn btn-primary"
             data-request="onDisableLocations"
-            data-request-confirm="<?= e(trans('rainlab.location::lang.locations.disable_confirm')) ?>"
+            data-request-confirm="<?= __("Are you sure?") ?>"
             data-stripe-load-indicator>
             <?= e(trans('backend::lang.form.apply')) ?>
         </button>

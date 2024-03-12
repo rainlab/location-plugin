@@ -21,14 +21,14 @@
         data-trigger=".control-list input[type=checkbox]"
         data-trigger-condition="checked"
         data-stripe-load-indicator>
-        <?= e(trans('rainlab.location::lang.locations.enable_or_disable')) ?>
+        <?= __("Enable or Disable") ?>
     </button>
 
     <button
         onclick="$(this).data('request-data', {checked: $('#Locations-update-RelationController-states-view .control-list').listWidget('getChecked') })"
         class="btn btn-sm btn-secondary oc-icon-trash-o control-disabled"
         data-request="onRelationButtonDelete"
-        data-request-confirm="<?= e(trans('rainlab.location::lang.locations.delete_confirm')) ?>"
+        data-request-confirm="<?= __("Do you really want to delete this location?") ?>"
         data-request-success="$.oc.relationBehavior.changed('states', 'deleted')"
         data-trigger-action="enable"
         data-trigger="#Locations-update-RelationController-states-view .control-list input[type=checkbox]"
