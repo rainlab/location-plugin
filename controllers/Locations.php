@@ -3,37 +3,49 @@
 use Lang;
 use Flash;
 use Backend;
-use BackendMenu;
 use RainLab\Location\Models\Country;
 use RainLab\Location\Models\State;
-use Backend\Classes\Controller;
-use System\Classes\SettingsManager;
+use Backend\Classes\SettingsController;
 use Exception;
 
 /**
  * Locations Backend Controller
  */
-class Locations extends Controller
+class Locations extends SettingsController
 {
+    /**
+     * @var array implement behaviors
+     */
     public $implement = [
         \Backend\Behaviors\FormController::class,
         \Backend\Behaviors\ListController::class,
         \Backend\Behaviors\RelationController::class
     ];
 
+    /**
+     * @var array formConfig configuration.
+     */
     public $formConfig = 'config_form.yaml';
+
+    /**
+     * @var array listConfig configuration.
+     */
     public $listConfig = 'config_list.yaml';
+
+    /**
+     * @var array relationConfig configuration.
+     */
     public $relationConfig = 'config_relation.yaml';
 
+    /**
+     * @var string settingsItemCode determines the settings code
+     */
+    public $settingsItemCode = 'locations';
+
+    /**
+     * @var array requiredPermissions to view this page.
+     */
     public $requiredPermissions = ['rainlab.location.access_settings'];
-
-    public function __construct()
-    {
-        parent::__construct();
-
-        BackendMenu::setContext('October.System', 'system', 'settings');
-        SettingsManager::setContext('RainLab.Location', 'location');
-    }
 
     /**
      * {@inheritDoc}
@@ -45,6 +57,9 @@ class Locations extends Controller
         }
     }
 
+    /**
+     * relationExtendViewWidget
+     */
     public function relationExtendViewWidget($widget)
     {
         $widget->bindEvent('list.injectRowClass', function ($record) {
@@ -54,6 +69,24 @@ class Locations extends Controller
         });
     }
 
+    /**
+     * formExtendFields adds available permission fields to the User form.
+     * Mark default groups as checked for new Users.
+     */
+    public function formExtendFields($form)
+    {
+        if ($codeField = $form->getField('code')) {
+            $codeField->commentAbove(str_replace('%s', '<a href="http://en.wikipedia.org/wiki/ISO_3166-1" target="_blank" rel="nofollow">http://en.wikipedia.org/wiki/ISO_3166-1</a>', $codeField->commentAbove));
+        }
+
+        if ($codeField = $form->getField('calling_code')) {
+            $codeField->commentAbove(str_replace('%s', '<a href="https://en.wikipedia.org/wiki/List_of_country_calling_codes" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/List_of_country_calling_codes</a>', $codeField->commentAbove));
+        }
+    }
+
+    /**
+     * onLoadDisableForm
+     */
     public function onLoadDisableForm()
     {
         try {
@@ -67,6 +100,9 @@ class Locations extends Controller
         return $this->makePartial('disable_form');
     }
 
+    /**
+     * onDisableLocations
+     */
     public function onDisableLocations()
     {
         $enable = post('enable', false);
@@ -104,6 +140,9 @@ class Locations extends Controller
         return redirect()->refresh();
     }
 
+    /**
+     * onLoadUnpinForm
+     */
     public function onLoadUnpinForm()
     {
         try {
@@ -116,6 +155,9 @@ class Locations extends Controller
         return $this->makePartial('unpin_form');
     }
 
+    /**
+     * onUnpinLocations
+     */
     public function onUnpinLocations()
     {
         $pin = post('pin', false);
