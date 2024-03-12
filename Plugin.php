@@ -2,6 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use System\Classes\SettingsManager;
 
 /**
  * Plugin Information File
@@ -31,20 +32,20 @@ class Plugin extends PluginBase
             'location' => [
                 'label' => "Countries & States",
                 'description' => "Manage available user countries and states.",
-                'category' => "Location",
+                'category' => SettingsManager::CATEGORY_USERS,
                 'icon' => 'icon-globe',
                 'url' => Backend::url('rainlab/location/locations'),
-                'order' => 500,
+                'order' => 700,
                 'permissions' => ['rainlab.location.access_settings'],
                 'keywords' => 'country, countries, state',
             ],
             'settings' => [
                 'label' => "Location Settings",
                 'description' => "Manage location based settings.",
-                'category' => "Location",
+                'category' => SettingsManager::CATEGORY_USERS,
                 'icon' => 'icon-map-signs',
                 'class' => \RainLab\Location\Models\Setting::class,
-                'order' => 600,
+                'order' => 800,
                 'permissions' => ['rainlab.location.access_settings'],
             ]
         ];

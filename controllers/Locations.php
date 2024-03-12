@@ -40,7 +40,7 @@ class Locations extends SettingsController
     /**
      * @var string settingsItemCode determines the settings code
      */
-    public $settingsItemCode = 'locations';
+    public $settingsItemCode = 'location';
 
     /**
      * @var array requiredPermissions to view this page.

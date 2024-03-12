@@ -18,6 +18,7 @@ fields:
 
     is_enabled:
         label: Enabled
+        comment: Uncheck to hide this state from the selection lists.
         type: checkbox
         default: true
         span: left
