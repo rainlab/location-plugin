@@ -7,13 +7,12 @@ class SeedUaStates extends Seeder
 {
     public function run()
     {
-        $ua = Country::whereCode('UA')->first();
-
-        if ($ua->states()->count() > 0) {
+        $country = Country::whereCode('UA')->first();
+        if ($country->states()->count() > 0) {
             return;
         }
 
-        $ua->states()->createMany([
+        $country->states()->createMany([
             ['code' => 'KK', 'name' => 'АР Крим'],
             ['code' => 'KB', 'name' => 'Вінницька область'],
             ['code' => 'KC', 'name' => 'Волинська область'],

@@ -7,13 +7,12 @@ class SeedItStates extends Seeder
 {
     public function run()
     {
-        $it = Country::whereCode('IT')->first();
-
-        if ($it->states()->count() > 0) {
+        $country = Country::whereCode('IT')->first();
+        if ($country->states()->count() > 0) {
             return;
         }
 
-        $it->states()->createMany([
+        $country->states()->createMany([
             ['code' => 'AG', 'name' =>	'Agrigento'],
             ['code' => 'AL', 'name' =>	'Alessandria'],
             ['code' => 'AN', 'name' =>	'Ancona'],

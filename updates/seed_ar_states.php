@@ -7,13 +7,12 @@ class SeedArStates extends Seeder
 {
     public function run()
     {
-        $ar = Country::whereCode('AR')->first();
-
-        if ($ar->states()->count() > 0) {
+        $country = Country::whereCode('AR')->first();
+        if ($country->states()->count() > 0) {
             return;
         }
 
-        $ar->states()->createMany([
+        $country->states()->createMany([
             ['code' => 'BA', 'name' => 'Buenos Aires'],
             ['code' => 'CA', 'name' => 'Catamarca'],
             ['code' => 'CH', 'name' => 'Chaco'],

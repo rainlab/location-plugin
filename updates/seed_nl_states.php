@@ -7,13 +7,12 @@ class SeedNlStates extends Seeder
 {
     public function run()
     {
-        $nl = Country::whereCode('NL')->first();
-
-        if ($nl->states()->count() > 0) {
+        $country = Country::whereCode('NL')->first();
+        if ($country->states()->count() > 0) {
             return;
         }
 
-        $nl->states()->createMany([
+        $country->states()->createMany([
             ['code' => 'DR', 'name' => 'Drenthe'],
             ['code' => 'FL', 'name' => 'Flevoland'],
             ['code' => 'FR', 'name' => 'Friesland'],
@@ -23,9 +22,9 @@ class SeedNlStates extends Seeder
             ['code' => 'NB', 'name' => 'Noord-Brabant'],
             ['code' => 'NH', 'name' => 'Noord-Holland'],
             ['code' => 'OV', 'name' => 'Overijssel'],
-            ['code' => 'ZU', 'name' => 'Zuid-Holland'],
             ['code' => 'UT', 'name' => 'Utrecht'],
             ['code' => 'ZE', 'name' => 'Zeeland'],
+            ['code' => 'ZH', 'name' => 'Zuid-Holland']
         ]);
     }
 }

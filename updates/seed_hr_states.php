@@ -7,13 +7,12 @@ class SeedHrStates extends Seeder
 {
     public function run()
     {
-        $hr = Country::whereCode('HR')->first();
-
-        if ($hr->states()->count() > 0) {
+        $country = Country::whereCode('HR')->first();
+        if ($country->states()->count() > 0) {
             return;
         }
 
-        $hr->states()->createMany([
+        $country->states()->createMany([
             ['code' => 'SH', 'name' => 'Središnja Hrvatska'],
             ['code' => 'DA', 'name' => 'Dalmacija'],
             ['code' => 'SL', 'name' => 'Slavonija'],

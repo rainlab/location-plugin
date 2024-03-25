@@ -5,8 +5,7 @@ use Backend\Classes\FormWidgetBase;
 use RainLab\Location\Models\Setting;
 
 /**
- * Address finder
- * Renders a Google Place address field.
+ * AddressFinder renders a Google Place address field.
  *
  * Usage:
  *

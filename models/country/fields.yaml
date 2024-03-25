@@ -2,27 +2,52 @@
 #  Form Field Definitions
 # ===================================
 
-fields:
-    name:
-        label: rainlab.location::lang.country.name
-        span: full
+tabs:
+    defaultTab: Country
+    fields:
+        name:
+            label: Name
+            span: full
 
-    is_enabled:
-        label: rainlab.location::lang.country.enabled
-        type: checkbox
-        span: left
+        code:
+            label: Country Code
+            comment: Enter a unique code to identify this country.
+            span: full
 
-    is_pinned:
-        label: rainlab.location::lang.country.pinned
-        type: checkbox
-        span: right
+        iso_code:
+            label: ISO Code
+            commentAbove: "Specify 3-letter ISO country code (eg: USA). You can find country names and codes here: %s"
+            commentHtml: true
+            span: auto
 
-    code:
-        label: rainlab.location::lang.country.code
-        span: auto
-        comment: rainlab.location::lang.country.code_comment
+        calling_code:
+            label: Calling Code
+            span: auto
+            commentAbove: "Specify country dial-in code without the plus sign. You can find calling codes here: %s"
+            commentHtml: true
 
-    calling_code:
-        label: rainlab.location::lang.country.calling_code
-        span: auto
-        comment: rainlab.location::lang.country.calling_code_comment
+        is_enabled:
+            label: Enabled
+            comment: "Disabled countries are not shown on the frontend."
+            type: checkbox
+            default: true
+
+        is_enabled_edit:
+            label: Enabled in the Admin Panel
+            comment: Use this if you want the country to be enabled in the admin panel.
+            type: checkbox
+            default: true
+            trigger:
+                action: disable|fill
+                field: is_enabled
+                condition: checked
+
+        is_pinned:
+            label: Pinned
+            comment: Show this country at the top of dropdown lists for quicker selection.
+            type: checkbox
+
+        states:
+            type: relation
+            label: Define states for this country, or leave this list empty if there are no states in the country.
+            tab: States

@@ -7,13 +7,12 @@ class SeedDkStates extends Seeder
 {
     public function run()
     {
-        $dk = Country::whereCode('DK')->first();
-
-        if ($dk->states()->count() > 0) {
+        $country = Country::whereCode('DK')->first();
+        if ($country->states()->count() > 0) {
             return;
         }
 
-        $dk->states()->createMany([
+        $country->states()->createMany([
             ['code' => 'HO', 'name' => 'Hovedstaden Region'],
             ['code' => 'MI', 'name' => 'Midtjylland Region'],
             ['code' => 'NO', 'name' => 'Nordjylland Region'],
