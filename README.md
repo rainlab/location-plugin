@@ -1,6 +1,6 @@
 # Location plugin
 
-This plugin adds location based features to [OctoberCMS](http://octobercms.com).
+This plugin adds location based features to [October CMS](http://octobercms.com).
 
 * Easily add Country and State to any model
 * Form widget for address lookups (Google API)
@@ -11,7 +11,7 @@ To integrate locations with front-end users consider installing the [User Plus+ 
 
 ### Google API key requirement
 
-As of June 22, 2016 the Google Maps service requires an API key. You may generate a key from the following link:
+Using the Google Maps service requires an API key. You may generate a key from the following link:
 
 - [Get a Google API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
@@ -26,10 +26,10 @@ $table->integer('country_id')->unsigned()->nullable()->index();
 $table->integer('state_id')->unsigned()->nullable()->index();
 ```
 
-Then implement the **RainLab.Location.Behaviors.LocationModel** behavior in the model class:
+Then implement the **RainLab\Location\Traits\LocationModel** trait in the model class:
 
 ```php
-public $implement = ['RainLab.Location.Behaviors.LocationModel'];
+use \RainLab\Location\Traits\LocationModel;
 ```
 
 This will automatically create two "belongs to" relationships:
@@ -111,11 +111,13 @@ The front-end can also use the relationships by creating a partial called **coun
 
 This partial can be rendered in a form with the following:
 
-    <div id="partialCountryState">
-        {% partial 'country-state' countryId=user.country_id stateId=user.state_id %}
-    </div>
+```twig
+<div id="partialCountryState">
+    {% partial 'country-state' countryId=user.country_id stateId=user.state_id %}
+</div>
+```
 
-### Short code accessors
+### Short Code Accessors
 
 The behavior will also add a special short code accessor and setter to the model that converts `country_code` and `state_code` to their respective identifiers.
 

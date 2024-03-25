@@ -15,7 +15,7 @@ use System\Classes\ModelBehavior;
 class LocationModel extends ModelBehavior
 {
     /**
-     * Constructor
+     * __construct
      */
     public function __construct($model)
     {

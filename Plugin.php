@@ -77,6 +77,17 @@ class Plugin extends PluginBase
         ];
     }
 
+
+    /**
+     * registerComponents
+     */
+    public function registerComponents()
+    {
+        return [
+           \RainLab\Location\Components\Location::class => 'location',
+        ];
+    }
+
     /**
      * registerFormWidgets registers any form widgets implemented in this plugin.
      */
