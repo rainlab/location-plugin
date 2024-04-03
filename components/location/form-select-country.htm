@@ -1,0 +1,18 @@
+{% set countryId = countryId|default(post('country_id')) %}
+{% set uniqueId = post('country_unique_id', uniqueId|default('stateControlSelector')) %}
+{% set countries = __SELF__.availableCountries|default([]) %}
+
+<select
+    name="country_id"
+    class="form-select"
+    data-request="onAjax"
+    data-request-data="{
+        country_unique_id: '{{ uniqueId }}'
+    }"
+    data-request-update="{
+        '@form-select-state': '#{{ uniqueId }}'
+    }">
+    {% for country in countries %}
+        <option value="{{ country.id }}" {{ country.id == countryId ? 'selected'}}>{{ country.name }}</option>
+    {% endfor %}
+</select>

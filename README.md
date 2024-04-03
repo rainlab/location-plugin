@@ -80,40 +80,17 @@ state:
 
 ### Front-end usage
 
-The front-end can also use the relationships by creating a partial called **country-state** with the content:
+The front-end can also use the relationships by rendering the `@form-select-country` and `@form-select-state` partials provided by the location component. Before proceeding, make sure you have the `location` component attached to the page or layout.
 
 ```twig
-{% set countryId = countryId|default(form_value('country_id')) %}
-{% set stateId = stateId|default(form_value('state_id')) %}
-
 <div class="form-group">
     <label for="accountCountry">Country</label>
-    {{ form_select_country('country_id', countryId, {
-        id: 'accountCountry',
-        class: 'form-control',
-        emptyOption: '',
-        'data-request': 'onInit',
-        'data-request-update': {
-            'country-state': '#partialCountryState'
-        }
-    }) }}
+    {% partial '@form-select-country' countryId=user.country_id %}
 </div>
 
 <div class="form-group">
     <label for="accountState">State</label>
-    {{ form_select_state('state_id', countryId, stateId, {
-        id: 'accountState',
-        class: 'form-control',
-        emptyOption: ''
-    }) }}
-</div>
-```
-
-This partial can be rendered in a form with the following:
-
-```twig
-<div id="partialCountryState">
-    {% partial 'country-state' countryId=user.country_id stateId=user.state_id %}
+    {% partial '@form-select-state' countryId=user.country_id stateId=user.state_id %}
 </div>
 ```
 
