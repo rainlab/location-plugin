@@ -10,12 +10,12 @@ use RainLab\Location\Models\State;
  * @property int $state_id
  * @property string $country_code
  * @property string $state_code
- * @property \October\Rain\Database\Model|null $country
- * @property \October\Rain\Database\Model|null $state
+ * @property \RainLab\Location\Models\Country|null $country
+ * @property \RainLab\Location\Models\State|null $state
  * @method \October\Rain\Database\Relations\BelongsTo country()
  * @method \October\Rain\Database\Relations\BelongsTo state()
  *
- * @package october\user
+ * @package rainlab\location
  * @author Alexey Bobkov, Samuel Georges
  */
 trait LocationModel
