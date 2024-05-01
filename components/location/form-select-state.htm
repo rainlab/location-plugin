@@ -1,0 +1,25 @@
+{% set countryId = post('country_id', countryId|default(null)) %}
+{% set stateId = post('state_id', stateId|default(null)) %}
+{% set uniqueId = post('country_unique_id', uniqueId|default('stateControlSelector')) %}
+{% set countries = __SELF__.availableCountries|default([]) %}
+{% set country = countries.find(countryId)|default(countries.first()) %}
+{% set states = country.fetchStates() %}
+{% set optionsOnly = post('country_unique_id') %}
+
+{% if optionsOnly %}
+    <option></option>
+    {% for state in states %}
+        <option value="{{ state.id }}" {{ state.id == stateId ? 'selected'}}>{{ state.name }}</option>
+    {% endfor %}
+{% else %}
+    <select
+        id="{{ uniqueId }}"
+        name="state_id"
+        class="form-select"
+    >
+        <option></option>
+        {% for state in states %}
+            <option value="{{ state.id }}" {{ state.id == stateId ? 'selected'}}>{{ state.name }}</option>
+        {% endfor %}
+    </select>
+{% endif %}

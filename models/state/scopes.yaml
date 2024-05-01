@@ -1,0 +1,5 @@
+scopes:
+    enabled:
+        label: Disabled
+        type: switch
+        scope: isEnabled

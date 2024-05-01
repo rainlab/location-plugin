@@ -1,14 +1,25 @@
 <?php namespace RainLab\Location\Models;
 
-use Model;
+use System\Models\SettingModel;
 
-class Setting extends Model
+/**
+ * Setting model for locations
+ */
+class Setting extends SettingModel
 {
-    public $implement = ['System.Behaviors.SettingsModel'];
-
+    /**
+     * @var string settingsCode
+     */
     public $settingsCode = 'location_settings';
+
+    /**
+     * @var string settingsFields
+     */
     public $settingsFields = 'fields.yaml';
 
+    /**
+     * initSettingsData
+     */
     public function initSettingsData()
     {
         $this->google_maps_key = '';
@@ -16,11 +27,17 @@ class Setting extends Model
         $this->default_state = 1;
     }
 
+    /**
+     * getDefaultCountryOptions
+     */
     public function getDefaultCountryOptions()
     {
         return Country::getNameList();
     }
 
+    /**
+     * getDefaultStateOptions
+     */
     public function getDefaultStateOptions()
     {
         return State::getNameList($this->default_country);

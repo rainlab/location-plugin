@@ -7,13 +7,12 @@ class SeedBeStates extends Seeder
 {
     public function run()
     {
-        $be = Country::whereCode('BE')->first();
-
-        if ($be->states()->count() > 0) {
+        $country = Country::whereCode('BE')->first();
+        if ($country->states()->count() > 0) {
             return;
         }
 
-        $be->states()->createMany([
+        $country->states()->createMany([
             ['code' => 'AN', 'name' => 'Antwerpen'],
             ['code' => 'OV', 'name' => 'Oost-Vlaanderen'],
             ['code' => 'VB', 'name' => 'Vlaams-Brabant'],

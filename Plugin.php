@@ -2,84 +2,99 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use System\Classes\SettingsManager;
 
 /**
- * Location Plugin Information File
+ * Plugin Information File
  */
 class Plugin extends PluginBase
 {
     /**
-     * Returns information about this plugin.
-     *
-     * @return array
+     * pluginDetails returns information about this plugin.
      */
     public function pluginDetails()
     {
         return [
-            'name'        => 'rainlab.location::lang.plugin.name',
-            'description' => 'rainlab.location::lang.plugin.description',
-            'author'      => 'Alexey Bobkov, Samuel Georges',
-            'icon'        => 'icon-globe',
-            'homepage'    => 'https://github.com/rainlab/location-plugin'
+            'name' => "Location",
+            'description' => "Location based features, such as Country and State.",
+            'author' => 'Alexey Bobkov, Samuel Georges',
+            'icon' => 'icon-globe',
+            'homepage' => 'https://github.com/rainlab/location-plugin'
         ];
     }
 
+    /**
+     * registerSettings
+     */
     public function registerSettings()
     {
         return [
             'location' => [
-                'label'       => 'rainlab.location::lang.locations.menu_label',
-                'description' => 'rainlab.location::lang.locations.menu_description',
-                'category'    => 'rainlab.location::lang.plugin.name',
-                'icon'        => 'icon-globe',
-                'url'         => Backend::url('rainlab/location/locations'),
-                'order'       => 500,
+                'label' => "Countries & States",
+                'description' => "Manage available user countries and states.",
+                'category' => SettingsManager::CATEGORY_USERS,
+                'icon' => 'icon-globe',
+                'url' => Backend::url('rainlab/location/locations'),
+                'order' => 700,
                 'permissions' => ['rainlab.location.access_settings'],
-                'keywords'    => 'country, countries, state',
+                'keywords' => 'country, countries, state',
             ],
             'settings' => [
-                'label'       => 'rainlab.location::lang.settings.menu_label',
-                'description' => 'rainlab.location::lang.settings.menu_description',
-                'category'    => 'rainlab.location::lang.plugin.name',
-                'icon'        => 'icon-map-signs',
-                'class'       => 'RainLab\Location\Models\Setting',
-                'order'       => 600,
+                'label' => "Location Settings",
+                'description' => "Manage location based settings.",
+                'category' => SettingsManager::CATEGORY_USERS,
+                'icon' => 'icon-map-signs',
+                'class' => \RainLab\Location\Models\Setting::class,
+                'order' => 800,
                 'permissions' => ['rainlab.location.access_settings'],
             ]
         ];
     }
 
+    /**
+     * registerPermissions
+     */
     public function registerPermissions()
     {
         return [
-            'rainlab.location.access_settings' => ['tab' => 'rainlab.location::lang.plugin.name', 'label' => 'rainlab.location::lang.permissions.settings'],
+            'rainlab.location.access_settings' => [
+                'tab' => "Location",
+                'label' => "Locations management"
+            ],
         ];
     }
 
     /**
-     * Register new Twig variables
-     * @return array
+     * registerMarkupTags registers new Twig variables
      */
     public function registerMarkupTags()
     {
         return [
             'functions' => [
-                'form_select_country' => ['RainLab\Location\Models\Country', 'formSelect'],
-                'form_select_state'   => ['RainLab\Location\Models\State', 'formSelect']
+                'form_select_country' => [\RainLab\Location\Models\Country::class, 'formSelect'],
+                'form_select_state' => [\RainLab\Location\Models\State::class, 'formSelect']
             ]
         ];
     }
 
+
     /**
-     * Registers any form widgets implemented in this plugin.
+     * registerComponents
+     */
+    public function registerComponents()
+    {
+        return [
+           \RainLab\Location\Components\Location::class => 'location',
+        ];
+    }
+
+    /**
+     * registerFormWidgets registers any form widgets implemented in this plugin.
      */
     public function registerFormWidgets()
     {
         return [
-            'RainLab\Location\FormWidgets\AddressFinder' => [
-                'label' => 'Address Finder',
-                'code'  => 'addressfinder'
-            ]
+            \RainLab\Location\FormWidgets\AddressFinder::class => 'addressfinder'
         ];
     }
 }

@@ -8,24 +8,24 @@ tabs:
         # Default Country
         default_country:
             span: left
-            label: rainlab.location::lang.locations.default_country
-            comment: rainlab.location::lang.locations.default_country_comment
+            label: Default Country
+            comment: When a user does not specify their location, select a default country to use.
             type: dropdown
-            tab: rainlab.location::lang.location.label
-            placeholder: - no default -
+            tab: Location
+            placeholder: -- no default --
 
         # Default State
         default_state:
             span: right
-            label: rainlab.location::lang.locations.default_state
-            comment: rainlab.location::lang.locations.default_state_comment
+            label: Default State
+            comment: When a user does not specify their location, select a default state to use.
             type: dropdown
-            tab: rainlab.location::lang.location.label
+            tab: Location
             dependsOn: default_country
-            placeholder: - no default -
+            placeholder: -- no default --
 
         # Google Maps API Key
         google_maps_key:
-            label: rainlab.location::lang.settings.google_maps_key
-            comment: rainlab.location::lang.settings.google_maps_key_comment
-            tab: rainlab.location::lang.settings.credentials_tab
+            label: Google Maps API Key
+            comment: If you plan on using Google Maps services, enter the API key for it here.
+            tab: Credentials

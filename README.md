@@ -1,17 +1,23 @@
 # Location plugin
 
-This plugin adds location based features to [OctoberCMS](http://octobercms.com).
+This plugin adds location based features to [October CMS](https://octobercms.com).
 
 * Easily add Country and State to any model
 * Form widget for address lookups (Google API)
 
+View this plugin on the October CMS marketplace:
+
+- https://octobercms.com/plugin/rainlab-location
+
 ### Extended features
 
-To integrate locations with front-end users consider installing the [User Plus+ plugin](http://octobercms.com/plugin/rainlab-userplus) (`RainLab.UserPlus`).
+To integrate locations with front-end users, consider also installing the `RainLab.UserPlus` plugin.
+
+- https://octobercms.com/plugin/rainlab-userplus
 
 ### Google API key requirement
 
-As of June 22, 2016 the Google Maps service requires an API key. You may generate a key from the following link:
+Using the Google Maps service requires an API key. You may generate a key from the following link:
 
 - [Get a Google API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
@@ -21,12 +27,16 @@ Copy the key and enter it in the **Settings > Location settings** area. If you f
 
 This plugin provides an easy way to add location fields, country and state, to any model. Simply add these columns to the database table:
 
-    $table->integer('country_id')->unsigned()->nullable()->index();
-    $table->integer('state_id')->unsigned()->nullable()->index();
+```php
+$table->integer('country_id')->unsigned()->nullable()->index();
+$table->integer('state_id')->unsigned()->nullable()->index();
+```
 
-Then implement the **RainLab.Location.Behaviors.LocationModel** behavior in the model class:
+Then implement the **RainLab\Location\Traits\LocationModel** trait in the model class:
 
-    public $implement = ['RainLab.Location.Behaviors.LocationModel'];
+```php
+use \RainLab\Location\Traits\LocationModel;
+```
 
 This will automatically create two "belongs to" relationships:
 
@@ -39,82 +49,69 @@ This will automatically create two "belongs to" relationships:
 
 You are free to add the following form field definitions:
 
-    country:
-        label: rainlab.location::lang.country.label
-        type: dropdown
-        span: left
-        placeholder: rainlab.location::lang.country.select
+```yaml
+country:
+    label: Country
+    type: dropdown
+    span: left
+    placeholder: -- select country --
 
-    state:
-        label: rainlab.location::lang.state.label
-        type: dropdown
-        span: right
-        dependsOn: country
-        placeholder: rainlab.location::lang.state.select
+state:
+    label: State
+    type: dropdown
+    span: right
+    dependsOn: country
+    placeholder: -- select state --
+```
 
 #### Lists
 
 For the list column definitions, you can use the following snippet:
 
-     country:
-         label: rainlab.location::lang.country.label
-         searchable: true
-         relation: country
-         select: name
-         sortable: false
+```yaml
+country:
+    label: Country
+    searchable: true
+    relation: country
+    select: name
+    sortable: false
 
-     state:
-         label: rainlab.location::lang.state.label
-         searchable: true
-         relation: state
-         select: name
-         sortable: false
+state:
+    label: State
+    searchable: true
+    relation: state
+    select: name
+    sortable: false
+```
 
 ### Front-end usage
 
-The front-end can also use the relationships by creating a partial called **country-state** with the content:
+The front-end can also use the relationships by rendering the `@form-select-country` and `@form-select-state` partials provided by the location component. Before proceeding, make sure you have the `location` component attached to the page or layout.
 
-    {% set countryId = countryId|default(form_value('country_id')) %}
-    {% set stateId = stateId|default(form_value('state_id')) %}
+```twig
+<div class="form-group">
+    <label for="accountCountry">Country</label>
+    {% partial '@form-select-country' countryId=user.country_id %}
+</div>
 
-    <div class="form-group">
-        <label for="accountCountry">Country</label>
-        {{ form_select_country('country_id', countryId, {
-            id: 'accountCountry',
-            class: 'form-control',
-            emptyOption: '',
-            'data-request': 'onInit',
-            'data-request-update': {
-                'country-state': '#partialCountryState'
-            }
-        }) }}
-    </div>
+<div class="form-group">
+    <label for="accountState">State</label>
+    {% partial '@form-select-state' countryId=user.country_id stateId=user.state_id %}
+</div>
+```
 
-    <div class="form-group">
-        <label for="accountState">State</label>
-        {{ form_select_state('state_id', countryId, stateId, {
-            id: 'accountState',
-            class: 'form-control',
-            emptyOption: ''
-        }) }}
-    </div>
-
-This partial can be rendered in a form with the following:
-
-    <div id="partialCountryState">
-        {% partial 'country-state' countryId=user.country_id stateId=user.state_id %}
-    </div>
-
-### Short code accessors
+### Short Code Accessors
 
 The behavior will also add a special short code accessor and setter to the model that converts `country_code` and `state_code` to their respective identifiers.
 
-    // Softly looks up and sets the country_id and state_id
-    // for these Country and State relations.
+```php
+// Softly looks up and sets the country_id and state_id
+// for these Country and State relations.
 
-    $model->country_code = "US";
-    $model->state_code = "FL";
-    $model->save();
+$model->country_code = "US";
+$model->state_code = "FL";
+$model->save();
+```
 
 ### Address Finder Form Widget
 
@@ -140,39 +137,45 @@ By default the `street` mapper places the house number before the street name. H
 
 Usage:
 
-    # ===================================
-    #  Form Field Definitions
-    # ===================================
+```yaml
+# ===================================
+#  Form Field Definitions
+# ===================================
 
-    fields:
-        address:
-            label: Address
-            type: addressfinder
-            countryRestriction: 'us,ch'
-            reverseStreetNumber: false
-            fieldMap:
-                latitude: latitude
-                longitude: longitude
-                city: city
-                zip: zip
-                street: street
-                country: country_code
-                state: state_code
-                vicinity: vicinity
+fields:
+    address:
+        label: Address
+        type: addressfinder
+        countryRestriction: 'us,ch'
+        reverseStreetNumber: false
+        fieldMap:
+            latitude: latitude
+            longitude: longitude
+            city: city
+            zip: zip
+            street: street
+            country: country_code
+            state: state_code
+            vicinity: vicinity
 
-        city:
-            label: City
-        zip:
-            label: Zip
-        street:
-            label: Street
-        country_code:
-            label: Country
-        state_code:
-            label: State
-        latitude:
-            label: Latitude
-        longitude:
-            label: Longitude
-        vicinity:
-            label: Vicinity
+    city:
+        label: City
+    zip:
+        label: Zip
+    street:
+        label: Street
+    country_code:
+        label: Country
+    state_code:
+        label: State
+    latitude:
+        label: Latitude
+    longitude:
+        label: Longitude
+    vicinity:
+        label: Vicinity
+```
+
+### License
+
+This plugin is an official extension of the October CMS platform and is free to use if you have a platform license. See [EULA license](LICENSE.md) for more details.
