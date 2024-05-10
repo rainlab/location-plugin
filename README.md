@@ -28,8 +28,8 @@ Copy the key and enter it in the **Settings > Location settings** area. If you f
 This plugin provides an easy way to add location fields, country and state, to any model. Simply add these columns to the database table:
 
 ```php
-$table->integer('country_id')->unsigned()->nullable()->index();
-$table->integer('state_id')->unsigned()->nullable()->index();
+$table->bigInteger('country_id')->unsigned()->nullable()->index();
+$table->bigInteger('state_id')->unsigned()->nullable()->index();
 ```
 
 Then implement the **RainLab\Location\Traits\LocationModel** trait in the model class:
