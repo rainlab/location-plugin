@@ -15,16 +15,17 @@
             <div class="form-group">
 
                 <!-- Checkbox -->
-                <div class="checkbox custom-checkbox">
+                <div class="form-check">
                     <input
                         type="checkbox"
                         name="pin"
                         value="1"
+                        class="form-check-input"
                         id="locationUnpin">
-                    <label for="locationUnpin" class="storm-icon-pseudo">
+                    <label for="locationUnpin" class="form-check-label">
                         <?= __("Pinned") ?>
                     </label>
-                    <p class="help-block form-text"><?= __("Pinned locations are sorted first in the list.") ?></p>
+                    <p class="help-block form-text mb-0"><?= __("Pinned locations are sorted first in the list.") ?></p>
                 </div>
 
             </div>
