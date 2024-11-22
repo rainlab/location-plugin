@@ -70,8 +70,8 @@ class State extends Model
      */
     public static function getObjectList($countryId)
     {
-        if (self::$objectList) {
-            return self::$objectList;
+        if (isset(self::$objectList[$countryId])) {
+            return self::$objectList[$countryId];
         }
 
         return self::$objectList[$countryId] = self::whereCountryId($countryId)->orderBy('name', 'asc')->get();
