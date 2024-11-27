@@ -71,8 +71,8 @@ class Plugin extends PluginBase
     {
         return [
             'functions' => [
-                'form_select_country' => [\RainLab\Location\Models\Country::class, 'formSelect'],
-                'form_select_state' => [\RainLab\Location\Models\State::class, 'formSelect']
+                'form_select_country' => [\RainLab\Location\Models\Country::class, 'formSelect', false],
+                'form_select_state' => [\RainLab\Location\Models\State::class, 'formSelect', false]
             ]
         ];
     }
