@@ -54,3 +54,4 @@ v1.2.5: Fixes missing callback parameter on Google API
 v2.0.0:
     - Major Upgrade to Location Plugin
     - migrate_from_version1.php
+v2.0.1: Fixes compatibility with October v4
