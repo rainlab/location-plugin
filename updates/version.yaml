@@ -34,6 +34,7 @@ v1.0.4:
     - seed_ru_states.php
     - seed_ua_states.php
     - seed_us_states.php
+    - seed_si_states.php
 v1.0.5: Countries can now be pinned to make them appear at the top of the list.
 v1.0.6: Added support for defining a default country and state.
 v1.0.7: Added basic geocoding method to the Country model.
@@ -55,3 +56,4 @@ v2.0.0:
     - Major Upgrade to Location Plugin
     - migrate_from_version1.php
 v2.0.1: Fixes compatibility with October v4
+v2.0.2: Include Slovenia states
