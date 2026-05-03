@@ -1,8 +1,8 @@
 /*
- * Location Autocomplete plugin
+ * Location Autocomplete control
  *
  * Data attributes:
- * - data-control="location-autocomplete" - enables the plugin on an element
+ * - data-control="location-autocomplete" - enables the control on an element
  * - data-input-street="#locationStreet" - input to populate with street
  * - data-input-city="#locationCity" - input to populate with city
  * - data-input-county="#locationCounty" - input to populate with county
@@ -14,98 +14,77 @@
  * - data-input-longitude="#locationLongitude" - input to populate with longitude
  *
  * JavaScript API:
- * $('input#addressAutocomplete').locationAutocomplete({ inputCountry: '#locationCountry' })
+ * oc.fetchControl(element, 'location-autocomplete')
  *
  * Dependences:
- * - Google maps (http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&callback=initMap&key=...)
- *
- * Example markup:
- *
-    <input
-        type="text"
-        class="form-control"
-        data-control="location-autocomplete"
-        data-country-restriction="us,ch"
-        data-input-street="#inputStreet"
-        data-input-city="#locationCity"
-        data-input-county="#locationCounty"
-        data-input-state="#locationState"
-        data-input-zip="#locationZip"
-        data-input-country="#locationCountry"
-        />
-
-    <input type="text" name="street" value="" id="inputStreet" />
-    <input type="text" name="city" value="" id="locationCity" />
-    <input type="text" name="county" value="" id="locationCounty" />
-    <input type="text" name="state" value="" id="locationState" />
-    <input type="text" name="zip" value="" id="locationZip" />
-    <input type="text" name="country" value="" id="locationCountry" />
- *
+ * - Google Maps Places API
  */
-
-
-+function ($, map) { "use strict";
-
-    // LOCATION AUTOCOMPLETE CLASS DEFINITION
-    // ============================
-
-    var LocationAutocomplete = function(element, options) {
-        this.options   = options
-        this.$el       = $(element)
-
-        // Init
-        this.init()
+oc.registerControl('location-autocomplete', class extends oc.ControlBase {
+    init() {
+        this.autocomplete = null;
     }
 
-    LocationAutocomplete.DEFAULTS = {
-        inputLatitude: null,
-        inputLongitude: null,
-        inputStreet: null,
-        inputCity: null,
-        inputCounty: null,
-        inputState: null,
-        inputZip: null,
-        inputVicinity: null,
-        inputCountry: null,
-        inputCountryLong: null
+    connect() {
+        this.initAutocomplete();
+
+        // Prevent ENTER from submitting form
+        this.listen('keypress', this.onSuppressEnter);
+        this.listen('keydown', this.onSuppressEnter);
+        this.listen('keyup', this.onSuppressEnter);
     }
 
-    LocationAutocomplete.prototype.init = function() {
+    disconnect() {
+        if (this.autocomplete) {
+            google.maps.event.clearInstanceListeners(this.autocomplete);
+            this.autocomplete = null;
+        }
+    }
+
+    initAutocomplete() {
+        if (typeof google === 'undefined' || !google.maps || !google.maps.places) {
+            // Google Maps not ready yet, retry
+            setTimeout(this.proxy(this.initAutocomplete), 100);
+            return;
+        }
+
         var autocompleteOptions = {
             types: ['geocode', 'establishment']
-        }
-        var countryRestriction = this.$el.data('countryRestriction')
+        };
+
+        var countryRestriction = this.config.countryRestriction;
         if (countryRestriction) {
             var countryCodes = countryRestriction.split(',').map(function(code) {
                 return code.trim();
             });
-            autocompleteOptions['componentRestrictions'] = {
-                'country': countryCodes
-            }
+            autocompleteOptions.componentRestrictions = {
+                country: countryCodes
+            };
         }
-        this.autocomplete = new map.places.Autocomplete(this.$el.get(0), autocompleteOptions)
 
-        map.event.addListener(this.autocomplete, 'place_changed', $.proxy(this.handlePlaceChanged, this))
+        this.autocomplete = new google.maps.places.Autocomplete(this.element, autocompleteOptions);
 
-        // Prevent ENTER from submitting form
-        this.$el.bind('keypress keydown keyup', function(e){
-            if (e.keyCode == 13) { e.preventDefault() }
-        })
+        google.maps.event.addListener(this.autocomplete, 'place_changed', this.proxy(this.handlePlaceChanged));
     }
 
-    LocationAutocomplete.prototype.getValueMap = function() {
-        var streetValueMap = ['street_number', 'route']
+    onSuppressEnter(ev) {
+        if (ev.keyCode === 13) {
+            ev.preventDefault();
+        }
+    }
 
-        if(this.$el.data('reverse-street-number')) {
-            streetValueMap = ['route', 'street_number']
+    getValueMap() {
+        var streetValueMap = ['street_number', 'route'];
+
+        if (this.config.reverseStreetNumber) {
+            streetValueMap = ['route', 'street_number'];
         }
 
         return {
-            'geometry': {
+            geometry: {
                 inputLatitude: 'lat',
                 inputLongitude: 'lng'
             },
-            'short': {
+            short: {
                 inputStreet: streetValueMap,
                 inputCity: ['locality', 'postal_town'],
                 inputCounty: 'administrative_area_level_2',
@@ -113,77 +92,80 @@
                 inputZip: 'postal_code',
                 inputCountry: 'country'
             },
-            'long': {
+            long: {
                 inputCountryLong: 'country'
             },
-            'misc': {
+            misc: {
                 inputVicinity: 'vicinity'
             }
-        }
+        };
     }
 
-    LocationAutocomplete.prototype.handlePlaceChanged = function() {
-
-        var self = this,
-            place = this.autocomplete.getPlace(),
+    handlePlaceChanged() {
+        var place = this.autocomplete.getPlace(),
             geoLocation = place.geometry.location,
-            valueMap = this.getValueMap()
+            valueMap = this.getValueMap();
 
-        var extractionFunction = function(standard, google, resultType) {
-            var value = []
+        var self = this;
 
-            if (!$.isArray(google))
-                google = [google]
+        var extractionFunction = function(standard, googleType, resultType) {
+            var value = [];
 
-            $.each(google, function(index, _google) {
-                value.push(self.getValueFromAddressObject(place, _google, resultType))
-            })
+            if (!Array.isArray(googleType)) {
+                googleType = [googleType];
+            }
 
-            return value.join(' ')
-        }
+            googleType.forEach(function(_googleType) {
+                value.push(self.getValueFromAddressObject(place, _googleType, resultType));
+            });
+
+            return value.join(' ');
+        };
 
         var elementFinderFunction = function(lookupKey) {
-            if (self.options[lookupKey] === undefined)
-                return
+            var selector = self.config[lookupKey];
+            if (!selector) {
+                return;
+            }
 
-            var element = $(self.options[lookupKey])
+            var element = document.querySelector(selector);
+            if (!element) {
+                return;
+            }
 
-            if (element.length == 0)
-                return
+            return element;
+        };
 
-            return element
-        }
+        Object.entries(valueMap.geometry).forEach(function([standard, googleType]) {
+            var targetEl = elementFinderFunction(standard);
+            if (!targetEl) return;
 
-        $.each(valueMap['geometry'], function(standard, google){
-            var $targetEl = elementFinderFunction(standard)
-            if (!$targetEl) return
+            if (googleType === 'lat') targetEl.value = geoLocation.lat();
+            else if (googleType === 'lng') targetEl.value = geoLocation.lng();
+        });
 
-            if (google == 'lat') $targetEl.val(geoLocation.lat())
-            else if (google == 'lng') $targetEl.val(geoLocation.lng())
-        })
+        Object.entries(valueMap.short).forEach(function([standard, googleType]) {
+            var targetEl = elementFinderFunction(standard);
+            if (!targetEl) return;
 
-        $.each(valueMap['short'], function(standard, google){
-            var $targetEl = elementFinderFunction(standard)
-            if (!$targetEl) return
+            targetEl.value = extractionFunction(standard, googleType);
+        });
 
-            $targetEl.val(extractionFunction(standard, google))
-        })
+        Object.entries(valueMap.long).forEach(function([standard, googleType]) {
+            var targetEl = elementFinderFunction(standard);
+            if (!targetEl) return;
 
-        $.each(valueMap['long'], function(standard, google){
-            var $targetEl = elementFinderFunction(standard)
-            if (!$targetEl) return
+            targetEl.value = extractionFunction(standard, googleType, 'long_name');
+        });
 
-            $targetEl.val(extractionFunction(standard, google, 'long_name'))
-        })
+        Object.entries(valueMap.misc).forEach(function([standard, googleType]) {
+            var targetEl = elementFinderFunction(standard);
+            if (!targetEl) return;
 
-        $.each(valueMap['misc'], function(standard, google){
-            var $targetEl = elementFinderFunction(standard)
-            if (!$targetEl) return
+            targetEl.value = place[googleType];
+        });
 
-            $targetEl.val(place[google])
-        })
-
-        this.$el.trigger('changedLocation')
+        this.element.dispatchEvent(new Event('changedLocation'));
     }
 
     /*
@@ -201,59 +183,25 @@
      * country                     = Country
      *
      */
-    LocationAutocomplete.prototype.getValueFromAddressObject = function(addressObj, type, resultType) {
-        var self = this
-        var result = null
-        if (!resultType)
-            resultType = 'short_name'
+    getValueFromAddressObject(addressObj, type, resultType) {
+        if (!resultType) {
+            resultType = 'short_name';
+        }
 
-        if (!addressObj)
-            return null
+        if (!addressObj) {
+            return null;
+        }
+
+        var result = null;
 
         for (var i = 0; i < addressObj.address_components.length; i++) {
             for (var j = 0; j < addressObj.address_components[i].types.length; j++) {
-                if (addressObj.address_components[i].types[j] == type)
-                    result = addressObj.address_components[i][resultType]
+                if (addressObj.address_components[i].types[j] === type) {
+                    result = addressObj.address_components[i][resultType];
+                }
             }
         }
 
-        return result
+        return result;
     }
-
-    // LOCATION AUTOCOMPLETE PLUGIN DEFINITION
-    // ============================
-
-    var old = $.fn.locationAutocomplete
-
-    $.fn.locationAutocomplete = function (option) {
-        var args = Array.prototype.slice.call(arguments, 1), result
-        this.each(function () {
-            var $this   = $(this)
-            var data    = $this.data('ui.location-autocomplete')
-            var options = $.extend({}, LocationAutocomplete.DEFAULTS, $this.data(), typeof option == 'object' && option)
-            if (!data) $this.data('ui.location-autocomplete', (data = new LocationAutocomplete(this, options)))
-            if (typeof option == 'string') result = data[option].apply(data, args)
-            if (typeof result != 'undefined') return false
-        })
-
-        return result ? result : this
-    }
-
-    $.fn.locationAutocomplete.Constructor = LocationAutocomplete
-
-    // LOCATION AUTOCOMPLETE NO CONFLICT
-    // =================
-
-    $.fn.locationAutocomplete.noConflict = function () {
-        $.fn.locationAutocomplete = old
-        return this
-    }
-
-    // LOCATION AUTOCOMPLETE DATA-API
-    // ===============
-
-    $(document).render(function() {
-        $('[data-control="location-autocomplete"]').locationAutocomplete()
-    })
-
-}(window.jQuery, google.maps);
+});
