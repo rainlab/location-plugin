@@ -113,6 +113,53 @@ $model->state_code = "FL";
 $model->save();
 ```
 
+### Tailor Content Fields
+
+This plugin provides `country` and `state` content field types for use in Tailor blueprints. These fields render as dropdowns populated with countries and states from the location database.
+
+#### Country Field
+
+```yaml
+fields:
+    country:
+        label: Country
+        type: country
+        span: auto
+        placeholder: -- select country --
+```
+
+#### State Field
+
+The state field automatically depends on a country field to filter its options.
+
+```yaml
+fields:
+    state:
+        label: State
+        type: state
+        span: auto
+        countryFrom: country
+        placeholder: -- select state --
+```
+
+The `countryFrom` option specifies which country field to source the country from (defaults to `country`). The `dependsOn` attribute is applied automatically.
+
+#### Full Example
+
+```yaml
+fields:
+    country:
+        label: Country
+        type: country
+        span: auto
+
+    state:
+        label: State
+        type: state
+        span: auto
+        countryFrom: country
+```
+
 ### Address Finder Form Widget
 
 This plugin introduces an address lookup form field called `addressfinder`. The form widget renders a Google Maps autocomplete address field that automatically populates mapped fields based on the value entered and selected in the address.

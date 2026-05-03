@@ -89,6 +89,17 @@ class Plugin extends PluginBase
     }
 
     /**
+     * registerContentFields registers content fields for Tailor.
+     */
+    public function registerContentFields()
+    {
+        return [
+            \RainLab\Location\ContentFields\CountryField::class => 'country',
+            \RainLab\Location\ContentFields\StateField::class => 'state',
+        ];
+    }
+
+    /**
      * registerFormWidgets registers any form widgets implemented in this plugin.
      */
     public function registerFormWidgets()
