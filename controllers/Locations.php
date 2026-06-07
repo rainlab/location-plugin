@@ -106,12 +106,13 @@ class Locations extends SettingsController
     public function onDisableLocations()
     {
         $enable = post('enable', false);
+        $locationType = post('location_type');
 
         if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
 
             foreach ($checkedIds as $objectId) {
                 $object = null;
-                switch (post('location_type')) {
+                switch ($locationType) {
                     case 'country':
                         $object = Country::find($objectId);
                         break;
@@ -137,7 +138,11 @@ class Locations extends SettingsController
             Flash::success(__("Successfully disabled those locations."));
         }
 
-        return redirect()->refresh();
+        if ($locationType === 'state') {
+            return $this->relationRefresh('states');
+        }
+
+        return $this->listRefresh();
     }
 
     /**

@@ -37,7 +37,7 @@
     </div>
     <div class="modal-footer">
         <?= Ui::ajaxButton("Apply", 'onDisableLocations')
-            ->confirmMessage("Are you sure?")
+            ->dismissPopup()
             ->primary() ?>
 
         <?= Ui::button("Cancel")
