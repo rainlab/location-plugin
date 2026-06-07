@@ -12,6 +12,8 @@
   "Locations management": "Správa lokací",
   "Successfully enabled those locations.": "Vybrané lokality byly úspěšně aktivovány.",
   "Successfully disabled those locations.": "Vybrané lokality byly úspěšně zakázány.",
+  "Successfully pinned selected locations.": "Vybraná místa byla úspěšně označena.",
+  "Successfully unpinned selected locations.": "Vybraná místa byla úspěšně odepnuta.",
   "Enable or Disable Locations": "Aktivace nebo zákaz lokality",
   "Locations selected: :amount": "Počet vybraných lokalit: :amount",
   "Enabled": "Aktivní",
@@ -19,7 +21,11 @@
   "Are you sure?": "Jste si jistí?",
   "New Location": "Nová lokalita",
   "Enable or Disable": "Aktivovat nebo zakázat",
+  "Pin or Unpin": "Připnout nebo odepnout",
   "Do you really want to delete this location?": "Opravdu chcete smazat tuto lokalitu?",
+  "Pin or Unpin Locations": "Připnutí nebo odpnutí míst",
+  "Pinned": "Preferovat",
+  "Pinned locations are sorted first in the list.": "Připnutá místa jsou v seznamu seřazena jako první.",
   "Disabled": "Skrýt neaktivní země",
   "Create Location": "Vytvoření lokality",
   "Edit Location": "Úprava lokality",
@@ -28,7 +34,7 @@
   "Return to locations list": "Zpět na seznam lokalit",
   "Name": "Jméno",
   "Code": "Kód",
-  "Pinned": "Preferovat",
+  "Calling Code": "Volací kód",
   "Enter a unique code to identify this country.": "Zadejte unikátní kód země.",
   "Default Country": "Výchozí země",
   "When a user does not specify their location, select a default country to use.": "Použije se pokud si uživatel nevybere zemi při registraci.",
@@ -38,5 +44,7 @@
   "If you plan on using Google Maps services, enter the API key for it here.": "Pokud chcete používat Google Mapy, zadejte zde váš API klíč.",
   "Credentials": "Údaje",
   "Enter the display name for this state.": "Zadejte jméno státu.",
-  "Enter a unique code to identify this state.": "Zadejte unikátní kód státu, např. CZ"
+  "Enter a unique code to identify this state.": "Zadejte unikátní kód státu, např. CZ",
+  "New State": "Nový stát",
+  "New Country": "Nová země"
 }

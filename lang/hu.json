@@ -34,6 +34,7 @@
   "Return to locations list": "Vissza a tartózkodási helyekhez",
   "Name": "Név",
   "Code": "Kód",
+  "Calling Code": "Hívókód",
   "Enter a unique code to identify this country.": "Írja be az országot azonosító egyedi kódot.",
   "Default Country": "Alapértelmezett ország",
   "When a user does not specify their location, select a default country to use.": "Ha egy felhasználó nem adja meg a tartózkodási helyét, akkor válasszon egy országot.",
@@ -43,5 +44,7 @@
   "If you plan on using Google Maps services, enter the API key for it here.": "Ha a Google Térkép szolgáltatásait kívánja használni, írja be ide az API kulcsot.",
   "Credentials": "Hitelesítés",
   "Enter the display name for this state.": "Írja be az államnak / megyének a megjelenítendő nevét.",
-  "Enter a unique code to identify this state.": "Írja be az államot / megyét azonosító egyedi kódot."
+  "Enter a unique code to identify this state.": "Írja be az államot / megyét azonosító egyedi kódot.",
+  "New State": "Új állam",
+  "New Country": "Új ország"
 }

@@ -1,5 +1,5 @@
 <div data-control="toolbar">
-    <?= Ui::popupButton("New Country", 'onRelationButtonCreate')
+    <?= Ui::popupButton("New State", 'onRelationButtonCreate')
         ->icon('icon-file')
         ->secondary() ?>
 

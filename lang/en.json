@@ -44,5 +44,7 @@
   "If you plan on using Google Maps services, enter the API key for it here.": "If you plan on using Google Maps services, enter the API key for it here.",
   "Credentials": "Credentials",
   "Enter the display name for this state.": "Enter the display name for this state.",
-  "Enter a unique code to identify this state.": "Enter a unique code to identify this state."
+  "Enter a unique code to identify this state.": "Enter a unique code to identify this state.",
+  "New State": "New State",
+  "New Country": "New Country"
 }

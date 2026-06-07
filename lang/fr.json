@@ -44,5 +44,7 @@
   "If you plan on using Google Maps services, enter the API key for it here.": "Si vous utilisez les services Google Maps, entrez votre clé API ici.",
   "Credentials": "Authentification",
   "Enter the display name for this state.": "Entrez le nom de cette région.",
-  "Enter a unique code to identify this state.": "Entrez un code unique pour identifier cette région."
+  "Enter a unique code to identify this state.": "Entrez un code unique pour identifier cette région.",
+  "New State": "Nouvel État",
+  "New Country": "Nouveau pays"
 }

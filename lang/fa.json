@@ -34,6 +34,7 @@
   "Return to locations list": "بازگشت به لیست موقعیت ها",
   "Name": "نام",
   "Code": "کد",
+  "Calling Code": "کد تماس",
   "Enter a unique code to identify this country.": "کد یکتایی را جهت دسترسی به این کشور را وارد نمایید.",
   "Default Country": "کشور پیشفرض",
   "When a user does not specify their location, select a default country to use.": "هنگامی که کاربر موقعیت خود را مشخص نکند کشور پیش فرض ایتفاده خواهد شد.",
@@ -43,5 +44,7 @@
   "If you plan on using Google Maps services, enter the API key for it here.": "اگر قصد استفاده از سرویس نقشه گوگل را دارید کلید API آن را در این قسمت وارد نمایید.",
   "Credentials": "مجوز ها",
   "Enter the display name for this state.": "نام استان را جهت نمایش وارد نمایید.",
-  "Enter a unique code to identify this state.": "کد یکتایی جهت دسترسی به این استان وارد نمایید."
+  "Enter a unique code to identify this state.": "کد یکتایی جهت دسترسی به این استان وارد نمایید.",
+  "New State": "ایالت جدید",
+  "New Country": "کشور جدید"
 }

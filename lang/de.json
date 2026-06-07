@@ -34,6 +34,7 @@
   "Return to locations list": "Zur Location Übersicht zurückkehren",
   "Name": "Name",
   "Code": "Code",
+  "Calling Code": "Vorwahl",
   "Enter a unique code to identify this country.": "Eindeutiger Code für dieses Land.",
   "Default Country": "Standard Land",
   "When a user does not specify their location, select a default country to use.": "Dieses Land wird verwendet, wenn ein User keine Location explizit auswählt.",
@@ -43,5 +44,7 @@
   "If you plan on using Google Maps services, enter the API key for it here.": "Wenn du den Google Maps Service verwenden willst, gib hier den API Key ein.",
   "Credentials": "Zugangsdaten",
   "Enter the display name for this state.": "Anzeigename für diesen Staat.",
-  "Enter a unique code to identify this state.": "Eindeutiger Code für diesen Staat."
+  "Enter a unique code to identify this state.": "Eindeutiger Code für diesen Staat.",
+  "New State": "Neuer Staat",
+  "New Country": "Neues Land"
 }

@@ -9,7 +9,7 @@
             <p class="flash-message static error"><?= $fatalError ?></p>
         <?php endif ?>
 
-        <p><?= __("Locations selected: :amount", ['amount'=>count($checked)]) ?></p>
+        <p><?= __("Locations selected: :amount", ['amount' => count($checked)]) ?></p>
 
         <div class="form-preview">
             <div class="form-group">
