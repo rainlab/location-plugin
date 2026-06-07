@@ -57,3 +57,4 @@ v2.0.0:
     - migrate_from_version1.php
 v2.0.1: Fixes compatibility with October v4
 v2.0.2: Include Slovenia states
+v2.0.3: Fixes disabling bulk states
