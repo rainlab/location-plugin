@@ -90,7 +90,7 @@ class Locations extends SettingsController
     public function onLoadDisableForm()
     {
         try {
-            $this->vars['checked'] = post('checked');
+            $this->vars['checked'] = array_unique((array) post('checked'));
             $this->vars['location_type'] = post('location_type');
         }
         catch (Exception $ex) {

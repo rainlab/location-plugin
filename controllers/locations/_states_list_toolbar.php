@@ -4,7 +4,7 @@
         ->secondary() ?>
 
     <?= Ui::popupButton(__("Enable or Disable"), 'onLoadDisableForm')
-        ->ajaxData(['location_type' => 'country'])
+        ->ajaxData(['location_type' => 'state'])
         ->listCheckedTrigger()
         ->listCheckedRequest()
         ->icon('icon-magic')
