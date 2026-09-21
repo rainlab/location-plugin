@@ -7,6 +7,10 @@ class SeedAllTables extends Seeder
 {
     public function run()
     {
+        if (Country::count() > 0) {
+            return;
+        }
+
         Country::insert([
             ['is_enabled' => 1, 'code' => 'AU', 'iso_code' => 'AUS', 'calling_code' => 61, 'name' => 'Australia'],
             ['is_enabled' => 1, 'code' => 'CA', 'iso_code' => 'CAN', 'calling_code' => 1, 'name' => 'Canada'],

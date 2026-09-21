@@ -7,8 +7,8 @@ class SeedPlStates extends Seeder
 {
     public function run()
     {
-        $country = Country::whereCode('AT')->first();
-        if ($country->states()->count() > 0) {
+        $country = Country::whereCode('PL')->first();
+        if (!$country || $country->states()->count() > 0) {
             return;
         }
 
@@ -20,7 +20,7 @@ class SeedPlStates extends Seeder
             ['code' => 'DO', 'name' => 'Dolnośląskie'],
             ['code' => 'LL', 'name' => 'Lubelskie'],
             ['code' => 'LS', 'name' => 'Lubuskie'],
-            ['code' => 'MA', 'name' => 'Mazowieckie'],
+            ['code' => 'MZ', 'name' => 'Mazowieckie'],
             ['code' => 'OP', 'name' => 'Opolskie'],
             ['code' => 'PD', 'name' => 'Podlaskie'],
             ['code' => 'PM', 'name' => 'Pomorskie'],
