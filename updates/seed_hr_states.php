@@ -8,7 +8,7 @@ class SeedHrStates extends Seeder
     public function run()
     {
         $country = Country::whereCode('HR')->first();
-        if ($country->states()->count() > 0) {
+        if (!$country || $country->states()->count() > 0) {
             return;
         }
 

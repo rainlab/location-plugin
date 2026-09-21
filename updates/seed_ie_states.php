@@ -8,7 +8,7 @@ class SeedIeStates extends Seeder
     public function run()
     {
         $country = Country::whereCode('IE')->first();
-        if ($country->states()->count() > 0) {
+        if (!$country || $country->states()->count() > 0) {
             return;
         }
 

@@ -8,7 +8,7 @@ class SeedMxStates extends Seeder
     public function run()
     {
         $country = Country::whereCode('MX')->first();
-        if ($country->states()->count() > 0) {
+        if (!$country || $country->states()->count() > 0) {
             return;
         }
 

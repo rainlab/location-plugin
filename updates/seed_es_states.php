@@ -8,7 +8,7 @@ class SeedEsStates extends Seeder
     public function run()
     {
         $country = Country::whereCode('ES')->first();
-        if ($country->states()->count() > 0) {
+        if (!$country || $country->states()->count() > 0) {
             return;
         }
 

@@ -10,7 +10,7 @@ class SeedSiStates extends Seeder
     public function run()
     {
         $country = Country::whereCode('SI')->first();
-        if ($country->states()->count() > 0) {
+        if (!$country || $country->states()->count() > 0) {
             return;
         }
 
